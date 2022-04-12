@@ -1,22 +1,17 @@
- /**/ console.log("Olá Mundo!")
+let a = 10
+let b = 10
 
- console.log( prompt("qual seu nome?") )
-  console.log( prompt ("Qual seu sobrenome?"))
-  //
+console.log(b)
 
+b = 5
+console.log(a, b)
+// primeiro o comsole vai imprimir 10\\
+// no segundo vai imprimir 10 e 5 pois o B recebeu um novo valor\\
 
-  
- let primeiroNome = "caroline"
- //
- let sobrenome = "martins"
- //
- let idade = 28
- //
- let estudante = true
- console.log( primeiroNome, sobrenome, idade, estudante )
+let a = 10
+let b = 20
+c = a
+b = c
+a = b
 
-
-console.log ( typeof idade )
-
-console.log(prompt ("variavel") )
-console.log(prompt ("qual sua idade?"))
+console.log(a, b, c)
