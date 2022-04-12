@@ -86,3 +86,4 @@ console.log(a, b)
 //criei uma nova variavel c dando o valor de a
 //a ficou com valor de b
 // b pegou o valor de c
+
