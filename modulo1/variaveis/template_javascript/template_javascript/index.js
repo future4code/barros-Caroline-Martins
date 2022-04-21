@@ -1,4 +1,5 @@
-// exercicio 1
+ 
+ // exercicio 1
 //let a = 10
  let b = 10
 
