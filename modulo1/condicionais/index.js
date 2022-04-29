@@ -109,28 +109,28 @@ let turno=prompt("Qual turno você estuda?M(matutino), V(vespetino) ou N(noturno
 //     }
 
 // //4.
-let filme = prompt("Qual genero do filme?")
-let preco = Number(prompt("Qual valor do ingresso?"))
-
-    if(filme === "fantasia" && preco <=15){
-        console.log("Bom filme!")
-    } else{
-        console.log("Escolha outro filme ;(")
-    }
-
-
-//DESAFIO
-//1.
-// let lanche = prompt("Qual lanche vocês vão escolher?")
 // let filme = prompt("Qual genero do filme?")
 // let preco = Number(prompt("Qual valor do ingresso?"))
 
 //     if(filme === "fantasia" && preco <=15){
-//         console.log(`Bom filme! 
-//         Aproveite o seu lanche ${lanche}`)
+//         console.log("Bom filme!")
 //     } else{
 //         console.log("Escolha outro filme ;(")
 //     }
+
+
+//DESAFIO
+//1.
+let lanche = prompt("Qual lanche vocês vão escolher?")
+let filme = prompt("Qual genero do filme?")
+let preco = Number(prompt("Qual valor do ingresso?"))
+
+    if(filme === "fantasia" && preco <=15){
+        console.log(`Bom filme! 
+        Aproveite o seu lanche ${lanche}`)
+    } else{
+        console.log("Escolha outro filme ;(")
+    }
 
 
 //2.
