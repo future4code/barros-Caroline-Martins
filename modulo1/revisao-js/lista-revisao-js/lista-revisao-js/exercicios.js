@@ -22,14 +22,28 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    let pares = array.filter((numeros)=>{
-        return (numeros % 2 === 0)
-    })
-}
+    
+//     let numerosPares=[] 
+//         for (let numerosPares1 of array) {
+//             if ((numerosPares1 % 2 === 0)) {
 
+//                 numerosPares.push(numerosPares1)
+//             }
+    
+//     }
+//  return numerosPares
+}
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    let numerosPares=[] 
+    for (let numerosPares1 of array) {
+        if ((numerosPares1 % 2 === 0)) {
+
+            numerosPares.push(numerosPares1)
+        } 
+    }
+            for(let )
+      
 }
 
 // EXERCÍCIO 06
