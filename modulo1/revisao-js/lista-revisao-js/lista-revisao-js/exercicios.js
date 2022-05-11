@@ -39,15 +39,15 @@ function retornaNumerosParesElevadosADois(array) {
     for (let numerosPares1 of array) {
         if ((numerosPares1 % 2 === 0)) {
 
-            numerosPares.push(numerosPares1)
+            numerosPares.push(numerosPares1 * numerosPares1)
         } 
     }
-            for(let )
-      
+     return numerosPares  
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
+
   
 }
 
