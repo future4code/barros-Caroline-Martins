@@ -38,7 +38,6 @@ let numerosPares=[]
 
             numerosPares.push(numerosPares1)
         }
-
     }
 return numerosPares
 }
