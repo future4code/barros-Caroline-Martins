@@ -1,22 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Caroline</title>
-    <link rel="stylesheet" href="estiloProjetos.css">
+    <style>
+        body{
+           padding-bottom: 350px;
+           margin: 0;
+           background-image: linear-gradient(to top,#a8edea 0%,#fed6e3 100%) ;
+       }
+
+       #menu{
+           text-align: end;
+           height: 60px;
+           margin: 0px;
+           background-image: linear-gradient(to top,#a8edea 0%,#fed6e3 100%) ;
+          
+       }
+       #menu nav{
+           display: block;
+       }
+       #menu nav a{
+           margin: 30px;
+           display: inline-block;
+           font-size: 20px;
+           color:black
+           
+       }
+       #menu nav a:hover{
+           color: white
+       
+       }
+   </style>
 </head>
 <body>
     <header>
         <!-- comentario antes do menu -->
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="bio.html">Bio</a>
-        <a href="experiencia.html">Experiência</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="contato.html">Contatos</a>
-    </nav>
+    <div id="menu">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="bio.html">Bio</a>
+            <a href="experiencia.html">Experiência</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="contato.html">Contatos</a>
+        </nav>
+    </div>
 </body>
 </html>
