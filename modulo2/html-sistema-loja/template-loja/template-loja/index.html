@@ -4,32 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nome da Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <title>LoAne</title>
 </head>
-<body>
-    <header>
-        <h1>Bem-vindes ao <em>LoAne</em>!</h1>
-        <p>Onde sua imaginação pode ser o que ela quiser</p>
-        <p>Para os trouxas apaixonados</p>
-        <p> Para você bruxo que não recebeu sua carta para Hogwarts</p>
-    </header>
+<style>
+   
+    #menu{
+        padding: 10px;
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
 
-    <nav>
-        <a href="index.html">Página Inicial |</a>
-        <a href="ctrl-estoque.html">Controle de Estoque |</a>
-        <a href="add-produto.html">Adicionar Produto |</a>
+    }
+    #menu a{
+        padding: 50px;
+        color: white;
+    }
+    #menu a:hover{
+        color: yellow
+    }
+    #descricao{
+        padding: 10px;
+        text-align: center;
+        color: white;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+    .descricao1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #main{
+        padding: auto;
+    }
+    footer{
+        padding: 70px 10px ;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+</style>
+<body>
+    <nav id = "menu">
+        <a href="index.html">Página Inicial </a>
+        <a href="ctrl-estoque.html">Controle de Estoque </a>
+        <a href="add-produto.html">Adicionar Produto </a>
         <a href="funcionarios.html">Funcionários</a>
     </nav>
+    <header id ="descricao">
+        <h1 class ="descricao1">Bem-vindes ao <i><b>LoAne</b></i>!</h1>
+        <p class ="descricao1">Onde sua imaginação pode ser o que ela quiser</p>
+        <p class ="descricao1">Para os trouxas apaixonados</p>
+        <p class ="descricao1"> Para você bruxo que não recebeu sua carta para Hogwarts</p>
+        <b><p class ="descricao1">Venha ter sua lembrança</p></b>
+        <img src="img/casas2.jpg" alt="casas-Harry">
+    </header>
 
-    <main>
+    <main id ="main">
         <!-- ADICIONAR CONTEÚDO PRINCIPAL SOBRE SUA LOJINHA -->
-        <b><p>Venha ter sua lembrança</p></b>
+        
     </main>
+
 
     
     <footer>
-        <p>Siga-nos nas redes sociais!</p>
-        <img src="img/redeSocial.jpg"/>
+        <h3>Siga-nos nas redes sociais!</h3>
+        <img src="img/face1.png" alt="facebook">
+        <img src="img/inst2.png" alt="instagram">
+        <img src="img/twitter.png" alt="twitter">
     </footer>
 </body>
 </html>

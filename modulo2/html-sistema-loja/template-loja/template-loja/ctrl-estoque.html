@@ -4,52 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Controle de Estoque</title>
+    <title>Controle de Estoque LoAne</title>
 </head>
+<style>
+    body{
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        text-align: center;
+    }
+    #menu{
+        padding: 20px;
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+    #menu a{
+        padding: 50px;
+        color: white;
+    }
+    #menu a:hover{
+        color: yellow
+    }
+    #descricao{
+    
+        padding: 30px;
+        text-align: center;
+        color: white;
+    }
+    .tabela{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    footer{
+        padding: 70px 10px ;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+</style>
 <body>
     <header>
-        <p>LoAne</p>
-    </header>
-    
-    <nav>
+         <nav id = "menu">
         <a href="index.html">Página Inicial</a>
         <a href="ctrl-estoque.html">Controle de Estoque</a>
         <a href="add-produto.html">Adicionar Produto</a>
         <a href="funcionarios.html">Funcionários</a>
     </nav>
+    </header>
 
-    <h2>Controle de Estoque</h2>
+    <img src="img/casas-harry-potter4.png" alt="casas-Harry">
+    <h2 id = "descricao">Controle de Estoque</h2>
 
     <table>
-        <tr>
+        <tr class = "tabela">
             <th>Foto</th>
             <th>Descrição</th>
             <th>Preço (R$)</th>
             <th>Quantidade disponível</th>
         </tr>
 
-        <tr>
-            <td><img src="img/harry.jpg" alt="Boneco Harry Potter"/></td>
+        <tr class="tabela">
+            <td><img src="img/harry2.jpg" alt="Boneco Harry Potter"/></td>
             <td> Boneco Harry Potter modelo Pop </td>
             <td> R$:149,00 </td>
             <td> 20 UN </td>
         </tr>
 
-        <tr>
+        <tr class="tabela">
             <td><img src="img/rony1..jpg" alt="Boneco Rony"/></td>
             <td> Boneco  Rony modelo Pop</td>
             <td> R$:149,00 </td>
             <td> 10 UN </td>
         </tr>
 
-        <tr>
+        <tr class="tabela">
             <td><img src="img/hermione.jpg" alt="Boneca hermione"/></td>
             <td> Boneca Hermione modelo Pop </td>
             <td> R$:149,00 </td>
             <td> 10 UN </td>
         </tr>
 
-        <tr>
+        <tr class="tabela">
             <td><img src="img/personagens.png" alt="Kit personagens Harry Potter"/></td>
             <td> Kit 6 personagens </td>
             <td> R$:750,00 </td>
@@ -57,13 +94,18 @@
         </tr>
         
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
-        <tr>
+        <tr class="tabela">
             <td> <img src="img/images (2).jpg" alt="Harry com coruja"/></td>
             <td>Boneco Harry Potter com coruja modelo Pop</td>
             <td>R$:149,00</td>
             <td>10 UN</td>
         </tr>
     </table>
-
+    <footer>
+        <h3>Siga-nos nas redes sociais!</h3>
+        <img src="img/face1.png" alt="facebook">
+        <img src="img/inst2.png" alt="instagram">
+        <img src="img/twitter.png" alt="twitter">
+    </footer>
 </body>
 </html>
