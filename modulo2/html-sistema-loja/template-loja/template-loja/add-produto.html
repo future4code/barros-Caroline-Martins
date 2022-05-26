@@ -4,30 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Adicionar Produto</title>
+    <title>Adicionar Produto LoAne</title>
 </head>
+<style>
+    body{
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        text-align: center;
+    }
+    #menu{
+        padding: 20px;
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+    #menu a{
+        padding: 50px;
+        color: white;
+    }
+    #menu a:hover{
+        color: yellow
+    }
+    .descricao{
+    
+    padding: 30px;
+    text-align: center;
+    color: white;
+    }
+    .produto{
+    padding: 30px;
+    text-align: center;
+    color: white;
+    }
+    footer{
+        padding: 70px 10px ;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+</style>
 <body>
     <header>
-        <p> LoAne </p>
+        <nav id ="menu">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+        </nav>
     </header>
     
-    <nav>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
-
-    
-    <h2>Adicionar Produto</h2>
-    <form action="">
+    <h2 class = "descricao">Adicionar Produto</h2>
+    <img src="img/casas5.jpg" alt="casasa-harry">
+    <form action="" class="produto">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
             <br>
      
             <label for="descricao">Descrição do produto: </label>
             <!-- Adicione o id apropriado para o input abaixo -->
-            <input type="text" id="Descrição do produto" name="descrição">
+            <input type="text" id="descrição do produtoj" name="descrição">
             <br>
             <label for="preco">Preço (em R$): </label>
             <!-- Adicione o id apropriado e o type para receber números abaixo -->
@@ -43,6 +79,11 @@
             <button type="button">Adicionar</button>
 
     </form>
-
+<footer>
+    <h3>Siga-nos nas redes sociais!</h3>
+    <img src="img/face1.png" alt="facebook">
+    <img src="img/inst2.png" alt="instagram">
+    <img src="img/twitter.png" alt="twitter">
+</footer>
 </body>
 </html>

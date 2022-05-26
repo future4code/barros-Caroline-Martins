@@ -4,27 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Funcionários</title>
+    <title>Funcionários LoAne</title>
 </head>
+<style>
+ body{
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+        text-align: center;
+    }
+    #menu{
+        padding: 20px;
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+    #menu a{
+        padding: 50px;
+        color: white;
+    }
+    #menu a:hover{
+        color: yellow
+    }
+    .descricao{
+        color: white;
+        text-align: center;
+        font-size: 30px;
+    }
+    footer{
+        padding: 70px 10px ;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-image: linear-gradient(to right, #434343 0%, black 100%);
+    }
+</style>
 <body>
     <header>
-        <p>LoAne</p>
+        <nav id ="menu">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+        </nav> 
     </header>
     
-    <nav>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
 
-    <h2>Funcionários</h2>
+
+    <h2 class="descricao">Funcionários</h2>
     <!-- Crie uma lista de funcionários usando as tags que você aprendeu hoje abaixo \/ -->
-        <ul>
+    <img src="img/casas6.jpg" alt="casas">
+    <i><p class="descricao"> Será atendido pelos melhores bruxos</p></i>
+        <ul class="descricao">
             <li>Fagner Dutra</li>
             <li>Ane Cristine Martins</li>
              <li>Cristiane Antunes</li>
             <li>Graziele Fabiane Martins</li>
         </ul>
+<footer>
+    <h3>Siga-nos nas redes sociais!</h3>
+    <img src="img/face1.png" alt="facebook">
+    <img src="img/inst2.png" alt="instagram">
+    <img src="img/twitter.png" alt="twitter">
+</footer>
 </body>
 </html>
