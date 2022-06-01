@@ -4,7 +4,7 @@
 }
 header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: mediumvioletred;
    
 }
@@ -29,12 +29,15 @@ button{
 .engloba{
     display: flex;
 }
+#navegacao{
+    width: 290px;
+    background-color: #f2d0e0;
+}
 .img-menu{
     display: flex;
-    align-items: center;
-    background-color: #f2d0e0;
-    padding: 50px;
-    width: 100px;
+    justify-content: space-between;
+    width: 20px;
+    height: 40px;
 }
 main{
     display: flex;
@@ -43,7 +46,7 @@ main{
 section{
     margin: 10px;
     padding:10px;
-    border: 1px solid  darkgray;
+    box-shadow: 5px 5px 5px darkgray;
     width: 200px;
 
 }
