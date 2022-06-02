@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: mediumvioletred;
+   
+}
+#cabecalho{
+    display: flex;
+    background-color: mediumvioletred;
+}
+.cake{
+    width: 20px;
+    height: 30px;
+    margin: 10px;
+}
+.confeitaria{
+    margin: 5px;
+    padding: 10px;
+}
+button{
+    padding: 10px;
+    margin: 15px;
+
+}
+.engloba{
+    display: flex;
+}
+#navegacao{
+    width: 290px;
+    background-color: #f2d0e0;
+}
+.img-menu{
+    display: flex;
+    justify-content: space-between;
+    width: 20px;
+    height: 40px;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+section{
+    margin: 10px;
+    padding:10px;
+    box-shadow: 5px 5px 5px darkgray;
+    width: 200px;
+
+}
+img{
+    width: 100%;
+}
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: mediumvioletred;
+}
