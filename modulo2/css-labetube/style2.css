@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: rgba(212, 109, 109, 0.637);
+    text-align: center;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 5px;
+    column-gap: 5px;
+    background-color: rgba(117, 145, 117, 0.781);
+
+}
