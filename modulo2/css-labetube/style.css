@@ -21,6 +21,12 @@ main{
     column-gap: 15px;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
+.link{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
 .legenda-imagem{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
