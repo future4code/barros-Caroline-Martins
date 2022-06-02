@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    justify-items: start;
+    background-color: rgba(212, 109, 109, 0.637);
+}
+button{
+    margin: 5px;
+    padding: 10px ;
+    box-shadow: 1px 1px rgba(8, 8, 8, 0.363);
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 5px;
+    column-gap: 5px;
+    background-color: rgba(117, 145, 117, 0.781);
+}
+footer{
+    display: grid;
+    justify-items: center;
+
+    background-color: grey;
+     width: 100%;
+}
