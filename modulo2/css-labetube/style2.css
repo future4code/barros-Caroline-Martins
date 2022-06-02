@@ -3,15 +3,26 @@
     padding: 0;
 }
 header{
-    background-color: rgba(212, 109, 109, 0.637);
+    padding: 10px;
+   background-color:  rgba(253,187,45,1);
     text-align: center;
 }
 main{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     justify-items: center;
-    row-gap: 5px;
-    column-gap: 5px;
-    background-color: rgba(117, 145, 117, 0.781);
+    row-gap: 15px;
+    column-gap: 15px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 
+}
+footer{
+    display: grid;
+    justify-items: center;
+    padding: 10px;
+    background-color:  rgba(34,193,195,1);
+     width: 100%;
 }
