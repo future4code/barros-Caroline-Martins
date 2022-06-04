@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    justify-items: start;
+    background-color: rgba(253,187,45,1);
+}
+button{
+    margin: 5px;
+    padding: 10px ;
+    box-shadow: 2px 1px rgba(8, 8, 8, 0.363);
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    row-gap: 10px;
+    column-gap: 15px;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.link{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.legenda-imagem{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer{
+    display: grid;
+    justify-items: center;
+    background-color: rgba(34,193,195,1);
+     width: 100%;
+}
