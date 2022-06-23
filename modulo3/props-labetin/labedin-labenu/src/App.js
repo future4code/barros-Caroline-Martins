@@ -4,10 +4,11 @@ import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import ImagemCarol from './components/ImagensCarol/foto-carol.jpg'
 import ImagemEmail from './components/ImagensCarol/Icone-email.png';
-import CardPequeno from './components/Pasta/CardPequeno';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemEndereco from './components/ImagensCarol/icone-endereco.png'
 import ImagemExperiencia from './components/ImagensCarol/imag-experiencia.png'
 import ImagemFarmacia from './components/ImagensCarol/logo-farmacia.png'
+
 
 function App() {
   return (
@@ -28,11 +29,11 @@ function App() {
       <div className='email'>
         <CardPequeno
           imagemEmail={ImagemEmail}
-          email={"CarolMartins@labenu.com"}
+          email={"Email: CarolMartins@labenu.com"}
           />
         <CardPequeno
           ImagemEndereco={ImagemEndereco}
-          endereco={"Florianópolis Santa Catarina"}
+          endereco={"Endereço: Florianópolis Santa Catarina"}
           />
 
       </div>
