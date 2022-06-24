@@ -7,10 +7,8 @@ function CardPequeno(props){
     <div className="card-email-endereco">
         
         <div className="card">
-            <img src={props.imagemEmail}/>
-            <p>{props.email}</p>
-            <img src={ props.ImagemEndereco }/>
-            <p> { props.endereco } </p>
+            <img src={props.imagem}/>
+            <p className="descricao">{props.descricao}</p>
         </div>
     </div>
 

@@ -28,12 +28,12 @@ function App() {
       </div>
       <div className='email'>
         <CardPequeno
-          imagemEmail={ImagemEmail}
-          email={"Email: CarolMartins@labenu.com"}
+          imagem={ImagemEmail}
+          descricao={"Email: CarolMartins@labenu.com"}
           />
         <CardPequeno
-          ImagemEndereco={ImagemEndereco}
-          endereco={"Endereço: Florianópolis Santa Catarina"}
+          imagem={ImagemEndereco}
+          descricao={"Endereço: Florianópolis Santa Catarina"}
           />
 
       </div>

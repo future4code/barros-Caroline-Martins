@@ -12,3 +12,11 @@ img{
     width: 510px;
     padding: 10px;
 }
+.card{
+    display: flex;
+    width: 100%;
+}
+.descricao {
+    display: flex;
+    align-items: center;
+}
