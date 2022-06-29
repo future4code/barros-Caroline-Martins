@@ -10,15 +10,16 @@ Esse repositório vai acompanhar vocês até o final do curso, para mantermos a 
 │   └── nome-do-projeto
 |
 ├── modulo2
-│   ├── nome-da-aula
-│   ├── nome-da-aula
-│   ├── nome-da-aula
-│   ├── nome-da-aula
-│   └── nome-do-projeto
+│   ├── Processos Ageis Surge:https://trello.com/b/Ycez3oT6/kanban-processo-ágil
+│   ├── HTML + CSS, Surge:https://legal-detail.surge.sh/
+│   ├── Flexbox, Surge:https://legal-detail.surge.sh/
+│   ├── Display Grid, Labetube Surge:https://abashed-crow.surge.sh/
+│   └── Projeto em Portfolio Surge:http://chivalrous-cave.surge.sh/
+│   └── Projeto em Grupo Surge:http://dramatic-brush.surge.sh/
 |
 ├── modulo3
-│   ├── nome-da-aula
-│   ├── nome-da-aula
+│   ├── Introdução ao React Surge:http://utopian-boy.surge.sh/
+│   ├── Componentes funcionais e Props Surge:https://disastrous-snake.surge.sh/
 │   ├── nome-da-aula
 │   ├── nome-da-aula
 │   ├── nome-da-aula
