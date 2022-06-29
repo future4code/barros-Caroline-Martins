@@ -10,34 +10,43 @@ import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 
 function Post(props){
-  const [state, setState] = useState({
-    curtido: false,
-    numeroCurtidas: 0,
-    comentando: false,
-    numeroComentarios: 0
-  })
-// setState não está sendo usado
+  
   const [numeroCurtidas, setnumeroCurtidas] = useState (0)
   const [curtido, setCurtido] = useState(false)
   const [comentando, setComentando] = useState(false)
   const [numeroComentarios, setNumeroComentarios] = useState(0)
-
+  const [resposta, setResposta] = useState("")
+ 
   const onClickCurtida = () => {
+   (setCurtido(!curtido)) 
+    if (curtido === false){
+      {setnumeroCurtidas(numeroCurtidas +1)}
+    }
+    else{
+      {setnumeroCurtidas(numeroCurtidas -1)}
+    }
     console.log('Curtiu!')
   }
-  // numeroCurtidas e SetNumeroCurtidas tambem nao estao sendo usados (numero em set esta com N minusculos)
+  
   const onClickComentario = () => {
     setComentando(!comentando)
     if(comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario}/>
+      componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} respostaUsuario={resposta} onChangeComentario={handleResposta}/>
     }
-    console.log(comentando)
+  
   }
   
+  const handleResposta = (event) =>{
+    setResposta(event.target.value)
+    console.log(resposta);
+  }
+  
+
   const aoEnviarComentario = () => {
     setComentando(false)
     setNumeroComentarios(numeroComentarios + 1)
   }
+ 
 
   let iconeCurtida
 
@@ -51,6 +60,7 @@ function Post(props){
 
     if(comentando) {
       componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario}/>
+      console.log(comentando)
     }
 
   return(
@@ -66,19 +76,16 @@ function Post(props){
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          valorContador={state.numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
-{/* icone curtida esta vindo de uma variavel com IF
- onclick curtida esta vindo da function e quando é clicado no coracao 
- ele imprimi no console.log curtiu e vai dando as vezes que foi curtido
- ja o numero contador nao entendi*/}
+
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
           valorContador={numeroComentarios}
         />
       </div>
-      {componenteComentario}
+      { componenteComentario}
     </div>
   )
 }
