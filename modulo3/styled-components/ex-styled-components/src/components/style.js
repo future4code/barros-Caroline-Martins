@@ -35,6 +35,27 @@ export const Conteiner=styled.aside`
         background-color: white;
         width: 60%;
     }
+    div{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    button:hover{
+        width: 150px;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+    }
+    p{
+        padding: 0;
+        margin: 0;
+
+    }
 
 
 `
