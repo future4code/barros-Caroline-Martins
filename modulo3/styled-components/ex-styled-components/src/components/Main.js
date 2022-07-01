@@ -7,9 +7,9 @@ function Main(){
             <aside></aside>
             <main>
                 <div>
-              <p>Remetente:</p> <input />
-              <p>Mensagem:</p> <input/>
-              <button>Enviar Mensagem</button>
+              <b>Remetente:</b> <input type="text"></input>
+              <b>Mensagem:</b> <input type="text"></input>
+              <button><b>Enviar Mensagem</b></button>
                 </div>
             </main>
             <aside></aside>
