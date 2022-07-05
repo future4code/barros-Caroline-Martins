@@ -2,25 +2,22 @@ import React, {useState} from "react";
 
 
 import { Form, Card } from "./style"
-// import Card from "./Card"
+
 
 function Main(){
 
     const [usuarioName , setUsuarioName] =useState('');
     const [usuario, setUsuario] =useState([])
-    // const [mensagem, setMensagem] = useState('')
-
+    
     function handleName(){
         const newName = {
-            usuarioNamey : setUsuarioName,
-        
-       
-       
+            usuarioName : setUsuarioName,
+
         }; 
         setUsuario([newName]);
     
     }
-
+    const novo=usuarioName.map((outro) => {<Card nome={handleName.newName.nomeUsuario} />})
     return(
         <>
         {/* section para barra lateral esquerda */}
@@ -55,7 +52,7 @@ function Main(){
             onClick={handleName}
             >Enviar mensagem</button>
             <Card/>
-            {usuario.map(outro => <Card nome={handleName.newName.nomeUsuario} />)}
+            
         </Form>
 
         {/* section para barra lateral direita */}
