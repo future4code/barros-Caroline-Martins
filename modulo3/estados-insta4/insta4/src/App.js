@@ -17,8 +17,10 @@ function App() {
     fotoUsuario ={item.imagem} 
     fotoPost={item.fotoPost}/>
     </>
-  )})
-  
+    )})
+    console.log(postagem1)
+    
+    
 return(
   <div className='MainContainer'>
 
