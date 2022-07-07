@@ -47,7 +47,7 @@ function App() {
     //PARA NÃO ATUALIZAR PAGINA
     event.preventDefault()
 
-    const arrayAtual=[...postagem1, {nome:inputName, imagem:"https://picsum.photos/01/12" , fotoPost:"https://picsum.photos/30/50"}]
+    const arrayAtual=[...postagem1, {nome:inputName, imagem:inputTexto, fotoPost:input}]
     setPostagem1(arrayAtual)
 
     console.log("clicou");
@@ -63,8 +63,8 @@ return(
     {postaMap}
     <form>
       <input type="text" required placeholder="Digite seu nome"  value = {inputName} onChange={adicionaNome}/>
-      <input type="img" required placeholder="Comentario"  value = {inputTexto} onChange={adicionaTexto}/>
-      <input type="img" required placeholder="Digite..."  value = {input} onChange={adicionaComentario}/>
+      <input type="text" required placeholder="Comentario"  value = {inputTexto} onChange={adicionaTexto} />
+      <input type="text" required placeholder="Digite..."  value = {input} onChange={adicionaComentario}/>
       <button onClick={adicionar}>Adicionar</button>
     </form>
 
