@@ -1,7 +1,10 @@
 .PostContainer {
     border: 1px solid gray;
     width: 300px;
-    margin-bottom: 10px}
+    margin-bottom: 10px
+    
+}
+    
 
 
 .PostHeader {
@@ -14,6 +17,32 @@
 .conteiner{
     display: flex;
     
+}
+.MainContainer{
+    background-color: rgba(8, 8, 8, 0.26);
+}
+form{
+    display: contents;
+    
+}
+input{
+    margin: 5px;
+    padding: 5px;
+    width: 290px;
+    
+}
+input:hover{
+    border: solid 2px;
+    color: black;
+}
+button{
+    width: 200px;
+
+}
+button:hover{
+    background-color: black;
+    color: white;
+    border: solid 2px;
 }
 .PostFooter { 
     height: 40px;
