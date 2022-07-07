@@ -11,13 +11,14 @@ function App() {
     {nome:"Carol" , imagem : 'https://picsum.photos/9/50' , fotoPost:'https://picsum.photos/206/150'}])
   
 
-  const postaMap = postagem1.map((item)=>
+  const postaMap = postagem1.map((item,index)=>
   {return (
-    <>
-    <Post nomeUsuario={item.nome}
+    
+    <Post key={index} 
+    nomeUsuario={item.nome}
     fotoUsuario ={item.imagem} 
     fotoPost={item.fotoPost}/>
-    </>
+    
     )})
     console.log(postagem1)
     
@@ -47,7 +48,7 @@ function App() {
     //PARA NÃO ATUALIZAR PAGINA
     event.preventDefault()
 
-    const arrayAtual=[...postagem1, {nome:inputName, imagem:inputTexto, fotoPost:input}]
+    const arrayAtual=[...postagem1, {nome:inputName, imagem:'https://picsum.photos/29/50', fotoPost:'https://picsum.photos/19/50'}]
     setPostagem1(arrayAtual)
 
     console.log("clicou");
@@ -60,7 +61,10 @@ function App() {
     
 return(
   <div className='MainContainer'>
+
+    <>
     {postaMap}
+    </>
     <form>
       <input type="text" required placeholder="Digite seu nome"  value = {inputName} onChange={adicionaNome}/>
       <input type="text" required placeholder="Comentario"  value = {inputTexto} onChange={adicionaTexto} />
