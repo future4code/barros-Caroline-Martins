@@ -6,12 +6,15 @@
 
 .PostHeader {
     height: 40px;
-    display: flex;
-    align-items: center;
+    display: grid;
+    align-items: flex-start;
     padding-left: 10px
 }
 
-
+.conteiner{
+    display: flex;
+    
+}
 .PostFooter { 
     height: 40px;
     display: flex;

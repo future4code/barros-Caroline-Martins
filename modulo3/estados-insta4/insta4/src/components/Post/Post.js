@@ -62,15 +62,37 @@ function Post(props){
       componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario} onChangeComentario={handleResposta} />
       // console.log(comentando)
     }
+    
+    //LISTA
+    // const postagem1=[
+    //     {nome:"Paulinha",imagem: 'https://picsum.photos/50/55' , fotoPost:'https://picsum.photos/40/50'},
+    //     {nome:"Antonio" , imagem:'https://picsum.photos/50/50' , fotoPost:'https://picsum.photos/210/150'},
+    //     {nome:"Carol" , imagem : 'https://picsum.photos/9/50' , fotoPost:'https://picsum.photos/206/150'}]
+    
+//     const arrayComponentes = postagem1.map((elemento,index)=>{
+//     return (
+//         <div key={index} className='conteiner'>
+//             <div>
+//                 <p>{elemento.nome}</p>
+//                 <img src={elemento.imagem}/>
+//                 <img src={elemento.fotoPost}/>
+//             </div>
+//         </div>
+//     )
+// })
 
   return(
     <div className = 'PostContainer'>
       <div className = 'PostHeader'>
         <img className = 'UserPhoto' src={props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{props.nomeUsuario}</p>
-      </div>
 
+        {/* {arrayComponentes} */}
+      </div>
       <img className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
+      
+       
+
 
       <div className = 'PostFooter'>
         <IconeComContador
@@ -91,4 +113,4 @@ function Post(props){
 }
 
 
-export default Post
+export default Post;
