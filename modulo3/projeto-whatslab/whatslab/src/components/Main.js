@@ -1,66 +1,83 @@
 import React, {useState} from "react";
 
 
-import { Form, Card } from "./style"
+import { MyComponente, lista } from "./style"
 
 
-function Main(){
 
-    const [usuarioName , setUsuarioName] =useState('');
-    const [usuario, setUsuario] =useState([])
+
+
+const Main=()=>{
+
+const [arrayMensagem, setArrayMensagem]=useState([
+    {nome:"",  mensagem:""},
     
-    function handleName(){
-        const newName = {
-            usuarioName : setUsuarioName,
+])
 
-        }; 
-        setUsuario([newName]);
-    
-    }
-    const novo=usuarioName.map((outro) => {<Card nome={handleName.newName.nomeUsuario} />})
-    return(
-        <>
-        {/* section para barra lateral esquerda */}
-        {/* <section>   </section> */}
-
-        <Form>
-            {/* input remetente
-            <p>Remetente:</p> <input type="text" 
-            
-            onChange={e => SetNomes(e.target.value)}
-             />
-
-            {/* input mensagem */}
-            {/* <p>Msg:</p> <input type=""text placeholder="Digite mensagem..." */}
-            {/* // onChange={e => SetMensagem(e.target.value)}
-            /> */}
-            {/* <button type="button" onClick={handleName} >
-            Enviar mensagem
-            </button>
-            
-            {
-                name.map(nomes => <Card name={ newName.usuario } /> )
-            } */}
-
-            <input
-            type="text"
-            placeholder="digite mensagem..."
-            onChange={e => setUsuarioName(e.target.value)}/>
-
-            <button
-            type="button"
-            onClick={handleName}
-            >Enviar mensagem</button>
-            <Card/>
-            
-        </Form>
-
-        {/* section para barra lateral direita */}
-        {/* <section></section> */}
-
-
-
-        </>
+let arrayComponentes=arrayMensagem.map((item,index)=>{
+    return (
+        <lista key={index}>
+            <div>
+                <p>{item.nome}</p>
+                <p>{item.mensagem}</p>
+               
+            </div>
+        </lista>
     )
+})
+//Lista 2
+
+const[inputName,setInputName] = useState("")
+const[inputMensagem,setInputMensagem] = useState()
+
+const mudaNome=(e)=>{
+    setInputName(e.target.value);
+    console.log(inputName)
 }
+
+const mudaMensagem=(e)=>{
+    setInputMensagem(e.target.value);
+    console.log(inputMensagem)
+}
+
+const adicionar=(event)=>{
+    //PARA NÃO ATUALIZAR PAGINA
+    event.preventDefault()
+
+    const arrayAtual=[...arrayMensagem, {nome:inputName, mensagem:inputMensagem}]
+    setArrayMensagem(arrayAtual)
+
+    console.log("clicou");
+
+
+    setInputName("")
+    setInputMensagem("")
+}
+
+const apagar=(indexRemover)=>{
+    const arrayAtual=arrayMensagem.filter((item,index)=>{
+        return index !== indexRemover
+    })
+
+   setArrayMensagem(arrayAtual) 
+}
+
+
+return(
+    <>
+    {arrayComponentes}
+    <MyComponente>
+    <section></section>
+        <p>Remetente:</p>
+        <input type="text" required placeholder=""  value = {inputName} onChange={mudaNome}/>
+        <p>MSG:</p>
+        <input type="text" required placeholder="Digite..."  value = {inputMensagem} onChange={mudaMensagem}/>
+        <button onClick={adicionar} >Adicionar</button>
+    <section></section>
+    </MyComponente>
+    
+    </>
+)
+}
+
 export default Main;
