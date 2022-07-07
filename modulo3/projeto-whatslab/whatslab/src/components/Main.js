@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-import { MyComponente, lista } from "./style"
+import { MyComponente, Lista } from "./style"
 
 
 
@@ -10,19 +10,19 @@ import { MyComponente, lista } from "./style"
 const Main=()=>{
 
 const [arrayMensagem, setArrayMensagem]=useState([
-    {nome:"",  mensagem:""},
+    {nome:""  ,  mensagem: "" },
     
 ])
 
 let arrayComponentes=arrayMensagem.map((item,index)=>{
     return (
-        <lista key={index}>
+        <Lista key={index}>
             <div>
                 <p>{item.nome}</p>
                 <p>{item.mensagem}</p>
-               
+                <button onClick={()=>{apagar(index)}} >x</button>
             </div>
-        </lista>
+        </Lista>
     )
 })
 //Lista 2
@@ -62,18 +62,36 @@ const apagar=(indexRemover)=>{
    setArrayMensagem(arrayAtual) 
 }
 
+const apagarMensagem=(indexApagar)=>{
+    const arrayAtual=arrayMensagem.filter((item)=>{
+        if (arrayAtual !== indexApagar){
+            return apagarMensagem
+        }else {
+            return arrayAtual
+        }
+    })
+    setArrayMensagem(arrayAtual)
+}
+
 
 return(
     <>
-    {arrayComponentes}
     <MyComponente>
-    <section></section>
+
+    <aside></aside>
+
+    <main>
+    {arrayComponentes}
+     <div>
         <p>Remetente:</p>
-        <input type="text" required placeholder=""  value = {inputName} onChange={mudaNome}/>
+        <input type="text" required placeholder=""  value = {inputName} onChange={mudaNome} onClick={apagarMensagem}/>
         <p>MSG:</p>
         <input type="text" required placeholder="Digite..."  value = {inputMensagem} onChange={mudaMensagem}/>
         <button onClick={adicionar} >Adicionar</button>
-    <section></section>
+     </div>
+    </main>
+
+    <aside></aside>
     </MyComponente>
     
     </>
