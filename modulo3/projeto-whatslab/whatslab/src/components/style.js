@@ -22,10 +22,16 @@ export const MyComponente=styled.div`
     div{
         display: flex;
         align-items: flex-end;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
         
-        
+        input:nth-child(1){
+            width: 40%;
+        }
+        input:nth-child(2){
+            width: 60%;
+            
+        }
     }
     button{
         font-family: Arial, Helvetica, sans-serif;
@@ -48,23 +54,25 @@ export const MyComponente=styled.div`
 
 export const Lista=styled.div`
     border: solid 1px black;
-    height: 40px;
+    height: 20px;
     display: flex;
-    align-items: flex-end;
-    margin: 50px;
+    width: 100px;
+    margin: 5px;
     background-color: lightgreen ;
-    div{
+    justify-content: space-between;
+    nav{
         height: 1000px;
         width: 500px;
 
     }
     p{
         font-family: Arial, Helvetica, sans-serif;
-        margin: 10px;
+        margin: 0px;
         padding: 0;
     }
     button:hover{
         width: 30px;
+        
     }
     button{
         text-align:end;

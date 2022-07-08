@@ -63,8 +63,8 @@ const apagar=(indexRemover)=>{
 }
 
 const apagarMensagem=(indexApagar)=>{
-    const arrayAtual=arrayMensagem.filter((item)=>{
-        if (arrayAtual !== indexApagar){
+    const arrayAtual=arrayMensagem.filter((item, )=>{
+        if ( item !== indexApagar){
             return apagarMensagem
         }else {
             return arrayAtual
@@ -83,9 +83,7 @@ return(
     <main>
     {arrayComponentes}
      <div>
-        <p>Remetente:</p>
-        <input type="text" required placeholder=""  value = {inputName} onChange={mudaNome} onClick={apagarMensagem}/>
-        <p>MSG:</p>
+        <input type="text" required placeholder="Remetente:"  value = {inputName} onChange={mudaNome} onClick={apagarMensagem}/>
         <input type="text" required placeholder="Digite..."  value = {inputMensagem} onChange={mudaMensagem}/>
         <button onClick={adicionar} >Adicionar</button>
      </div>
