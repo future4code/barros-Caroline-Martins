@@ -1,9 +1,12 @@
 import React from "react";
+import PagFinal from "./PagFinal";
 import {Form} from "./styleEnsino"
 
 
 
 const Ensino=()=>{
+
+    
 
     return(
         <Form>
@@ -19,6 +22,7 @@ const Ensino=()=>{
                 <option>Não fiz curso complementar</option>
             </select>
         </div>
+            <button>Próxima Etapa</button>
         </Form>
     )
 }

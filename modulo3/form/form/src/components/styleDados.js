@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 
 export const Inicio=styled.div`
+    display: flex;
+    justify-items: center;
+    
     margin-top:20px;
-    width: 40vw;
-    border-radius: 3vw;
-    background-color: gray;
+    width: 40%;
+    border-radius: 3%;
     padding-bottom:40px;
+    padding: 50px;
     h1{
         margin:10px;
         color: white;
@@ -14,6 +17,7 @@ export const Inicio=styled.div`
     form{
         display: flex;
         flex-direction: column;
+       
         label{
             color: orange;
             font-size: 20px;
@@ -26,19 +30,27 @@ export const Inicio=styled.div`
             font-size: 20px;
             padding: 5px 15px;
             width: 30vw;
-        }
-        button{
-            font-size: large;
-            padding: 5px 10px;
-            border-radius: 10px;
-            margin: 20px;
-        }
-        button:hover{
-        background-color: black;
-        color: white;
-    }
-    }
+        }}
+            
+`
 
+export const Conteiner=styled.div`
+    background-color: grey;
+    text-align: center;
+   button{
+       font-size: large;
+       padding: 5px 50px;
+       border-radius: 10px;
+       margin: 0;
 
+    button:hover{
+       background-color: black;
+       color: white;
+       }
+   }
 
 `
+
+
+// export const Botao=styled.button`
+// `

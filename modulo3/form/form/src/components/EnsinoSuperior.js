@@ -1,5 +1,6 @@
 import React from "react";
 import {Form} from "./styleEnsino"
+import PagFinal from "./PagFinal";
 
 
 const EnsinoSuperior=()=>{
@@ -16,7 +17,7 @@ const EnsinoSuperior=()=>{
         <label>Instituição de ensino:</label>
         <input type="text"></input>
 
-        <button>Próxima Etapa</button>
+        <button onClick={PagFinal}>Próxima Etapa</button>
         
         </Form>
     )

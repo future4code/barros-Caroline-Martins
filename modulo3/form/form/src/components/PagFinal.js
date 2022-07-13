@@ -2,7 +2,7 @@ import React from "react";
 import {Final} from "./styleEnsino"
 
 
-const PagFinal=()=>{
+const PagFinal=(props)=>{
     return(
 
     <Final>

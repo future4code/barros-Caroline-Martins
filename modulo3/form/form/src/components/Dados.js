@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import {Inicio,} from "./styleDados"
+import Ensino from "./Ensino";
+import EnsinoSuperior from "./EnsinoSuperior";
+import PagFinal from "./PagFinal";
 
 
-const Dados=()=>{
+const Dados=(props)=>{
 
+    const [selecao,setSelecao]= useState(null)
 
-
-
+    const fazerLogin=(event)=>{
+        event.preventDefault();
+        props.estarLogado(true)
+    }
+     let ensino;
+  switch(selecao){
+      case "incompleto":
+         <Ensino/>
+          break;
+      case "completo":
+             <EnsinoSuperior/>
+              break;
+      case "medio":
+          ensino= <PagFinal/>
+          break;
+      
+  }
+    
 
     return(
 
@@ -29,14 +49,13 @@ const Dados=()=>{
                     <label>Nivel escolaridade:</label>
 
                     <select>
-                    <option>Ensino médio incompleto</option>
-                    <option>Ensino médio completo</option>
-                    <option>Ensino superior incompleto</option>
-                    <option>Ensino superior completo</option>
+                    <option >Ensino médio incompleto</option>
+                    <option >Ensino médio completo</option>
+                    <option onClick={()=>setSelecao("incompleto")}>Ensino superior incompleto</option> 
+                    <option onClick={()=>setSelecao("completo")}>Ensino superior completo</option>
                     </select>
                 </div>
-
-                <button>Próxima Etapa</button>
+                <button onClick={PagFinal}>Próxima Etapa</button>
                 
             </form>
 
