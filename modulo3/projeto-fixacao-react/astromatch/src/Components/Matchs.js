@@ -1,8 +1,10 @@
-import React,{useEffect, useState} from "react";
-import axios from "axios";
-import{Header, ConteinerBotao} from "./styled"
+import React, {useState, useEffect} from "react";
+import axios from "axios"
+import {ConteinerBotao, } from "./styled"
 
+//pagina Matchs curtidos 
 function Match (props){
+    
     const [match, setMatch] = useState ([])
     const [open, setOpen]= useState(false)
 
@@ -34,27 +36,26 @@ function Match (props){
 
 
     return(
-        <>
-        
-        <Header>
+    <>
+        <div>
             
             <h1>ASTROMATCH</h1>
             <button onClick={props.matchCard}>BOTAO MUDA PAGINA</button>
 
-        </Header>
-       
+        </div>
+
         <div>
     {/* era para estar renderizando os matchs mas não funciona */}
             {match.map((item) =>{
                 return( 
             <div><img src={item.photo}/>
-            
             <strong>{item.name}</strong>
             </div> 
             ) })}
 
         </div>
-        
+        {/* intencao para ser um alert não conclui direito */}
+
         <ConteinerBotao>
             <div>
               <button onClick={handleOpen}>Limpar matches</button>
@@ -62,6 +63,7 @@ function Match (props){
       
             <div>
              <button onClick={handleClick} >Não confirmo!</button>
+        {/* Botao de CONFIRMO esta com status:200 no console */}
              <button   onClick={clear}>Confirmo!</button>
             </div>
 
@@ -71,7 +73,11 @@ function Match (props){
     </>
     )
 
-        
-    
+
+
+
+
+
 }
+
 export default Match;

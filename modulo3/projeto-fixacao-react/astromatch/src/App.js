@@ -1,8 +1,9 @@
-import React, {useState,useEffect} from "react";
-import Card from "./Components/Card"
-import Match from "./Components/Matchs"
+import React, { useEffect, useState} from 'react'
+import Card from './Components/Card'
+import Match from './Components/Matchs'
 
 function App() {
+
   const [pag, setPag] = useState(false)
 
   const paginaCard = () => {
@@ -21,20 +22,23 @@ function App() {
       ) 
     }else{
       return(
-        <Card cardMatch = {paginaCard}/>
-)}}
+        <Card CardMatch = {paginaCard}/>
+  )}}
 
-  useEffect (() =>{trocaTela()})
+  useEffect (() =>{    
+    trocaTela()
+  })
 
 
   return (
-   <div>
+  <div>
 
-   <div>{trocaTela}</div>
-   
-   
-   </div>
+    <div>{trocaTela()}</div>
+
+  </div>
   );
+
+
 }
 
 export default App;
