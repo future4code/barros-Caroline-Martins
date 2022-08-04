@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import {CenterGrid, Center, Header, Icon, Descript, MainGrid, NameAge, Bio, Imagem} from "./styled"
-
+import {CenterGrid, Center, Header, Icon, Descript, MainGrid, NameAge, Bio, Imagem, IconPag} from "./styled"
+import ImagemHearder from "./imagens/hearder.jpg"
+import MudaPag from "./imagens/coneccao.jpg"
+import CoracaoVermelho from "./imagens/coracao.png"
+import Xis from "./imagens/x.png"
 
 //pagina Inicial para curtir 
 function Card(props){
@@ -17,32 +20,28 @@ function Card(props){
     useEffect(()=>{getProfile()},[])
 
 
-    //POST NÃO CURTIU
-    //usei id que esta na documentação com ele funcionou sem estava dando erro
-    const bodyOk={
-        "id": "71gMbZs2txS9LDvGK5Ew",
-        "choise": true
-        }
+   
     const url="https://us-central1-missao-newton.cloudfunctions.net/astroMatch/caroline/choose-person"
-    const choose=()=>{
-        axios.post(url, bodyOk)
-        .then((response)=>{getProfile(); console.log(response)})
-        .catch((erro)=>{alert ("Ouve um erro"); console.log(erro)})
-
-    }
-
-
+   
     //POST CURTIU
+    const choose=(id, escolha)=>{
     const body={
-        "id": "71gMbZs2txS9LDvGK5Ew",
-        "choise":false
+        "id": id,
+        "choice":escolha
     }
-    const chooseFalse=()=>
         axios.post(url, body)
-        .then((response)=>{getProfile(); console.log(response)})
+        .then((response)=>{getProfile(); console.log(`resposta chooseFalse ${response.data}`)})
         .catch((erro)=>console.log(erro))
 
-
+    }
+   
+     //GET PARA EXCLUIR 
+     const clear=()=>{
+      axios.put`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/caroline/clear`
+      .then((response)=>{getProfile(); console.log(response) })
+      .catch((erro)=>{alert ("Ouve um problema") 
+      console.log(erro)})
+  }
 
     return(
         
@@ -52,10 +51,12 @@ function Card(props){
     <CenterGrid>      
       <Header>
         
-        <h1>ASTROMATCH</h1>
-        <div> <button onClick={props.CardMatch}>BOTAO muda pagina</button></div>      
+        <img src={ImagemHearder} />
+        <div>
+        <IconPag src={MudaPag} onClick={props.CardMatch} alt="icone match" ></IconPag>
+        </div>
       </Header>
-      
+      {usuario?
       <Center>
         <Imagem src={usuario.photo} alt="photo_alt"/>   
           <Descript>            
@@ -63,15 +64,22 @@ function Card(props){
             <Bio>{usuario.bio}</Bio>
           </Descript>
       </Center>
-
+      :
+      <div>
+        <button   onClick={clear}>Confirmo!</button>
+      </div>
+      }
+      {usuario?
       <footer>
         <Icon>
-            <button onClick = {( ()  => chooseFalse(usuario.id) )}>♥</button>
-      </Icon>
-        <Icon>
-            <button onClick = {( ()  => choose(usuario.id) )}>X</button>
-        </Icon>      
+            <img src={Xis} onClick = {( ()  => choose(usuario.id,false) )}  alt="icone xis"></img>
+            <img src={CoracaoVermelho} onClick = {( ()  => choose(usuario.id,true))} alt="icone coracao"></img>
+        </Icon>    
       </footer>
+      :
+      <div>Acabou</div>
+      }
+
     </CenterGrid>
 
     

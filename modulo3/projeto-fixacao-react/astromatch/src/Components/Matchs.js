@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios"
-import {ConteinerBotao, } from "./styled"
-
+import { ConteinerBotao, HeaderMatchs,IconPag, MainMatchs } from "./styled"
+import MudaPag from "./imagens/coneccao.jpg"
+import ImagemHearder from "./imagens/headerSemFundo.png"
 //pagina Matchs curtidos 
 function Match (props){
     
@@ -10,9 +11,11 @@ function Match (props){
 
     //para excluir os matchs
     const handleOpen=()=>{setOpen(true)}
+    // console.log(handleOpen)
 
     //´para nao confirmar as exclucoes
     const handleClick=()=>{setOpen(false)}
+    // console.log(handleClick)
 
     //GET 
     const getMatches=()=>{
@@ -22,7 +25,7 @@ function Match (props){
     }
 
     useEffect(()=>{getMatches()},[])
-
+    
 
     //GET PARA EXCLUIR 
     const clear=()=>{
@@ -36,47 +39,35 @@ function Match (props){
 
 
     return(
-    <>
-        <div>
-            
-            <h1>ASTROMATCH</h1>
-            <button onClick={props.matchCard}>BOTAO MUDA PAGINA</button>
+    <MainMatchs>
+            <HeaderMatchs>
+                <img src={ImagemHearder} />
+                <div>
+                <IconPag src={MudaPag} onClick={props.matchCard} alt="icone match" ></IconPag>
+                </div>
+            </HeaderMatchs>
+        
 
-        </div>
-
         <div>
-    {/* era para estar renderizando os matchs mas não funciona */}
             {match.map((item) =>{
                 return( 
-            <div><img src={item.photo}/>
-            <strong>{item.name}</strong>
+            <div>
+                <img src={item.photo}/>
+                <strong>{item.name}</strong>
             </div> 
             ) })}
-
         </div>
-        {/* intencao para ser um alert não conclui direito */}
+       
 
         <ConteinerBotao>
+            
             <div>
-              <button onClick={handleOpen}>Limpar matches</button>
-            </div>
-      
-            <div>
-             <button onClick={handleClick} >Não confirmo!</button>
-        {/* Botao de CONFIRMO esta com status:200 no console */}
              <button   onClick={clear}>Confirmo!</button>
             </div>
 
         </ConteinerBotao>
-        
-        
-    </>
+    </MainMatchs>
     )
-
-
-
-
-
 
 }
 
