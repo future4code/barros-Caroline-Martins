@@ -30,7 +30,7 @@ function Card(props){
         "choice":escolha
     }
         axios.post(url, body)
-        .then((response)=>{getProfile(); console.log(`resposta chooseFalse ${response.data}`)})
+        .then((response)=>{getProfile(); console.log(`resposta ${response.data}`)})
         .catch((erro)=>console.log(erro))
 
     }
@@ -58,7 +58,7 @@ function Card(props){
       </Header>
       {usuario?
       <Center>
-        <Imagem src={usuario.photo} alt="photo_alt"/>   
+        <Imagem src={usuario.photo} alt="Photo pretendente"/>   
           <Descript>            
             <NameAge>{usuario.name}, {usuario.age}</NameAge>            
             <Bio>{usuario.bio}</Bio>
