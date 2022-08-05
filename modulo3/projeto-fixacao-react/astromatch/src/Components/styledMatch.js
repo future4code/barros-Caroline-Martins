@@ -4,6 +4,11 @@ import styled from "styled-components";
 export const MainMatchs=styled.div`
     margin-right: 500px;
     margin-left: 300px;
+
+    @media (max-width: 375px) {
+        margin-right: 300px;
+        margin-left: 10px;
+    }
     
     `
 
@@ -17,7 +22,7 @@ export const HeaderMatchs=styled.div`
     height: 110px;
     margin-top: 10px;
     
-    
+   
 
     button{
         border: none;
@@ -28,10 +33,15 @@ export const HeaderMatchs=styled.div`
         background-color: black;
         color: white;
     }
+    @media (max-width: 375px){
+        background-image: none;
+        border: none;
+    }
 
 `
 export const IconPag=styled.img`
     width: 150px;
+   
     
 `
 
@@ -52,6 +62,11 @@ export const Center=styled.div`
 export const Imagem=styled.img`
    height: 100px;
    width: 100px;
+   border-radius: 100%;
+
+   @media (max-width: 375px) {
+     background-image: none;
+   }
 
 `
 export const Strong=styled.strong`
