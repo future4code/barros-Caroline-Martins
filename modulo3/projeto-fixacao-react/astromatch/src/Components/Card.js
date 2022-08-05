@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import {CenterGrid, Center, Header, Icon, Descript, MainGrid, NameAge, Bio, Imagem, IconPag} from "./styled"
-import ImagemHearder from "./imagens/hearder.jpg"
-import MudaPag from "./imagens/coneccao.jpg"
+import {CenterGrid, Center, Header, Icon, Descript, MainGrid, NameAge, Bio, Imagem, IconPag, TextFinal ,Final} from "./styled"
+import ImagemHearder from "./imagens/headerSemFundo.png"
+import MudaPag from "./imagens/coneccao.png"
 import CoracaoVermelho from "./imagens/coracao.png"
 import Xis from "./imagens/x.png"
 
@@ -65,9 +65,10 @@ function Card(props){
           </Descript>
       </Center>
       :
-      <div>
-        <button   onClick={clear}>Confirmo!</button>
-      </div>
+        <TextFinal>
+          <h3>Chegou ao final dos candidados</h3>
+          <h4>Para Retornar só clicar</h4>
+        </TextFinal>
       }
       {usuario?
       <footer>
@@ -77,7 +78,13 @@ function Card(props){
         </Icon>    
       </footer>
       :
-      <div>Acabou</div>
+      <div>
+        
+      <Final>
+        <button   onClick={clear}>AQUI!</button>
+      </Final>
+
+      </div>
       }
 
     </CenterGrid>

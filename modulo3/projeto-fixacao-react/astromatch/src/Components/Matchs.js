@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios"
-import { ConteinerBotao, HeaderMatchs,IconPag, MainMatchs } from "./styled"
-import MudaPag from "./imagens/coneccao.jpg"
+import { HeaderMatchs,IconPag, MainMatchs,Imagem, Strong, AntesCenter } from "./styledMatch"
+import MudaPag from "./imagens/coneccao.png"
 import ImagemHearder from "./imagens/headerSemFundo.png"
+import { Center } from "./styled";
 //pagina Matchs curtidos 
 function Match (props){
     
@@ -44,28 +45,23 @@ function Match (props){
                 <img src={ImagemHearder} />
                 <div>
                 <IconPag src={MudaPag} onClick={props.matchCard} alt="icone match" ></IconPag>
+                <button   onClick={clear}>Limpar Match</button>
                 </div>
             </HeaderMatchs>
         
 
-        <div>
+        <AntesCenter>
             {match.map((item) =>{
                 return( 
-            <div>
-                <img src={item.photo}/>
-                <strong>{item.name}</strong>
-            </div> 
+            <Center>
+                <Imagem src={item.photo}/>
+                <Strong>{item.name}</Strong>
+            </Center> 
             ) })}
-        </div>
+        </AntesCenter>
        
 
-        <ConteinerBotao>
-            
-            <div>
-             <button   onClick={clear}>Confirmo!</button>
-            </div>
-
-        </ConteinerBotao>
+        
     </MainMatchs>
     )
 

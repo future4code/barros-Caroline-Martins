@@ -9,8 +9,8 @@ position: relative;
 top: -100px;
 left: 50px;
 border-radius: 10px;
-opacity: 0.6;
-width: 75%;
+opacity: 0.7;
+width: 70%;
 box-shadow: 0px 0.5px 15px gray;
 `
 
@@ -33,7 +33,6 @@ box-shadow: 0px 5px 15px black;
 `
 
 export const MainGrid = styled.div`
-
     margin-left: 350px;
     margin-right: 350px;
     display: grid; 
@@ -42,35 +41,27 @@ export const MainGrid = styled.div`
     `
 
 export const CenterGrid = styled.div`
-  
+  background-image: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%);
   border: 1px solid gray;
-  height: 80vh;
+  height: 75vh;
   
   `
 export const Header =styled.div`
+    background-image: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%);
+    border: 2px solid lightgray;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    justify-content: flex-start;
+    padding: 10px;
+    height: 110px;
+    margin-top: 10px;
 
-border-bottom: 1px solid lightgray;
-display: grid;
-grid-template-columns: 4fr 1fr;
-height: 100px;
-margin-right: 50px;
-
-div{
-    height: 40%;
-    
-}
-img{
-    height: 100%;
-}
-button{
-    margin: 140px;
-    
-}
 
 `
 
 export const Center = styled.div`
-height: 450px;
+    background-image: radial-gradient(circle at 50% -20.71%, #a4d8ec 0, #a7d7ef 6.25%, #abd6f1 12.5%, #b0d5f3 18.75%, #b5d3f4 25%, #bbd2f4 31.25%, #c1d0f4 37.5%, #c7cff3 43.75%, #cdcdf2 50%, #d3cbf0 56.25%, #d9caed 62.5%, #dec8ea 68.75%, #e3c7e7 75%, #e8c6e3 81.25%, #ecc5df 87.5%, #efc4da 93.75%, #f2c4d6 100%);
+    height: 450px;
 `
 
 export const ConteinerBotao=styled.div`
@@ -98,32 +89,28 @@ img:hover{
 
 
 export const IconPag=styled.img`
-    width: 80px;
+    width: 150px;
     
 `
-export const MainMatchs=styled.div`
-    margin-left: 300px;
-    display: grid; 
-    grid-template-columns: 1fr 1fr;
-    justify-items: end;
-    `
-export const HeaderMatchs=styled.div`
-    border: 2px solid lightgray;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
-    padding: 1px;
-    height: 110px;
 
-div{
-    height: 40%;
-    
-}
-img{
-    height: 100%;
-}
+export const Final=styled.div`
+    display: flex;
+    align-items: center;
+
+    button{
+        margin: 50px;
+        margin-left: 190px;
+        padding: 10px;
+        color: aqua;
+        background-color: black;
+    }
 
 `
+export const TextFinal=styled.div`
+    text-align: center;
+
+`
+
 
 
 
