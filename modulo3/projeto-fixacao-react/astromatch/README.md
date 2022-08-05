@@ -1,6 +1,6 @@
 <h1>Projeto AstroMatch</h1>
 
-*Link SUrge*
+*Link Surge*
 http://erratic-vegetable.surge.sh/
 
 ##### Tecnologias utilizadas
