@@ -18,7 +18,8 @@ function Router(){
                 <Route path="/login" element={<LoginAdm/>}/>
                 <Route path="/trips/aplicacao" element={<FormUsuario/>}/>
                 <Route path="/login/adm" element={<ControlAdm/>}/>
-                <Route path="/criar" element={<FormAdm/>}/>
+                <Route path="/admin/trips/create" element={<FormAdm/>}/>
+                <Route path="/admin/trips/list" element={<DetailsAdm/>}/>
             </Routes>
         
         </BrowserRouter>
