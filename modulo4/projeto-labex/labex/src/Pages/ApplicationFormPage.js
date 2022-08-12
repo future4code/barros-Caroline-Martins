@@ -1,12 +1,14 @@
 import React from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+
 
 function FormUsuario (){
+    //navegação
     const navigate=useNavigate();
-
     const lastPage = () => {
         navigate(-1)
       }
+    
   
 
     return(
