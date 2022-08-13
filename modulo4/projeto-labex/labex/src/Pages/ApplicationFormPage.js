@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
+import axios from "axios"
 
 
 function FormUsuario (){
@@ -8,9 +9,20 @@ function FormUsuario (){
     const lastPage = () => {
         navigate(-1)
       }
-    
-  
 
+    // const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/caroline-martins-barros/trips/NoIFVcOiSgTKTIPVZwXS/apply'
+    // const candidados=()=>{
+    // const body={
+    //     "name": "",
+    //     "age": Number,
+    //     "applicationText": "",
+    //     "profession": "",
+    //     "country": ""
+    // }
+    //     axios.post(url, body)
+    //     .then((response)=>{url, body, console.log(`resposta ${response.data.trip}`)})
+    //     .catch((erro)=>console.log(erro))}
+        
     return(
         <>
         <p>FormUsuario</p>
