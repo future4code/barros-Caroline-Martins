@@ -13,19 +13,47 @@ export const Main=styled.main`
    `
 
 export const Conteiner=styled.div`
-    width: 90vw;
-    height: 90vh;
-    padding-left: 30%;
+    width: 50vw;
+    height: 50vh;
+    padding-left: 25%;
     align-items: center;
     
     
+    div{
+        margin-top: 25vh;
+        background-color: white;
+        opacity: 0.6;
+        border-radius: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+        
+    }
     button{
      margin: 10vh;
-     width: 10vw;
+     width: 9,5vw;
+     border: 2px solid blue;
+     background-color: black;
+     color: white;
+     opacity: 2.0;
+     height: 6vh;
+     border-radius: 10px;
+     font-family: Georgia, 'Times New Roman', Times, serif
+     
+
+    }
+    button:hover{
+        background-color: blue;
+        width: 10vw;
     }
     
     h3{
-        color: white;
+        text-align: center;
+        padding: 10px;
+        color: black;
+    }
+    h4{
+        text-align: center;
+        color: black;
     }
 
 

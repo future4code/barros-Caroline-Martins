@@ -15,13 +15,17 @@ function Home (){
     return(
       <Main>
         <Conteiner>
+        <div>
 
-        <h3>Home </h3>
-        <h3>Para o usuário escolher entre Área Administrativa e Lista de Viagens</h3>
+        <h3>BEM-VIND@S</h3>
+        <h3>Ao LabeX </h3>
+        <h4>venha ter uma experiência de outro Planeta!</h4>
+      
         <button onClick={tripList}>Lista de Viagens</button>
 
-        <button onClick={tripAdm}>Area Administrativa</button>
-        
+        <button onClick={tripAdm}>Administrativo</button>
+        </div>
+
         </Conteiner>
         
 
