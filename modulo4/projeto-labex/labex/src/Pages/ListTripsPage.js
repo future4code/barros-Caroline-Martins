@@ -2,7 +2,8 @@ import React from "react";
 import {useNavigate} from "react-router-dom"
 import useRequestData from "../hooks/useRequestData";
 import {BASE_URL} from "../constants/constants"
-import {Card} from "./styleds/ListTripsStyled"
+import {Card, Header,Main} from "./styleds/ListTripsStyled"
+
 
 
 function ListaViagens (){
@@ -23,8 +24,8 @@ function ListaViagens (){
     return(
         <Card>
             <div>
-                <p>{i.name}</p>
-                <p>{i.description}</p>
+                <h3>{i.name}</h3>
+                <h4>{i.description}</h4>
                 <p>{i.planet}</p>
                 <p>{i.durationInDays}</p>
                 <p>{i.date}</p>
@@ -35,24 +36,27 @@ function ListaViagens (){
     
 
     return(
-        <main>
+        <Main>
+            <Header>
+                
         <p>ListaViagens</p>
         <h3>Para vermos todas as viagens</h3>
-
-
-        <section>
-        {isLoadingTrip && <h3>...CARREGANDO...</h3>}
-        {!isLoadingTrip && cards}
-        {!isLoadingTrip && !cards && erroTrip}
-        </section>
-
 
         <div>
             <button onClick={tripListViagem}>Inscreva-se</button>
             <button onClick={lastPage}>Voltar</button>
         </div>
+            </Header>
 
-        </main>
+
+        
+        {isLoadingTrip && <h3>...CARREGANDO...</h3>}
+        {!isLoadingTrip && cards}
+        {!isLoadingTrip && !cards && erroTrip}
+      
+
+
+        </Main>
     )
 }
 

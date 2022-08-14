@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Sideral from "../imagens/gala.jpg"
+import SideralResp from "../imagens/sideral2.jpg"
 
 export const Main=styled.main`
    background-image: url(${Sideral});
@@ -10,6 +11,11 @@ export const Main=styled.main`
    width: 98vw;
    height: 98vh;
    
+
+   @media (min-width:350px) and (max-width: 1140px){
+    background-image: url(${SideralResp});
+    background-size: cover;
+   }
    `
 
 export const Conteiner=styled.div`
@@ -24,6 +30,8 @@ export const Conteiner=styled.div`
         background-color: white;
         opacity: 0.6;
         border-radius: 10px;
+        align-items: center;
+        text-align: center;
         font-family: Georgia, 'Times New Roman', Times, serif;
 
         
@@ -37,9 +45,8 @@ export const Conteiner=styled.div`
      opacity: 2.0;
      height: 6vh;
      border-radius: 10px;
+     align-items: center;
      font-family: Georgia, 'Times New Roman', Times, serif
-     
-
     }
     button:hover{
         background-color: blue;
@@ -55,6 +62,20 @@ export const Conteiner=styled.div`
         text-align: center;
         color: black;
     }
+@media (min-width: 350px)and (max-width: 1140px ){
+    width: 60vw;
+    height: 25vh;
+    padding-left: 20%;
 
+
+    div{
+     margin: 1vh;
+     margin-top: 15vh;
+    }
+    button{
+     margin: 5vh;
+     width: 9,5vw;
+    }
+}
 
 `
