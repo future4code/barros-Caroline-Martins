@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Sideral from "../imagens/gala.jpg"
 import SideralResp from "../imagens/sideral2.jpg"
 
-export const Main=styled.main`
+export const Main = styled.main`
    background-image: url(${Sideral});
    background-repeat: no-repeat;
    background-size: cover;
@@ -18,7 +18,7 @@ export const Main=styled.main`
    }
    `
 
-export const Conteiner=styled.div`
+export const Conteiner = styled.div`
     width: 50vw;
     height: 50vh;
     padding-left: 25%;
@@ -26,13 +26,13 @@ export const Conteiner=styled.div`
     
     
     div{
-        margin-top: 25vh;
-        background-color: white;
-        opacity: 0.6;
-        border-radius: 10px;
-        align-items: center;
-        text-align: center;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+     margin-top: 25vh;
+     background-color: white;
+     opacity: 0.6;
+     border-radius: 10px;
+     align-items: center;
+     text-align: center;
+     font-family: Georgia, 'Times New Roman', Times, serif;
 
         
     }
