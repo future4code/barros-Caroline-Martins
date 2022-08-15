@@ -6,7 +6,7 @@ export const Form=styled.form`
     flex-direction: column;
     width: 40vw;
     height: 30vh;
-    margin-left: 50vh;
+    margin-left: 45vh;
     margin-top: 10vh;
     padding-bottom: 10vh;
     border: 2px solid lightskyblue;
@@ -25,10 +25,10 @@ export const Form=styled.form`
 @media screen and (min-width: 400px)and (max-width: 800px){
     margin-left: 10vh;
     margin-top: 5vh;
-    width: 40vw;
+    width: 60vw;
     input{
         height: 10vh;
-        width: 40vw;
+        width: 58vw;
     }
 }
 
@@ -36,15 +36,15 @@ export const Form=styled.form`
 
 export const Section=styled.div`
     align-items: center;
-    margin-left: 70vh;
+    margin-left: 60vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 
     button{
-     padding-right: 15vh;
-     padding-left: 15vh;
+     padding-right: 10vh;
+     padding-left: 10vh;
      border-radius: 5px;
-     border: blue;
+     
     }
     button:hover{
      padding-right: 20vh;
@@ -54,6 +54,10 @@ export const Section=styled.div`
      border: none;
      
     }
+
+@media screen and (min-width: 400px)and (max-width: 800px){
+    margin-left: 10vh;
+}
     
 `
 
