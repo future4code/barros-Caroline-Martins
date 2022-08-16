@@ -31,7 +31,7 @@ function FormUsuario() {
         }
 
         axios.post(`${BASE_URL}trips/:id/apply`, body)
-            .then((response) => { console.log("sucesso") })
+            .then((response) => {alert("Requisição realizada com SUCESSO!")})
             .catch((erro) => { console.log(erro) })
     };
     //ação do formulario
