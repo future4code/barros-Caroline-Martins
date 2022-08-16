@@ -11,7 +11,7 @@ export const Card = styled.main`
     margin-top: 1vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
-@media screen and (min-width: 400px)and (max-width: 800px){
+@media screen and (min-width: 350px)and (max-width: 800px){
     border: 2px solid lightskyblue;
     border-radius: 10px;
     align-items: center;

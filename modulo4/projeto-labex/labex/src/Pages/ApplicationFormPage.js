@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-import { Form, Section,Header } from "./styleds/FormUserStyled"
+import { Form, Section, Header } from "./styleds/FormUserStyled"
+import { useForm } from "../hooks/useForms"
+import {BASE_URL} from "../constants/constants"
 
 function FormUsuario() {
     //navegação
@@ -9,6 +11,50 @@ function FormUsuario() {
     const lastPage = () => {
         navigate(-1)
     }
+
+    const [form, onChange, clear] = useForm({
+        "name": "",
+        "age": "",
+        "applicationText": "",
+        "profession": "",
+        "country": "",
+        "trip": "",
+    })
+    const Formulario = () => {
+        const body = {
+            name: form.name,
+            age: form.age,
+            profession: form.profession,
+            country: form.country,
+            applicationText: form.applicationText,
+        }
+
+        axios.post(`${BASE_URL}/trips/:id/apply`, body)
+
+            .then((response) => {
+                console.log("sucesso")
+
+            
+            })
+            .catch((erro) => {
+                console.log(erro)
+            })
+            clear();
+    };
+    //ação do formulario
+    const onClickForm = (event) => {
+        event.preventDefault()
+        console.log(form)
+        clear()
+        Formulario()
+        } 
+
+
+    // para selecionar viagens
+    const [trips, setTrips] = useState([]) 
+
+  
+
 
     // const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/caroline-martins-barros/trips/NoIFVcOiSgTKTIPVZwXS/apply'
     // const candidados=()=>{
@@ -31,22 +77,69 @@ function FormUsuario() {
                 <h1>Formulário de Inscrição</h1>
                 <button onClick={lastPage}>Voltar</button>
             </Header>
-            <Form>
-
+            <Form onSubmit={onClickForm}>
+                <label htmlFor="name">Nome Completo:</label>
                 <input type="text"
-                    placeholder="Nome:"></input>
+                    placeholder="Nome:"
+                    id="name"
+                    name="name"
+                    value={form.name}
+                    onChange={onChange}
+                    required
+                    pattern={"^.{5,}"}>
+                </input>
 
+                <label htmlFor="idade">Idade:</label>
+                <input type="number"
+                    placeholder="Idade:"
+                    min={18}
+                    id="age"
+                    name="age"
+                    value={form.age}
+                    onChange={onChange}
+                    required>
 
-                <input type="number" placeholder="Idade:"></input>
+                </input>
 
+                <label htmlFor="teste de candidatura"></label>
+                <input type="text"
+                    placeholder="Teste de candidatura:"
+                    id="applicationText"
+                    name="applicationText"
+                    value={form.applicationText}
+                    onChange={onChange}
+                    required
+                    pattern={"^.{30,}"}
+                    title={"O texto deve ter no mínimo 30 caracteres"}
+                >
 
-                <input type="text" placeholder="Teste de candidatura:"></input>
+                </input>
 
+                <label htmlFor="profession"></label>
+                <input type="text"
+                    placeholder="Profissão:"
+                    id="profession"
+                    name="profession"
+                    value={form.profession}
+                    onChange={onChange}
+                    required
+                    pattern={"^.{5,}"}
+                >
 
-                <input type="text" placeholder="Profissão:"></input>
+                </input>
 
-                <select>
+                    <label htmlFor="country">País de residência</label>
+                <select
+                id="country"      
+                type="select"                 
+                name="country"
+                value={form.country}
+                onChange={onChange}
+                placeholder="country"
+                required
+                >
                     <option >Escolha o País</option>
+
                     <option value="ET">Outro Planeta</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>

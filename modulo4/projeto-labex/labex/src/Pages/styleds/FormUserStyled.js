@@ -22,7 +22,7 @@ export const Form=styled.form`
     }
 
 
-@media screen and (min-width: 400px)and (max-width: 800px){
+@media screen and (min-width: 350px)and (max-width: 800px){
     margin-left: 10vh;
     margin-top: 5vh;
     width: 60vw;
@@ -55,7 +55,7 @@ export const Section=styled.div`
      
     }
 
-@media screen and (min-width: 400px)and (max-width: 800px){
+@media screen and (min-width: 350px)and (max-width: 800px){
     margin-left: 10vh;
 }
     

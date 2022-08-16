@@ -3,9 +3,8 @@ import {useNavigate} from "react-router-dom"
 
 
 function ControlAdm (){
+    //navegação
     const navigate = useNavigate();
-
-
     const newViagens =()=>{
         navigate("/admin/trips/create")
     }
@@ -15,6 +14,9 @@ function ControlAdm (){
     const lastPage = () => {
         navigate(-1)
       }
+
+
+      
     return(
         <>
         <p>ControlAdm</p>
