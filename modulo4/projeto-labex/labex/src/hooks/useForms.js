@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-export function UseForm(inicialState) {
+export function useForm(inicialState) {
 
     const [form,setForm]=useState(inicialState)
 

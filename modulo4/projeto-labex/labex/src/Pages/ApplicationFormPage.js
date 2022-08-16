@@ -1,9 +1,9 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import { Form, Section, Header } from "./styleds/FormUserStyled"
-import { useForm } from "../hooks/useForms"
-import {BASE_URL} from "../constants/constants"
+import { BASE_URL } from "../constants/constants"
+import useRequestData from "../hooks/useRequestData";
+import {useForm}from "../hooks/useForms"
 
 function FormUsuario() {
     //navegação
@@ -11,7 +11,7 @@ function FormUsuario() {
     const lastPage = () => {
         navigate(-1)
     }
-
+    // API Esse endpoint recebe informações de um candidato e o relaciona a uma viagem.
     const [form, onChange, clear] = useForm({
         "name": "",
         "age": "",
@@ -27,47 +27,23 @@ function FormUsuario() {
             profession: form.profession,
             country: form.country,
             applicationText: form.applicationText,
+            trip:form.trip,
         }
 
-        axios.post(`${BASE_URL}/trips/:id/apply`, body)
-
-            .then((response) => {
-                console.log("sucesso")
-
-            
-            })
-            .catch((erro) => {
-                console.log(erro)
-            })
-            clear();
+        axios.post(`${BASE_URL}trips/:id/apply`, body)
+            .then((response) => { console.log("sucesso") })
+            .catch((erro) => { console.log(erro) })
     };
     //ação do formulario
     const onClickForm = (event) => {
         event.preventDefault()
-        console.log(form)
         clear()
         Formulario()
-        } 
+        console.log(form)
+    }
 
-
-    // para selecionar viagens
-    const [trips, setTrips] = useState([]) 
-
-  
-
-
-    // const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/caroline-martins-barros/trips/NoIFVcOiSgTKTIPVZwXS/apply'
-    // const candidados=()=>{
-    // const body={
-    //     "name": "",
-    //     "age": Number,
-    //     "applicationText": "",
-    //     "profession": "",
-    //     "country": ""
-    // }
-    //     axios.post(url, body)
-    //     .then((response)=>{url, body, console.log(`resposta ${response.data.trip}`)})
-    //     .catch((erro)=>console.log(erro))}
+    // GET para selecionar viagens ja existentes
+    const [data] = useRequestData(`${BASE_URL}trips`)
 
     return (
         <>
@@ -98,10 +74,9 @@ function FormUsuario() {
                     value={form.age}
                     onChange={onChange}
                     required>
-
                 </input>
 
-                <label htmlFor="teste de candidatura"></label>
+                <label htmlFor="teste de candidatura">Teste de Candidatura:</label>
                 <input type="text"
                     placeholder="Teste de candidatura:"
                     id="applicationText"
@@ -112,10 +87,9 @@ function FormUsuario() {
                     pattern={"^.{30,}"}
                     title={"O texto deve ter no mínimo 30 caracteres"}
                 >
-
                 </input>
 
-                <label htmlFor="profession"></label>
+                <label htmlFor="profession">Profissão:</label>
                 <input type="text"
                     placeholder="Profissão:"
                     id="profession"
@@ -125,18 +99,17 @@ function FormUsuario() {
                     required
                     pattern={"^.{5,}"}
                 >
-
                 </input>
 
-                    <label htmlFor="country">País de residência</label>
+                <label htmlFor="country">País de residência</label>
                 <select
-                id="country"      
-                type="select"                 
-                name="country"
-                value={form.country}
-                onChange={onChange}
-                placeholder="country"
-                required
+                    id="country"
+                    type="select"
+                    name="country"
+                    value={form.country}
+                    onChange={onChange}
+                    placeholder="country"
+                    required
                 >
                     <option >Escolha o País</option>
 
@@ -385,13 +358,30 @@ function FormUsuario() {
                     <option value="Yemen">Yemen</option>
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
-
                 </select>
-            </Form>
-            <Section>
 
+                <label for="viagem">Escolha a viagem:</label>
+
+                <select 
+                name ={'trip'}
+                onChange={onChange}
+                value={form.trip}>
+
+                {data && data.map((trip) => {
+                    return (
+                        <option
+                            viagem="id"
+                            value={trip.id}
+                            name="trip"
+                            onChange={onChange}
+                        > {trip.name} ({trip.planet})</option>
+                    )
+                })}
+                </select>
+
+                
                 <button >Inscreva-se</button>
-            </Section>
+            </Form>
 
         </>
     )

@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
-import {UseForm} from "../hooks/useForms"
+import {useForm} from "../hooks/useForms"
 import {BASE_URL} from "../constants/constants"
 
 function LoginAdm (){
@@ -13,7 +13,7 @@ function LoginAdm (){
         navigate(-1)
       }
     // API para acesso ao administrativo
-    const [body, onChange, clear]=UseForm({email:"",password:"",})
+    const [body, onChange, clear]=useForm({email:"",password:"",})
 
     const fazerLogin = (event) => {
       event.preventDefault()
