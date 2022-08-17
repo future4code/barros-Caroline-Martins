@@ -2,6 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import { useForm } from "../hooks/useForms"
 import { BASE_URL } from "../constants/constants"
+import {Main} from "./styleds/CreateTripStyled"
 
 function FormAdm() {
     //navegacao
@@ -43,9 +44,9 @@ function FormAdm() {
             clear()
         }
         return (
-            <>
-                <p>FormAdm</p>
-                <h3> Formulário para o administrador criar uma nova viagem</h3>
+            <Main>
+                
+                <h1> Nova viagem</h1>
                 <form onSubmit={onClickCreate}>
 
                     <label htmlFor="name">Nome:</label>
@@ -85,7 +86,7 @@ function FormAdm() {
                     <label htmlFor="date">Data:</label>
                     <input
                         type="date"
-                        min={"2023-01-01"}
+                        min={"2023/01/01"}
                         id="date"
                         name="date"
                         value={form.date}
@@ -107,7 +108,7 @@ function FormAdm() {
                     >
                     </input>
 
-                    <label htmlFor="durationInDays">Duração em dias</label>
+                    <label htmlFor="durationInDays">Duração em dias:</label>
                     <input
                         type="number"
                         min={50}
@@ -119,11 +120,13 @@ function FormAdm() {
                         required
                     >
                     </input>
+                    <div>
+                    <button onClick={lastPage}>Voltar</button>
                     <button>Criar viagem</button>
+                    </div>
                 </form>
 
-                <button onClick={lastPage}>Voltar</button>
-            </>
+            </Main>
         )
 
     

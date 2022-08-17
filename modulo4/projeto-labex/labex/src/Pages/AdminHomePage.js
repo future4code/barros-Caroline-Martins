@@ -1,5 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
+import {Main} from "./styleds/AdmControlStyled"
 
 
 function ControlAdm (){
@@ -18,16 +19,15 @@ function ControlAdm (){
 
       
     return(
-        <>
-        <p>ControlAdm</p>
-        <h3>Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas</h3>
+        <Main>
+        <h1>Controle Administrativo</h1>
 
+        <button onClick={lastPage}>Voltar</button>
 
         <button onClick={newViagens}>Criar Viagens</button>
         <button onClick={listViagens}>Viagens existentes</button>
         <button >Deletar Viagens</button>
-        <button onClick={lastPage}>Voltar</button>
-        </>
+        </Main>
     )
 }
 

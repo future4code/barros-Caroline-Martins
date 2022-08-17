@@ -81,6 +81,13 @@ export const Section=styled.div`
 
 @media screen and (min-width: 350px)and (max-width: 800px){
     margin-left: 10vh;
+    button:hover{
+     padding: 3vh;
+     background-color: lightskyblue;
+     color: white;
+     border: none;
+     
+    }
 }
     
 `
