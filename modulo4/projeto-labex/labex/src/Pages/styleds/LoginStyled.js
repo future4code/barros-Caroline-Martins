@@ -21,15 +21,16 @@ export const Main=styled.main`
         padding-top: 5vh;
         margin-top: 20vh;
         background-color: white;
-        margin-right: 30vh;
-        padding-right: 20vh;
-        margin-left: 30vh;
-        padding-left: 20vh;
+        margin-right: 20%;
+        padding-right: 10%;
+        margin-left: 20%;
+        padding-left: 10%;
         padding-bottom: 5vh;
         margin-bottom: 10vh;
         color: black;
         opacity: 0.7;
         border-radius: 10px;
+        text-align: center;
         
 
 
@@ -39,19 +40,7 @@ export const Main=styled.main`
         text-align: center;
         font-weight: bold;
     }
-    /* h3{
-        color: black;
-        opacity: 0.7;
-        border-radius: 10px;
-        text-align: center;
-        background-color: white;
-        padding-top: 20vh;
-        margin-left: 50vh;
-        margin-right: 43vh;
-        margin-top: 20vh;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-    } */
+  
     div{
         text-align: center;
     
@@ -75,28 +64,4 @@ export const Main=styled.main`
     }
    
 
-
-@media screen and (min-width: 400px)and (max-width: 800px){
-background-color: white;
-    form{
-        width: 15vw;
-        padding-left: 5vh;
-        padding-top: 5vh;
-        margin-left: 10vh;
-        background-color: black;
-        color: white;
-    }
-    h3{
-        padding-top: 10vh;
-        margin-left: 20vh;
-        margin-right: 43vh;
-        margin-top: 20vh;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-        background-color: none;
-        color: white;
-
-    }
-
-}
 `

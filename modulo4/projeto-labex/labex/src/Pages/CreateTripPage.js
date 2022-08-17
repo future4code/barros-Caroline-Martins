@@ -71,6 +71,7 @@ function FormAdm() {
                         placeholder="Planeta"
                         required
                     >
+                        <option value="escolha">Escolha um Planeta</option>
                         <option value="Mercurio">Mercúrio</option>
                         <option value="Venus">Vênus</option>
                         <option value="Terra">Terra</option>
