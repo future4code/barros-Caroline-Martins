@@ -84,7 +84,7 @@ function FormAdm() {
                     <label htmlFor="date">Data:</label>
                     <input
                         type="date"
-                        min={"01-01-2023"}
+                        min={"2023-01-01"}
                         id="date"
                         name="date"
                         value={form.date}

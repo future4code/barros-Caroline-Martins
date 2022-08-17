@@ -38,10 +38,7 @@ function ListaViagens() {
     return (
         <Main>
             <Header>
-
-                <p>ListaViagens</p>
-                <h3>Para vermos todas as viagens</h3>
-
+                <h1>Viagens para tirar o Fôlego</h1>
                 <Button>
                     <button onClick={lastPage}>Voltar</button>
                     <button onClick={tripListViagem}>Inscreva-se</button>

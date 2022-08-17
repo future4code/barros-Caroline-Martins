@@ -31,6 +31,10 @@ export const Header = styled.header`
     text-align: center;
     margin: 0;
 
+    h1{
+        color: white;
+    }
+
 `
 
 export const Main = styled.main`
