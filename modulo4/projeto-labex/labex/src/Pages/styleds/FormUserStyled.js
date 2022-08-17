@@ -5,20 +5,44 @@ export const Form=styled.form`
     display: flex;
     flex-direction: column;
     width: 40vw;
-    height: 30vh;
+    height: 50vh;
     margin-left: 45vh;
-    margin-top: 10vh;
+    margin-top: 5vh;
     padding-bottom: 10vh;
-    border: 2px solid lightskyblue;
+    box-shadow: 0 0 2em blue;
     border-radius: 5px;
     
-
+    label{
+        height: 15vh;
+        padding-top: 4vh;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
     input{
-        height: 5vh;
-        
+        height: 50vh;
+        font-style: italic;
+        border: none;
+       
     }
     select{
         height: 5vh;
+        font-style: italic;
+        border: none;
+    }
+    button{
+        margin-top: 4vh;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        box-shadow: 0 0 1em blue;
+        border: none;
+    }
+    button:hover{
+        background-color: lightskyblue;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        border: none;
     }
 
 

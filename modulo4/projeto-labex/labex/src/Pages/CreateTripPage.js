@@ -27,15 +27,15 @@ function FormAdm() {
             description: form.description,
             durationInDays: form.durationInDays,
         }
-        const myHeader={
+        const Header={
             headers:{
                 auth:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im93T2g5ZWo2bW50akZqNUNRMVB4IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1ODk1NjI5MDh9.aB4dNbTCkToXB7pdzEa-tuMa-QbRQDUd93eva4-cec0"
             }
         }
-        axios.post(`${BASE_URL}trips`, body, myHeader )
+        axios.post(`${BASE_URL}trips`, body,Header)
             .then((response) => { alert("Requisição realizada com SUCESSO!"); })
             .catch((erro) => { console.log(erro) })
-
+    }
         // acao formulario
         const onClickCreate = (event) => {
             event.preventDefault()
@@ -106,12 +106,12 @@ function FormAdm() {
                     >
                     </input>
 
-                    <label htmlFor="duractionInDays">Duração em dias</label>
+                    <label htmlFor="durationInDays">Duração em dias</label>
                     <input
                         type="number"
                         min={50}
-                        id="duractionInDays"
-                        name="duractionInDays"
+                        id="durationInDays"
+                        name="durationInDays"
                         value={form.durationInDays}
                         onChange={onChange}
                         placeholder="Duração viagem"
@@ -125,7 +125,7 @@ function FormAdm() {
             </>
         )
 
-    }
+    
 
 }
 export default FormAdm;

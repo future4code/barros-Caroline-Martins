@@ -57,7 +57,7 @@ function LoginAdm (){
                 type="password"
                 pattern="^.{6}"
             />
-            <button  >Login</button>
+            <button >Login</button>
             </form>
         <button onClick={lastPage}>Voltar</button>
         </>

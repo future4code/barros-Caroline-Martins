@@ -11,7 +11,7 @@ function FormUsuario() {
     const lastPage = () => {
         navigate(-1)
     }
-    // API Esse endpoint recebe informações de um candidato e o relaciona a uma viagem.
+    // API (custon hooks) Esse endpoint recebe informações de um candidato e o relaciona a uma viagem.
     const [form, onChange, clear] = useForm({
         "name": "",
         "age": "",
@@ -29,7 +29,7 @@ function FormUsuario() {
             applicationText: form.applicationText,
             trip:form.trip,
         }
-
+        // Esse endpoint recebe informações de um candidato e o relaciona a uma viagem.
         axios.post(`${BASE_URL}trips/:id/apply`, body)
             .then((response) => {alert("Requisição realizada com SUCESSO!")})
             .catch((erro) => { console.log(erro) })
@@ -54,9 +54,9 @@ function FormUsuario() {
                 <button onClick={lastPage}>Voltar</button>
             </Header>
             <Form onSubmit={onClickForm}>
-                <label htmlFor="name">Nome Completo:</label>
+                <label htmlFor="name">Nome Completo</label>
                 <input type="text"
-                    placeholder="Nome:"
+                    placeholder="nome"
                     id="name"
                     name="name"
                     value={form.name}
@@ -65,9 +65,9 @@ function FormUsuario() {
                     pattern={"^.{5,}"}>
                 </input>
 
-                <label htmlFor="idade">Idade:</label>
+                <label htmlFor="idade">Idade</label>
                 <input type="number"
-                    placeholder="Idade:"
+                    placeholder="idade"
                     min={18}
                     id="age"
                     name="age"
@@ -76,9 +76,9 @@ function FormUsuario() {
                     required>
                 </input>
 
-                <label htmlFor="teste de candidatura">Teste de Candidatura:</label>
+                <label htmlFor="teste de candidatura">Teste de Candidatura</label>
                 <input type="text"
-                    placeholder="Teste de candidatura:"
+                    placeholder="Digite aqui..."
                     id="applicationText"
                     name="applicationText"
                     value={form.applicationText}
@@ -89,9 +89,9 @@ function FormUsuario() {
                 >
                 </input>
 
-                <label htmlFor="profession">Profissão:</label>
+                <label htmlFor="profession">Profissão</label>
                 <input type="text"
-                    placeholder="Profissão:"
+                    placeholder="profissão"
                     id="profession"
                     name="profession"
                     value={form.profession}
@@ -101,7 +101,7 @@ function FormUsuario() {
                 >
                 </input>
 
-                <label htmlFor="country">País de residência</label>
+                <label htmlFor="country">País de Residência</label>
                 <select
                     id="country"
                     type="select"
