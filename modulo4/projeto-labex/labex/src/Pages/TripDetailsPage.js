@@ -1,9 +1,10 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
+import { useProtectPage } from "../hooks/useProtectPage";
 
 
 function DetailsAdm(){
-    
+    useProtectPage();
     const navigate = useNavigate();
     const lastPage = () => {
         navigate(-1)

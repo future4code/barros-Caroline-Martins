@@ -11,6 +11,7 @@ function Home() {
   }
   const tripAdm = () => {
     navigate("/login")
+    console.log(tripAdm)
   }
   const [isLoading]=useRequestData()
   return (

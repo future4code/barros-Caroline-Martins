@@ -3,9 +3,11 @@ import axios from "axios";
 import { useForm } from "../hooks/useForms"
 import { BASE_URL } from "../constants/constants"
 import { Main, } from "./styleds/LoginStyled"
+import { useProtectPage } from "../hooks/useProtectPage";
 
 function LoginAdm() {
     //navegação
+    useProtectPage();
     const navigate = useNavigate();
     const login = () => {
         navigate("/login/adm")
@@ -18,19 +20,17 @@ function LoginAdm() {
 
     const fazerLogin = (event) => {
         event.preventDefault()
-        axios.post(`${BASE_URL}login`, body).then((response) => { console.log(response.data); login() })
+        axios.post(`${BASE_URL}login`, body).then((response) => {
+            console.log(response.data);
+            login()
+            localStorage.setItem("token",response.data.token) })
             .catch((erro) => { console.log("deu erro"); alert("Acesso invalido!") })
 
         clear();
     }
-
-
-
     return (
 
         <Main>
-
-
             <form onSubmit={fazerLogin}>
             <h3>Área Administrativa</h3>
                 <label htmlFor="email">Email:</label>

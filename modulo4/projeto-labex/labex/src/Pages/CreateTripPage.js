@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom"
 import { useForm } from "../hooks/useForms"
 import { BASE_URL } from "../constants/constants"
 import {Main} from "./styleds/CreateTripStyled"
+import { useProtectPage } from "../hooks/useProtectPage";
 
 function FormAdm() {
     //navegacao
+    useProtectPage();
     const navigate = useNavigate();
     const lastPage = () => {
         navigate(-1)
@@ -28,12 +30,11 @@ function FormAdm() {
             description: form.description,
             durationInDays: form.durationInDays,
         }
-        const Header={
-            headers:{
-                auth:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im93T2g5ZWo2bW50akZqNUNRMVB4IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1ODk1NjI5MDh9.aB4dNbTCkToXB7pdzEa-tuMa-QbRQDUd93eva4-cec0"
-            }
-        }
-        axios.post(`${BASE_URL}trips`, body,Header)
+       
+        axios.post(`${BASE_URL}trips`, body,
+        {Header:{
+            auth:localStorage.getItem("token")
+        }})
             .then((response) => { alert("Requisição realizada com SUCESSO!"); })
             .catch((erro) => { console.log(erro) })
     }
@@ -43,6 +44,8 @@ function FormAdm() {
             createTrip()
             clear()
         }
+
+        
         return (
             <Main>
                 
