@@ -28,6 +28,12 @@ function LoginAdm() {
 
         clear();
     }
+
+
+    //ACESSO:
+    //EMAIL: caroline-martins-barros@astrodev.com
+    //SENHA: 123456
+
     return (
 
         <Main>

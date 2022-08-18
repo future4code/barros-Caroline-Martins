@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main=styled.main`
     text-align: center;
-    margin-top: 25%;
+    margin-top: 5%;
 
 
     button{

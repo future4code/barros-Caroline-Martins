@@ -19,7 +19,7 @@ function Router(){
                 <Route path="/login" element={<LoginAdm/>}/>
                 <Route path="/login/adm" element={<ControlAdm/>}/>
                 <Route path="/admin/trips/create" element={<FormAdm/>}/>
-                <Route path="/admin/trips/list" element={<DetailsAdm/>}/>
+                <Route path="/admin/trips/list:id" element={<DetailsAdm/>}/>
             </Routes>
         
         </BrowserRouter>

@@ -4,6 +4,7 @@ import { Form, Section, Header } from "./styleds/FormUserStyled"
 import { BASE_URL } from "../constants/constants"
 import useRequestData from "../hooks/useRequestData";
 import {useForm}from "../hooks/useForms"
+import { useState } from "react";
 
 function FormUsuario() {
     //navegação
@@ -30,7 +31,7 @@ function FormUsuario() {
             trip:form.trip,
         }
         // Esse endpoint recebe informações de um candidato e o relaciona a uma viagem.
-        axios.post(`${BASE_URL}trips/:id/apply`, body)
+        axios.post(`${BASE_URL}trips/${selectId}/apply`, body)
             .then((response) => {alert("Requisição realizada com SUCESSO!")})
             .catch((erro) => { console.log(erro) })
     };
@@ -44,6 +45,12 @@ function FormUsuario() {
 
     // GET para selecionar viagens ja existentes
     const [data] = useRequestData(`${BASE_URL}trips`)
+
+
+    const [selectId, setSelectId]=useState()
+    const handleSelectId=(event)=>{
+        setSelectId(event.target.value)
+    }
 
     return (
         <>
@@ -364,12 +371,13 @@ function FormUsuario() {
 
                 <select 
                 name ={'trip'}
-                onChange={onChange}
+                onChange={handleSelectId}
                 value={form.trip}>
 
                 {data && data.map((trip) => {
                     return (
                         <option
+                            key={trip.id}
                             viagem="id"
                             value={trip.id}
                             name="trip"
