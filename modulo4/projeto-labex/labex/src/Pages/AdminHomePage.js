@@ -4,7 +4,6 @@ import { useProtectPage } from "../hooks/useProtectPage";
 import { Main } from "./styleds/AdmControlStyled"
 import useRequestData from "../hooks/useRequestData";
 import { BASE_URL } from "../constants/constants"
-import ListaViagens from "./ListTripsPage";
 import axios from "axios";
 
 

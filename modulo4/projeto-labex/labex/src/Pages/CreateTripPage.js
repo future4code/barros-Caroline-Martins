@@ -44,7 +44,7 @@ function FormAdm() {
             createTrip()
             clear()
         }
-        // console.log(onClickCreate)
+       
 
         
         return (
