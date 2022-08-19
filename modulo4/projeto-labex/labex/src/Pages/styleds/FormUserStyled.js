@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import cabecalho from "../imagens/planetas.jpg"
 
-export const Form=styled.form`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 40vw;
@@ -13,26 +13,34 @@ export const Form=styled.form`
     border-radius: 5px;
     
     label{
-        height: 15vh;
+        height: 15%;
         padding-top: 4vh;
         font-weight: bold;
         font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-left: 2%;
+        margin-right: 2%;
     }
     input{
         height: 50vh;
         font-style: italic;
         border: none;
+        margin-left: 2%;
+        margin-right: 2%;
        
     }
     select{
         height: 5vh;
         font-style: italic;
         border: none;
+        margin-left: 2%;
+        margin-right: 2%;
     }
     button{
-        margin-top: 4vh;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
+        margin-top: 4%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
         font-weight: bold;
         font-family: Georgia, 'Times New Roman', Times, serif;
         box-shadow: 0 0 1em blue;
@@ -52,13 +60,15 @@ export const Form=styled.form`
     width: 60vw;
     input{
         height: 10vh;
-        width: 58vw;
+        width: 58%;
     }
+
+
 }
 
 `
 
-export const Section=styled.div`
+export const Section = styled.div`
     align-items: center;
     margin-left: 60vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -92,25 +102,41 @@ export const Section=styled.div`
     
 `
 
-export const Header=styled.header`
+export const Header = styled.header`
     background-image: url(${cabecalho});
     background-size: cover;
-    background-repeat: no-repeat;
     height: 25vh;
     text-align: center;
-    margin: 0;
+    margin-top: 0;
+    padding-top: 2%;
+
+    h1{
+        color: white;
+    }
 
     button{
-        border-radius: 5px;
-        border: lightskyblue;
-        padding: 4vh;
-        padding: 1vw;
+       width: 10%;
+       height: 5vh;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+       border: lightsteelblue;
+       border-radius: 10px;
     }
+    
     button:hover{
-     padding: 3vh;
-     background-color: lightskyblue;
-     color: white;
-     border: none;
-     
+        background-color: lightskyblue;
     }
+
+    @media screen and (min-width: 350px)and (max-width: 800px){
+        button{
+            width: 25%;
+        }
+        h1{
+            color: black;
+            background-color: white;
+            border-radius: 20px;
+            opacity: 0.7;
+        }
+    }
+     
+    
 `

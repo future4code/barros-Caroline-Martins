@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom"
 import useRequestData from "../hooks/useRequestData";
 import { BASE_URL } from "../constants/constants"
-import { Card, Header, Main, Button, Carreg } from "./styleds/ListTripsStyled"
+import { Card, Header, Button, Carreg } from "./styleds/ListTripsStyled"
 
 
 
@@ -16,8 +16,6 @@ function ListaViagens() {
     const lastPage = () => {
         navigate(-1)
     }
-
-    
     const [dataTrip, isLoadingTrip, erroTrip] = useRequestData(`${BASE_URL}trips`)
 
     const cards = dataTrip && dataTrip.map((i) => {
@@ -36,7 +34,7 @@ function ListaViagens() {
 
 
     return (
-        <Main>
+        <main>
             <Header>
                 <h1>Viagens para tirar o Fôlego</h1>
                 <Button>
@@ -49,7 +47,7 @@ function ListaViagens() {
             {!isLoadingTrip && cards}
             {!isLoadingTrip && !cards && erroTrip}
 
-        </Main>
+        </main>
     )
 }
 

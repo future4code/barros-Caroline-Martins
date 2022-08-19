@@ -55,8 +55,6 @@ function FormUsuario() {
     return (
         <>
             <Header>
-
-                <p>FormUsuario</p>
                 <h1>Formulário de Inscrição</h1>
                 <button onClick={lastPage}>Voltar</button>
             </Header>

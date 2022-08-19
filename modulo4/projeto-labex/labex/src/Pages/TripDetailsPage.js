@@ -25,7 +25,7 @@ function DetailsAdm() {
             }
         }).then((response) => {
             setTrip(response.data.trip)}).catch((erro) => { console.log(erro.data) })}
-            
+
     useEffect(() => { getTripDetail() }, [])
 
     const aprovado = (id) => {
@@ -91,10 +91,6 @@ function DetailsAdm() {
                         <div>
                             <div >
                                 <p>Nome:{i.name}</p>
-                                <p>Profissão:{i.profession}</p>
-                                <p>Candidatura:{i.applicationText}</p>
-                                <p>idade:{i.age}</p>
-
                             </div>
                         </div>
                     )

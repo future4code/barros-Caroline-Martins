@@ -6,20 +6,12 @@ export const Card = styled.main`
     border-radius: 10px;
     align-items: center;
     text-align: center;
-    margin-left: 40vh;
-    margin-right: 40vh;
-    margin-top: 1vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
-@media screen and (min-width: 350px)and (max-width: 800px){
-    border: 2px solid lightskyblue;
-    border-radius: 10px;
-    align-items: center;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    margin-top: 1vh;
-    padding-top: 5vh;
-}
+
 `
 
 
@@ -29,25 +21,30 @@ export const Header = styled.header`
     background-repeat: no-repeat;
     height: 25vh;
     text-align: center;
-    margin: 0;
+    margin-top: 0;
+    padding-top: 2%;
 
     h1{
         color: white;
     }
+    @media screen and (min-width: 350px)and (max-width: 800px){
 
+        h1{
+            color: black;
+            background-color: white;
+            border-radius: 20px;
+            opacity: 0.7;
+        }
+    }
 `
 
-export const Main = styled.main`
-
-`
 export const Button = styled.div`
     display: flex;
     justify-content: space-evenly;
-    padding-top: 6vh;
-
+    padding-top: 5%;
 
     button{
-       width: 10vw;
+       width: 10%;
        height: 5vh;
        font-family: Georgia, 'Times New Roman', Times, serif;
        border: lightsteelblue;
@@ -56,16 +53,13 @@ export const Button = styled.div`
     button:hover{
         background-color: lightskyblue;
     }
+    @media screen and (min-width: 350px)and (max-width: 800px){
+        padding-top: 2%;
 
-@media screen and (min-width: 400px)and (max-width: 800px) {
-
-    button{
-        width: 16vw;
-        height: 6vh;
+        button{
+            width: 25%;
+        }
     }
-    
-}
-
 `
 export const Carreg = styled.h3`
     width: 100vw;
