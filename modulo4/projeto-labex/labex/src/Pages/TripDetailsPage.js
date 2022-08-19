@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { BASE_URL } from "../constants/constants";
 import { useProtectPage } from "../hooks/useProtectPage";
-
+import {DescricaoViagem, Main} from "./styleds/DetailsPageStyled"
 
 function DetailsAdm() {
     //protecao de paginas
@@ -27,7 +27,7 @@ function DetailsAdm() {
             setTrip(response.data.trip)}).catch((erro) => { console.log(erro.data) })}
 
     useEffect(() => { getTripDetail() }, [])
-
+    //requisicao para aprovar candidados
     const aprovado = (id) => {
         const body = {
             approve: true
@@ -39,7 +39,7 @@ function DetailsAdm() {
         }).then((response) => { getTripDetail(); alert("Candidato Aprovado!"); }
         ).catch((erro) => { alert("Ouve um problema!"); })
     }
-
+    //requisicao para reprovar candidados
     const reprovado = (candidatesId) => {
         const body = {
             approve: false
@@ -53,26 +53,27 @@ function DetailsAdm() {
     }
 
     return (
-        <main>
-            <p>DetailsAdm</p>
-            <h3>Para o administrador ver o detalhe de uma viagem específica, bem como os candidatos que aplicaram para ela</h3>
+        <Main>
+            
+            <h1>Viagens e Candidados</h1>
             <button onClick={lastPage}>Voltar</button>
-            <div>
-                <p>Planeta: {trip.planet}</p>
-                <p>Nome:  {trip.name}</p>
-                <p>Data:  {trip.date}</p>
-                <p>Descrição viagem:  {trip.description}</p>
-            </div>
+            <DescricaoViagem>
+                <h2>Planeta:</h2>
+                <h3> {trip.planet}</h3>
+                <h2>Nome:</h2>
+                <h3> {trip.name}</h3>
+                <h2>Data partida:</h2>
+                <h3>{trip.date}</h3>
+            </DescricaoViagem>
 
-            <h2> Candidatos Pendentes</h2>
 
             <section>
+            <h2> Candidatos Pendentes</h2>
                 {trip.candidates && trip.candidates.map((i) => {
                     return (
                         <div>
                             <div >
-                                <h3>Candidados</h3>
-                                <p>Nome:{i.name}</p>
+                                <p>{i.name}</p>
                                 <p>Profissão:{i.profession}</p>
                                 <p>Candidatura:{i.applicationText}</p>
                                 <p>idade:{i.age}</p>
@@ -98,7 +99,7 @@ function DetailsAdm() {
             </section>
 
 
-        </main >
+        </Main >
     )
 
 

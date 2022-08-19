@@ -25,3 +25,19 @@ export const Main=styled.main`
 
 
 `
+
+export const Card=styled.section`
+    border: 2px solid lightskyblue;
+    border-radius: 10px;
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-top: 2%;
+    
+ 
+    button{
+        margin-bottom: 2%;
+        
+    }
+
+
+`

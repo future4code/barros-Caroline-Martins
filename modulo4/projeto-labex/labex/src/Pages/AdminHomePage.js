@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { useProtectPage } from "../hooks/useProtectPage";
-import { Main } from "./styleds/AdmControlStyled"
+import { Main, Card } from "./styleds/AdmControlStyled"
 import useRequestData from "../hooks/useRequestData";
 import { BASE_URL } from "../constants/constants"
 import axios from "axios";
@@ -39,14 +39,17 @@ function ControlAdm() {
 
     const cards = dataTrip && dataTrip.map((i) => {
         return (
-            <div>
+            <Card>
                 <div >
                     <h2>{i.name}</h2>
                     <h4>{i.planet}</h4>
+                </div>
+                <div>
                     <button onClick={() => { listViagens(i.id) }}>Detalhes</button>
                     <button onClick={() => { Deletar(i.id) }}>Deletar</button>
                 </div>
-            </div>
+                    
+            </Card>
         )
     })
 
