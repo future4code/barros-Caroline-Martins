@@ -17,7 +17,7 @@ function ListaViagens() {
         navigate(-1)
     }
 
-
+    
     const [dataTrip, isLoadingTrip, erroTrip] = useRequestData(`${BASE_URL}trips`)
 
     const cards = dataTrip && dataTrip.map((i) => {
