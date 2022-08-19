@@ -32,10 +32,10 @@ function FormAdm() {
         }
        
         axios.post(`${BASE_URL}trips`, body,
-        {Header:{
+        {headers:{
             auth:localStorage.getItem("token")
         }})
-            .then((response) => { alert("Requisição realizada com SUCESSO!"); })
+            .then((response) => { alert("Requisição realizada com SUCESSO!");console.log() })
             .catch((erro) => { console.log(erro) })
     }
         // acao formulario
@@ -44,6 +44,7 @@ function FormAdm() {
             createTrip()
             clear()
         }
+        // console.log(onClickCreate)
 
         
         return (

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-import { Form, Section, Header } from "./styleds/FormUserStyled"
+import { Form, Header } from "./styleds/FormUserStyled"
 import { BASE_URL } from "../constants/constants"
 import useRequestData from "../hooks/useRequestData";
 import {useForm}from "../hooks/useForms"
@@ -373,7 +373,7 @@ function FormUsuario() {
                 name ={'trip'}
                 onChange={handleSelectId}
                 value={form.trip}>
-
+                <option>Escolha uma viagem</option>
                 {data && data.map((trip) => {
                     return (
                         <option
