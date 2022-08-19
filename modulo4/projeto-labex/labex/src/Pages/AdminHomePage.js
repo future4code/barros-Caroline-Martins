@@ -25,20 +25,19 @@ function ControlAdm() {
         navigate(-1)
     }
     const [dataTrip, isLoading, erro, page, setPage] = useRequestData(`${BASE_URL}trips`)
-    
+
     const Deletar = (id) => {
         axios.delete(`${BASE_URL}trips/${id}`, {
             headers: {
                 auth: localStorage.getItem("token")
             }
         }).then((response) => {
-            setPage(!page);alert("Viagem deletada com Sucesso!!")
-        }).catch((erro) => { 
-            console.log(erro) })}
+            setPage(!page); alert("Viagem deletada com Sucesso!!")
+        }).catch((erro) => { console.log(erro) })
+    }
 
 
     const cards = dataTrip && dataTrip.map((i) => {
-
         return (
             <div>
                 <div >

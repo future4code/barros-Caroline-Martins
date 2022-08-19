@@ -17,17 +17,15 @@ function DetailsAdm() {
     const [trip, setTrip] = useState({})
 
     const parametro = useParams()
-    // console.log(parametro)
+   
     const getTripDetail = () => {
         axios.get(`${BASE_URL}trip/${parametro.id}`, {
             headers: {
                 auth: localStorage.getItem("token")
             }
         }).then((response) => {
-            setTrip(response.data.trip)
-            // console.log(response.data.trip)
-        }).catch((erro) => { console.log(erro.data) })
-    }
+            setTrip(response.data.trip)}).catch((erro) => { console.log(erro.data) })}
+            
     useEffect(() => { getTripDetail() }, [])
 
     const aprovado = (id) => {
@@ -38,10 +36,10 @@ function DetailsAdm() {
             headers: {
                 auth: localStorage.getItem("token")
             }
-        }.then((response)=>{alert("Candidato Aprovado!");console.log(response.data.trip)}
-        ).catch((erro)=>{alert("Ouve um problema!");console.log(erro)}))
+        }).then((response) => { getTripDetail(); alert("Candidato Aprovado!"); }
+        ).catch((erro) => { alert("Ouve um problema!"); })
     }
-    
+
     const reprovado = (candidatesId) => {
         const body = {
             approve: false
@@ -50,32 +48,15 @@ function DetailsAdm() {
             headers: {
                 auth: localStorage.getItem("token")
             }
-        }.then((response)=>{alert("Candidato reprovado!");console.log(response.data.trip)}
-        ).catch((erro)=>{alert("Ouve um problema!");console.log(erro)}))
+        }).then((response) => { alert("Candidato reprovado!") }
+        ).catch((erro) => { alert("Ouve um problema!") })
     }
 
-    //map para ver candidatos as viagens
-    const candidatos = trip.candidates && trip.candidates.map((i) => {
-        return (
-            <div>
-                <div >
-                    <h3>Candidados</h3>
-                    <p>Nome:{i.name}</p>
-                    <p>Profissão:{i.profession}</p>
-                    <p>Candidatura:{i.applicationText}</p>
-                    <p>idade:{i.age}</p>
-                    <button onClick={() => aprovado(i.id, i.name)}>Aprovar</button>
-                    <button onClick={() => reprovado(i.id, i.name)}>Reprovar</button>
-                </div>
-            </div>
-        )
-    })
-
-
     return (
-        <>
+        <main>
             <p>DetailsAdm</p>
             <h3>Para o administrador ver o detalhe de uma viagem específica, bem como os candidatos que aplicaram para ela</h3>
+            <button onClick={lastPage}>Voltar</button>
             <div>
                 <p>Planeta: {trip.planet}</p>
                 <p>Nome:  {trip.name}</p>
@@ -83,10 +64,45 @@ function DetailsAdm() {
                 <p>Descrição viagem:  {trip.description}</p>
             </div>
 
-            {candidatos}
-           
-            <button onClick={lastPage}>Voltar</button>
-        </>
+            <h2> Candidatos Pendentes</h2>
+
+            <section>
+                {trip.candidates && trip.candidates.map((i) => {
+                    return (
+                        <div>
+                            <div >
+                                <h3>Candidados</h3>
+                                <p>Nome:{i.name}</p>
+                                <p>Profissão:{i.profession}</p>
+                                <p>Candidatura:{i.applicationText}</p>
+                                <p>idade:{i.age}</p>
+                                <button onClick={() => aprovado(i.id)}>Aprovar</button>
+                                <button onClick={() => reprovado(i.id)}>Reprovar</button>
+                            </div>
+                        </div>
+                    )
+                })}
+            </section>
+            {/* //map para ver candidatos aprovados */}
+            <section>
+                <h3>Candidados aprovados</h3>
+                {trip.approved && trip.approved.map((i) => {
+                    return (
+                        <div>
+                            <div >
+                                <p>Nome:{i.name}</p>
+                                <p>Profissão:{i.profession}</p>
+                                <p>Candidatura:{i.applicationText}</p>
+                                <p>idade:{i.age}</p>
+
+                            </div>
+                        </div>
+                    )
+                })}
+            </section>
+
+
+        </main >
     )
 
 
