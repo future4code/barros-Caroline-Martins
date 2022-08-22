@@ -4,13 +4,13 @@ import cabecalho from "../imagens/planetas.jpg"
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    width: 40vw;
-    height: 50vh;
-    margin-left: 45vh;
-    margin-top: 5vh;
-    padding-bottom: 10vh;
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    margin-top: 5%;
+    padding-bottom: 1%;
     box-shadow: 0 0 2em blue;
-    border-radius: 5px;
+    border-radius: 5%;
     
     label{
         height: 15%;
@@ -21,7 +21,7 @@ export const Form = styled.form`
         margin-right: 2%;
     }
     input{
-        height: 50vh;
+        height: 50%;
         font-style: italic;
         border: none;
         margin-left: 2%;
@@ -38,7 +38,7 @@ export const Form = styled.form`
     button{
         margin-top: 4%;
         padding-top: 2%;
-        padding-bottom: 2%;
+        padding-bottom: 1%;
         margin-left: 2%;
         margin-right: 2%;
         font-weight: bold;
@@ -48,64 +48,54 @@ export const Form = styled.form`
     }
     button:hover{
         background-color: lightskyblue;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
+        padding-top: 3%;
+        padding-bottom: 3%;
         border: none;
     }
 
 
-@media screen and (min-width: 350px)and (max-width: 800px){
-    margin-left: 10vh;
-    margin-top: 5vh;
-    width: 60vw;
-    input{
-        height: 10vh;
-        width: 58%;
-    }
 
-
-}
 
 `
 
-export const Section = styled.div`
-    align-items: center;
-    margin-left: 60vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+// export const Section = styled.div`
+//     align-items: center;
+//     margin-left: 60vh;
+//     font-family: Georgia, 'Times New Roman', Times, serif;
 
 
-    button{
-     padding-right: 10vh;
-     padding-left: 10vh;
-     border-radius: 5px;
+//     button{
+//      padding-right: 10vh;
+//      padding-left: 10vh;
+//      border-radius: 5px;
      
-    }
-    button:hover{
-     padding-right: 20vh;
-     padding-left: 16vh;
-     background-color: lightskyblue;
-     color: white;
-     border: none;
+//     }
+//     button:hover{
+//      padding-right: 20vh;
+//      padding-left: 16vh;
+//      background-color: lightskyblue;
+//      color: white;
+//      border: none;
      
-    }
+//     }
 
-@media screen and (min-width: 350px)and (max-width: 800px){
-    margin-left: 10vh;
-    button:hover{
-     padding: 3vh;
-     background-color: lightskyblue;
-     color: white;
-     border: none;
+// @media screen and (min-width: 350px)and (max-width: 800px){
+//     margin-left: 10vh;
+//     button:hover{
+//      padding: 3vh;
+//      background-color: lightskyblue;
+//      color: white;
+//      border: none;
      
-    }
-}
+//     }
+// }
     
-`
+// `
 
 export const Header = styled.header`
     background-image: url(${cabecalho});
     background-size: cover;
-    height: 25vh;
+    height: 20vh;
     text-align: center;
     margin-top: 0;
     padding-top: 2%;

@@ -19,7 +19,7 @@ export const Header = styled.header`
     background-image: url(${astronauta});
     background-size: cover;
     background-repeat: no-repeat;
-    height: 25vh;
+    height: 30%;
     text-align: center;
     margin-top: 0;
     padding-top: 2%;
@@ -49,6 +49,7 @@ export const Button = styled.div`
        font-family: Georgia, 'Times New Roman', Times, serif;
        border: lightsteelblue;
        border-radius: 10px;
+       margin-bottom: 1%;
     }
     button:hover{
         background-color: lightskyblue;

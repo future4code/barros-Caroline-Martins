@@ -11,14 +11,12 @@ function Home() {
   }
   const tripAdm = () => {
     navigate("/login")
-    console.log(tripAdm)
   }
   const [isLoading]=useRequestData()
   return (
     <Main>
       <Conteiner>
         <div>
-
 
           {isLoading && <h1>...CARREGANDO...</h1>}
           <h3>BEM-VIND@S</h3>
@@ -30,9 +28,6 @@ function Home() {
         </div>
 
       </Conteiner>
-
-
-
     </Main>
   )
 }

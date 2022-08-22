@@ -70,7 +70,7 @@ function FormUsuario() {
                     pattern={"^.{5,}"}>
                 </input>
 
-                <label htmlFor="idade">Idade</label>
+                <label htmlFor="age">Idade</label>
                 <input type="number"
                     placeholder="idade"
                     min={18}
@@ -81,7 +81,7 @@ function FormUsuario() {
                     required>
                 </input>
 
-                <label htmlFor="teste de candidatura">Teste de Candidatura</label>
+                <label htmlFor="applicationText">Teste de Candidatura</label>
                 <input type="text"
                     placeholder="Digite aqui..."
                     id="applicationText"
@@ -365,9 +365,10 @@ function FormUsuario() {
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
 
-                <label for="viagem">Escolha a viagem:</label>
+                <label htmlFor="trip">Escolha a viagem:</label>
 
                 <select 
+                id="trip"
                 name ={'trip'}
                 onChange={handleSelectId}
                 value={form.trip}>

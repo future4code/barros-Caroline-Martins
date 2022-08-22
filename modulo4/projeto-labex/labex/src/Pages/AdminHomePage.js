@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { useProtectPage } from "../hooks/useProtectPage";
 import { Main, Card } from "./styleds/AdmControlStyled"
@@ -8,7 +7,7 @@ import axios from "axios";
 
 
 function ControlAdm() {
-    //navegação
+    //navegação e protecao da pagina
     useProtectPage();
     const navigate = useNavigate();
     const newViagens = () => {
@@ -24,6 +23,7 @@ function ControlAdm() {
         localStorage.removeItem("token")
         navigate(-1)
     }
+    //custon hooks
     const [dataTrip, isLoading, erro, page, setPage] = useRequestData(`${BASE_URL}trips`)
 
     const Deletar = (id) => {

@@ -37,8 +37,8 @@ export const Conteiner = styled.div`
         
     }
     button{
-     margin: 10vh;
-     width: 9,5vw;
+     margin: 10%;
+     width: 20%;
      border: 2px solid blue;
      background-color: black;
      color: white;
@@ -50,7 +50,7 @@ export const Conteiner = styled.div`
     }
     button:hover{
         background-color: blue;
-        width: 10vw;
+        width: 30%;
     }
     
     h3{
@@ -73,8 +73,12 @@ export const Conteiner = styled.div`
      margin-top: 15vh;
     }
     button{
-     margin: 5vh;
-     width: 9,5vw;
+     margin: 20%;
+     width: 50%;
+    }
+    button:hover{
+        background-color: blue;
+        width: 60%;
     }
 }
 
