@@ -58,40 +58,6 @@ export const Form = styled.form`
 
 `
 
-// export const Section = styled.div`
-//     align-items: center;
-//     margin-left: 60vh;
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-
-
-//     button{
-//      padding-right: 10vh;
-//      padding-left: 10vh;
-//      border-radius: 5px;
-     
-//     }
-//     button:hover{
-//      padding-right: 20vh;
-//      padding-left: 16vh;
-//      background-color: lightskyblue;
-//      color: white;
-//      border: none;
-     
-//     }
-
-// @media screen and (min-width: 350px)and (max-width: 800px){
-//     margin-left: 10vh;
-//     button:hover{
-//      padding: 3vh;
-//      background-color: lightskyblue;
-//      color: white;
-//      border: none;
-     
-//     }
-// }
-    
-// `
-
 export const Header = styled.header`
     background-image: url(${cabecalho});
     background-size: cover;

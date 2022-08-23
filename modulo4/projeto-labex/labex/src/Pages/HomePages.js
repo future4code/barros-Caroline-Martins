@@ -12,7 +12,7 @@ function Home() {
   const tripAdm = () => {
     navigate("/login")
   }
-  const [isLoading]=useRequestData()
+  const [data, isLoading]=useRequestData()
   return (
     <Main>
       <Conteiner>

@@ -1,9 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom"
 import { BASE_URL } from "../constants/constants";
 import { useProtectPage } from "../hooks/useProtectPage";
-import {DescricaoViagem, Main} from "./styleds/DetailsPageStyled"
+import { DescricaoViagem, Main } from "./styleds/DetailsPageStyled"
 
 function DetailsAdm() {
     //protecao de paginas
@@ -17,16 +17,19 @@ function DetailsAdm() {
     const [trip, setTrip] = useState({})
 
     const parametro = useParams()
-   
+
     const getTripDetail = () => {
         axios.get(`${BASE_URL}trip/${parametro.id}`, {
             headers: {
                 auth: localStorage.getItem("token")
             }
         }).then((response) => {
-            setTrip(response.data.trip)}).catch((erro) => { console.log(erro.data) })}
+            setTrip(response.data.trip)
+        }).catch((erro) => { console.log(erro.data) })
+    }
 
     useEffect(() => { getTripDetail() }, [])
+
     //requisicao para aprovar candidados
     const aprovado = (id) => {
         const body = {
@@ -54,7 +57,7 @@ function DetailsAdm() {
 
     return (
         <Main>
-            
+
             <h1>Viagens e Candidados</h1>
             <button onClick={lastPage}>Voltar</button>
             <DescricaoViagem>
@@ -65,10 +68,9 @@ function DetailsAdm() {
                 <h2>Data partida:</h2>
                 <h3>{trip.date}</h3>
             </DescricaoViagem>
-
-
             <section>
-            <h2> Candidatos Pendentes</h2>
+                <h1>Candidados</h1>
+                <h2>Pendentes</h2>
                 {trip.candidates && trip.candidates.map((i) => {
                     return (
                         <div>
@@ -84,20 +86,21 @@ function DetailsAdm() {
                     )
                 })}
             </section>
+
             {/* //map para ver candidatos aprovados */}
             <section>
-                <h3>Candidados aprovados</h3>
+                <h2>Aprovados</h2>
                 {trip.approved && trip.approved.map((i) => {
                     return (
                         <div>
                             <div >
-                                <p>Nome:{i.name}</p>
+
+                                <h4>{i.name}</h4>
                             </div>
                         </div>
                     )
                 })}
             </section>
-
 
         </Main >
     )
