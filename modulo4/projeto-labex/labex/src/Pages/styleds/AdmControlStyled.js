@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Main=styled.main`
     text-align: center;
     margin-top: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
 
     button{

@@ -19,6 +19,7 @@ function Home() {
         <div>
 
           {isLoading && <h1>...CARREGANDO...</h1>}
+          
           <h3>BEM-VIND@S</h3>
           <h3>Ao LabeX </h3>
           <h4>venha ter uma experiência de outro Planeta!</h4>

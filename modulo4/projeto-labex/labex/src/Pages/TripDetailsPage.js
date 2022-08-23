@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom"
 import { BASE_URL } from "../constants/constants";
 import { useProtectPage } from "../hooks/useProtectPage";
-import { DescricaoViagem, Main } from "./styleds/DetailsPageStyled"
+import { DescricaoViagem, Main, Section } from "./styleds/DetailsPageStyled"
 
 function DetailsAdm() {
     //protecao de paginas
@@ -54,6 +54,7 @@ function DetailsAdm() {
         }).then((response) => { alert("Candidato reprovado!") }
         ).catch((erro) => { alert("Ouve um problema!") })
     }
+    
 
     return (
         <Main>
@@ -68,12 +69,12 @@ function DetailsAdm() {
                 <h2>Data partida:</h2>
                 <h3>{trip.date}</h3>
             </DescricaoViagem>
-            <section>
+
+            <Section>
                 <h1>Candidados</h1>
-                <h2>Pendentes</h2>
-                {trip.candidates && trip.candidates.map((i) => {
-                    return (
-                        <div>
+                {trip.candidates && trip.candidates.length > 0 ?
+                    (trip.candidates && trip.candidates.map((i) => {
+                        return (<div>
                             <div >
                                 <p>{i.name}</p>
                                 <p>Profissão:{i.profession}</p>
@@ -82,25 +83,28 @@ function DetailsAdm() {
                                 <button onClick={() => aprovado(i.id)}>Aprovar</button>
                                 <button onClick={() => reprovado(i.id)}>Reprovar</button>
                             </div>
-                        </div>
+                        </div>)
+                    }
                     )
-                })}
-            </section>
+                    ) :
+                    (<h1>Não há candidados Pendentes</h1>)}
+            </Section>
 
             {/* //map para ver candidatos aprovados */}
-            <section>
-                <h2>Aprovados</h2>
-                {trip.approved && trip.approved.map((i) => {
-                    return (
-                        <div>
-                            <div >
-
-                                <h4>{i.name}</h4>
+            <Section>
+                {trip.approved && trip.approved.length > 0 ?
+                    (trip.approved && trip.approved.map((i) => {
+                        return (
+                            <div>
+                                <div >
+                                    <p>Aprovado</p>
+                                    <h4>{i.name}</h4>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </section>
+                        )
+                    })) :
+                    (<h1>Não há candidados Aprovados</h1>)}
+            </Section>
 
         </Main >
     )
