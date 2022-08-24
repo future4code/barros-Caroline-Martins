@@ -52,10 +52,6 @@ export const Form = styled.form`
         padding-bottom: 3%;
         border: none;
     }
-
-
-
-
 `
 
 export const Header = styled.header`
@@ -93,6 +89,4 @@ export const Header = styled.header`
             opacity: 0.7;
         }
     }
-     
-    
 `

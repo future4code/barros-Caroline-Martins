@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom"
 import useRequestData from "../hooks/useRequestData";
 import { BASE_URL } from "../constants/constants"
-import { Card, Header, Button, Carreg } from "./styleds/ListTripsStyled"
+import { Card, Button, Carreg, Main } from "./styleds/ListTripsStyled"
 
 
 
@@ -34,20 +34,20 @@ function ListaViagens() {
 
 
     return (
-        <main>
-            <Header>
+        <Main>
+            <div>
                 <h1>Viagens para tirar o Fôlego</h1>
                 <Button>
                     <button onClick={lastPage}>Voltar</button>
                     <button onClick={tripListViagem}>Inscreva-se</button>
                 </Button>
-            </Header>
+            </div>
 
             {isLoadingTrip && <Carreg>...CARREGANDO...</Carreg>}
             {!isLoadingTrip && cards}
             {!isLoadingTrip && !cards && erroTrip}
 
-        </main>
+        </Main>
     )
 }
 

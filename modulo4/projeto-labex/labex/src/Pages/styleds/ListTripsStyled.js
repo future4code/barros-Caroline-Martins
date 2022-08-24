@@ -1,8 +1,40 @@
 import styled from "styled-components";
-import astronauta from "../imagens/planetas.jpg"
+// import astronauta from "../imagens/planetas.jpg"
+import foguete from "../imagens/foqueteLabex.png"
+import mobile from "../imagens/foguetemobile.jpg"
+
+
+export const Main =styled.main`
+    background-image: url(${foguete});
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0 auto;
+    padding-bottom: 1%;
+
+
+    h1{
+        padding-top: 5%;
+        text-align: center;
+        color: white;  
+    }
+    @media screen and (min-width: 350px)and (max-width: 800px){
+        background-image: url(${mobile});
+        background-size: cover;
+
+        h1{
+        color: black;
+        padding-top: 5%;
+        background-color: white;
+        border-radius: 20px;
+        opacity: 0.7;
+        }
+    }
+`
 
 export const Card = styled.main`
-    border: 2px solid lightsteelblue;
+    background-color: white;
+    opacity: 0.7;
+    box-shadow: 0 0 1rem blue;
     border-radius: 10px;
     align-items: center;
     text-align: center;
@@ -10,33 +42,31 @@ export const Card = styled.main`
     margin-right: 25%;
     margin-top: 1%;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
-
 `
 
 
-export const Header = styled.header`
-    background-image: url(${astronauta});
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 30%;
-    text-align: center;
-    margin-top: 0;
-    padding-top: 2%;
+// export const Header = styled.header`
+//     background-image: url(${astronauta});
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     height: 30%;
+//     text-align: center;
+//     margin-top: 0;
+//     padding-top: 2%;
 
-    h1{
-        color: white;
-    }
-    @media screen and (min-width: 350px)and (max-width: 800px){
+//     h1{
+//         color: white;
+//     }
+//     @media screen and (min-width: 350px)and (max-width: 800px){
 
-        h1{
-            color: black;
-            background-color: white;
-            border-radius: 20px;
-            opacity: 0.7;
-        }
-    }
-`
+//         h1{
+//             color: black;
+            // background-color: white;
+            // border-radius: 20px;
+            // opacity: 0.7;
+//         }
+//     }
+// `
 
 export const Button = styled.div`
     display: flex;
