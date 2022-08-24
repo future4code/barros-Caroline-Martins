@@ -1,8 +1,6 @@
 import styled from "styled-components";
-// import astronauta from "../imagens/planetas.jpg"
 import foguete from "../imagens/foqueteLabex.png"
-import mobile from "../imagens/foguetemobile.jpg"
-
+import mobile from "../imagens/mobile.jpg"
 
 export const Main =styled.main`
     background-image: url(${foguete});
@@ -20,6 +18,7 @@ export const Main =styled.main`
     @media screen and (min-width: 350px)and (max-width: 800px){
         background-image: url(${mobile});
         background-size: cover;
+        background-position: 60%;
 
         h1{
         color: black;
@@ -43,30 +42,6 @@ export const Card = styled.main`
     margin-top: 1%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 `
-
-
-// export const Header = styled.header`
-//     background-image: url(${astronauta});
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     height: 30%;
-//     text-align: center;
-//     margin-top: 0;
-//     padding-top: 2%;
-
-//     h1{
-//         color: white;
-//     }
-//     @media screen and (min-width: 350px)and (max-width: 800px){
-
-//         h1{
-//             color: black;
-            // background-color: white;
-            // border-radius: 20px;
-            // opacity: 0.7;
-//         }
-//     }
-// `
 
 export const Button = styled.div`
     display: flex;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Sideral from "../imagens/gala.jpg"
 import SideralResp from "../imagens/sideral2.jpg"
+import labex from "../imagens/LabeX.png"
 
 export const Main = styled.main`
-   background-image: url(${Sideral});
+   background-image: url(${labex});
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: 80%;
    padding-top: 1px;
    padding-left: 1px;
    width: 98vw;
@@ -74,11 +75,11 @@ export const Conteiner = styled.div`
     }
     button{
      margin: 20%;
-     width: 50%;
+     width: 55%;
     }
     button:hover{
         background-color: blue;
-        width: 60%;
+        width: 65%;
     }
 }
 

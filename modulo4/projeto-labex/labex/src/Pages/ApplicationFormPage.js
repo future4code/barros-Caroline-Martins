@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-import { Form, Header } from "./styleds/FormUserStyled"
+import { Form, Header, Main } from "./styleds/FormUserStyled"
 import { BASE_URL } from "../constants/constants"
 import useRequestData from "../hooks/useRequestData";
 import {useForm}from "../hooks/useForms"
@@ -53,11 +53,13 @@ function FormUsuario() {
     }
 
     return (
-        <>
+        <Main>
             <Header>
+
                 <h1>Formulário de Inscrição</h1>
                 <button onClick={lastPage}>Voltar</button>
             </Header>
+          
             <Form onSubmit={onClickForm}>
                 <label htmlFor="name">Nome Completo</label>
                 <input type="text"
@@ -390,7 +392,7 @@ function FormUsuario() {
                 <button >Inscreva-se</button>
             </Form>
 
-        </>
+        </Main>
     )
 }
 

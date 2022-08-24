@@ -1,5 +1,19 @@
 import styled from "styled-components";
-import cabecalho from "../imagens/planetas.jpg"
+import astronauta from "../imagens/astronauta.jpg"
+
+
+export const Main=styled.main`
+    background-image: url(${astronauta});
+    background-size: cover;
+    text-align: center;
+    padding-bottom: 8%;
+
+
+    @media screen and (min-width: 350px)and (max-width: 800px){
+        background-position: 50%;
+    }
+
+`
 
 export const Form = styled.form`
     display: flex;
@@ -13,6 +27,8 @@ export const Form = styled.form`
     border-radius: 5%;
     
     label{
+        text-align: left;
+        color: white;
         height: 15%;
         padding-top: 4vh;
         font-weight: bold;
@@ -24,8 +40,10 @@ export const Form = styled.form`
         height: 50%;
         font-style: italic;
         border: none;
+        padding-left: 10%;
         margin-left: 2%;
         margin-right: 2%;
+        border-radius: 10px;
        
     }
     select{
@@ -34,6 +52,7 @@ export const Form = styled.form`
         border: none;
         margin-left: 2%;
         margin-right: 2%;
+        border-radius: 10px;
     }
     button{
         margin-top: 4%;
@@ -45,19 +64,15 @@ export const Form = styled.form`
         font-family: Georgia, 'Times New Roman', Times, serif;
         box-shadow: 0 0 1em blue;
         border: none;
+        align-items: center;
     }
     button:hover{
         background-color: lightskyblue;
-        padding-top: 3%;
-        padding-bottom: 3%;
         border: none;
     }
 `
 
 export const Header = styled.header`
-    background-image: url(${cabecalho});
-    background-size: cover;
-    height: 20vh;
     text-align: center;
     margin-top: 0;
     padding-top: 2%;
