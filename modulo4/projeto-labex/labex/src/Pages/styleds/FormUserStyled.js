@@ -7,6 +7,10 @@ export const Main=styled.main`
     background-size: cover;
     text-align: center;
     padding-bottom: 8%;
+    width: 100vw;
+    height: 100%;
+    margin-top: -2%;
+    margin-left: -2%;
 
 
     @media screen and (min-width: 350px)and (max-width: 800px){
@@ -19,7 +23,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 50%;
+    height: 60%;
     margin-left: 10%;
     margin-top: 5%;
     padding-bottom: 1%;

@@ -9,8 +9,10 @@ export const Main = styled.main`
    background-position: 80%;
    padding-top: 1px;
    padding-left: 1px;
-   width: 98vw;
-   height: 98vh;
+   width: 100vw;
+   height: 99vh;
+   margin-top: -1%;
+   margin-left: -1%;
    
 
    @media (min-width:350px) and (max-width: 1140px){

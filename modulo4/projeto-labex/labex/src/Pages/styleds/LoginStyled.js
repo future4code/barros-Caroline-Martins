@@ -6,8 +6,10 @@ export const Main=styled.main`
     background-image: url(${constelacao});
     background-repeat: no-repeat;
     background-size: cover;
-    width: 99vw;
-    height: 97vh;
+    width: 100vw;
+    height: 99vh;
+    margin-top: -1%;
+    margin-left: -1%;
     padding-top: 1px;
     font-family: Georgia, 'Times New Roman', Times, serif;
    
@@ -19,11 +21,11 @@ export const Main=styled.main`
         width: 35vw;
         padding-left: 50vh;
         padding-top: 5vh;
-        margin-top: 20vh;
+        margin-top: 25vh;
         background-color: white;
         margin-right: 20%;
         padding-right: 10%;
-        margin-left: 20%;
+        margin-left: 25%;
         padding-left: 10%;
         padding-bottom: 5vh;
         margin-bottom: 10vh;

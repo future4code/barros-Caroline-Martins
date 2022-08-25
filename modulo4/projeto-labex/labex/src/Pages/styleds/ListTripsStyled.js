@@ -6,8 +6,11 @@ export const Main =styled.main`
     background-image: url(${foguete});
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: 0 auto;
     padding-bottom: 1%;
+    width: 100vw;
+    height: 100%;
+    margin-top: -2%;
+    margin-left: -2%;
 
 
     h1{
@@ -18,7 +21,7 @@ export const Main =styled.main`
     @media screen and (min-width: 350px)and (max-width: 800px){
         background-image: url(${mobile});
         background-size: cover;
-        background-position: 60%;
+        background-position: 50%;
 
         h1{
         color: black;
@@ -39,7 +42,9 @@ export const Card = styled.main`
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 1%;
+    margin-top: 2%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 `
 
