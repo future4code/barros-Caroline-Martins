@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SideralResp from "../imagens/sideral2.jpg"
-import labex from "../imagens/LabeX.png"
+import labex from "../imagens/gala.jpg"
 
 export const Main = styled.main`
    background-image: url(${labex});
