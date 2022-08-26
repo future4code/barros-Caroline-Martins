@@ -13,7 +13,12 @@ Realizado no módulo de Frontend do curso de desenvolvimento Wep da Labenu.
 - Styled components.
 
 *Link:*
+https://tightfisted-space.surge.sh/
 
+
+###### Rodando em:
+- Desktop 
+- Mobile (testes realizados em: Iphone XR, Iphone 5/6/7, Android) 
 
 # Funcionalidades:
 Dividido em área privada (Administrativo) e área pública.
