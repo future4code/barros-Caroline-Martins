@@ -23,13 +23,6 @@ export const Main =styled.main`
         background-size: cover;
         background-position: 50%;
 
-        h1{
-        color: black;
-        padding-top: 5%;
-        background-color: white;
-        border-radius: 20px;
-        opacity: 0.7;
-        }
     }
 `
 

@@ -101,11 +101,6 @@ export const Header = styled.header`
         button{
             width: 25%;
         }
-        h1{
-            color: black;
-            background-color: white;
-            border-radius: 20px;
-            opacity: 0.7;
-        }
+       
     }
 `
