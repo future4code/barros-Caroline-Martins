@@ -10,7 +10,7 @@ function conversor(temperaturaCelsius, medida) {
         return(`${temperaturaCelsius}° Celsius é equivalente a ${kelvin}° Kelvin`)
     } if (medida !== "F" && medida !== "K"){
         return (`Erro. Parametro invalido ${medida}`)
-    }if( typeof Number === temperaturaCelsius ){
+    }else if( typeof temperaturaCelsius !==  "number" ){
         return(`ERRO. Parametro errado ${temperaturaCelsius}`)
     }
 }
