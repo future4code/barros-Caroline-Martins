@@ -3,7 +3,7 @@ console.log("Exercicio 4")
 
 type pokemon = {
 	name: string,
-  types: string,
+    types: string,
 	healthPoints: number
 }
 
@@ -28,14 +28,14 @@ const pokemon3: pokemon = {
 
 // b) Como você faria, já com a extensão instalada,
 //  para transpilar(converter) esse arquivo typescript em um arquivo javascript?
-
-// no meu arquivo package.json eu converto com o comando 
+//Resposta:
+// No meu arquivo package.json eu converto com o comando 
 //"start": "tsc && node ./build/exercicio1.js"
 
 //c) E se este arquivo estivesse dentro de uma pasta chamada src.
 // O processo seria diferente? Se sim, descreva as diferenças.
-
-// nas configurações vc vai ter que adicionar essa opção
+//Resposta:
+// Nas configurações vc vai ter essa opção (nas aspas voce pode definir o diretorio que quiser)
 // "rootDir": "./src" nela vc especifica o diretorio raiz e o proprio programa procura
 
 //d) Existe alguma maneira de transpilar múltilplos arquivos de uma vez só? Caso conheça, explique como fazer.

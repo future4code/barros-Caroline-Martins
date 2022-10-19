@@ -2,7 +2,7 @@ console.log("exercicio 1")
 
 // a) Crie uma variável minhaString do tipo string e atribua um valor a ela. 
 // Tente atribuir um número a esta variável. O que acontece?
-
+//Resposta:
 // Gera um erro pois ela espera somente uma string.
 
 // let minhaString: string = 30
@@ -10,7 +10,7 @@ console.log("exercicio 1")
 // b) Crie uma variável meuNumero do tipo number e atribua um valor numérico. 
 // Como fazer para que essa variável também aceite strings? 
 // Ou seja, como criamos no typescript uma variável que aceite mais de um tipo de valor?
-
+//Resposta:
 // usando o type aliases
 // que ficaria assim:
 let meuNumero: number | string = "caroline"
@@ -22,7 +22,7 @@ let meuNumero2: number | string = 28
 type Person={
     nome: string,
     idade: number,
-    corFavorita: string,
+    corFavorita: corFavorita,
 }
 // primeira parte:
 // const pessoa1: Person= {
