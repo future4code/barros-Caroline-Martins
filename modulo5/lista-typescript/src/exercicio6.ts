@@ -1,3 +1,5 @@
+import { ClientRequest } from "http";
+
 console.log("Exercicio 6");
 
 type Clients={
@@ -15,6 +17,22 @@ const ativos: Clients[]=[
 	{ cliente: "Soter", saldoTotal: 1200, debitos: [] }
 ]
 
-// function saldoNegativo(list:Clients[]):Clients[]{
+function saldoNegativo(list:Clients[]):Clients[]{
 
+    const debitosClientes= list.map((list)=>{
+        let debitos =  list.debitos.reduce((a:number, b:number)=> a + b, 0)
+        return {cliente: list.cliente, saldoTotal:(list.saldoTotal - debitos),debitos: []}
+    }).filter((i)=>{
+        return i.saldoTotal< 0 
+    })
+
+return debitosClientes
+}
+
+console.log(saldoNegativo(ativos));
+
+
+// for(let i = 0; i < list.length;i++ ){
+//   let debitosClientes=  list[i].debitos.reduce((a:number, b:number)=> a + b, 0)
 // }
+// return debitosClientes
