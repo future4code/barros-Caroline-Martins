@@ -1,12 +1,11 @@
 console.log("Exercicio 2");
 
 
-function qualquerCoisa(variavel: any):any{
-    const tipoVariavel= typeof variavel
-
-    return (tipoVariavel)
-
+function qualquerCoisa(variavel: any):void{
+    
+    console.log(typeof variavel)
 }
 
-console.log(qualquerCoisa("Carol"));
-console.log(qualquerCoisa(28));
+
+qualquerCoisa("Carol")
+qualquerCoisa(28)

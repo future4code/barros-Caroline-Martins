@@ -1,5 +1,3 @@
-import { ClientRequest } from "http";
-
 console.log("Exercicio 6");
 
 type Clients={

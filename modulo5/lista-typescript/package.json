@@ -10,7 +10,8 @@
     "start4": "tsc && node ./build/exercicio4.js",
     "start5": "tsc && node ./build/exercicio5.js",
     "start6": "tsc && node ./build/exercicio6.js",
-    "start7": "tsc && node ./build/exercicio7.js"
+    "start7": "tsc && node ./build/exercicio7.js",
+    "start8": "tsc && node ./build/exercicio8.js"
   },
   "keywords": [],
   "author": "Caroline Martins",
