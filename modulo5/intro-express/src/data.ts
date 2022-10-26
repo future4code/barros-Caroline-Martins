@@ -40,7 +40,7 @@ export const users: user[] = [
 
 type posts = {
     userId: string,
-    id: number,
+    id: string,
     title: string,
     body: string,
 
@@ -50,32 +50,39 @@ export const postagens: posts[] = [
     
     {
         userId: "1",
-        id: 1,
+        id:" 1",
         title: "Tudo posso basta não desistir",
         body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis"
     },
     {
         userId: "2",
-        id: 2,
+        id:" 2",
         title: "A beleza de tudo esta na natureza",
         body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto  quo et"
     },
     {
         userId: "3",
-        id: 3,
+        id: "3",
         title: "Vamos correr e brincar",
         body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto  quo et"
     },
     {
         userId: "4",
-        id: 4,
+        id: "4",
         title: "É isso ai!",
         body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto  quo et"
     },
     {
         userId:" 4",
-        id: 5,
+        id: "5",
+        title: "É isso ai!",
+        body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto  quo et"
+    },
+    {
+        userId:" 4",
+        id: "5",
         title: "É isso ai!",
         body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto  quo et"
     }
+
 ]
