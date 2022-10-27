@@ -2,7 +2,7 @@ console.log("EXERCICIOS ");
 import express, { Request, Response } from "express"
 import cors from 'cors'
 import { tarefas } from "./data"
-import { send } from "process";
+
 
 
 const app = express()
@@ -32,8 +32,10 @@ app.get("/tarefas", (req: Request, resp: Response) => {
     const status = req.query.completed
 
     const verificaStatus = tarefas.filter((statu) => {
-        if (statu.completed === status) {
-            return statu.title
+        if (status === "true") {
+            return statu.completed === true
+        } else if (status === "false") {
+            return statu.completed === false
         }
     })
 
@@ -73,6 +75,23 @@ app.post("/adicionar/tarefa", (req: Request, resp: Response) => {
 })
 
 //Exercicio 6
+
+app.put("/editar/:id", (req: Request, resp: Response) => {
+    const edit = Number(req.params.id)
+    console.log(edit);
+
+    if (!edit) {
+        resp.status(401).send("Verificar parametro")
+    }
+
+    for (let i = 0; i < tarefas.length; i++) {
+        if (tarefas[i].id === edit) {
+         tarefas[i].completed = !tarefas[i].completed
+        }
+    }
+
+    resp.status(201).send(tarefas)
+})
 
 
 app.listen(3000, () => {
