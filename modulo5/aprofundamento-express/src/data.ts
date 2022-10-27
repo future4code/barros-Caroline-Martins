@@ -8,13 +8,13 @@ type Afazeres = {
 export const tarefas: Afazeres[] = [
 
     {
-        userId:" 1",
+        userId:"1",
         id: 2,
         title: "Lavar louça",
         completed: false
     },
     {
-        userId:" 2",
+        userId:"2",
         id: 4,
         title: "Passear com o doguinho",
         completed: true
@@ -26,7 +26,7 @@ export const tarefas: Afazeres[] = [
         completed: true
     },
     {
-        userId:" 2",
+        userId:"2",
         id: 6,
         title: "Almoço",
         completed: false

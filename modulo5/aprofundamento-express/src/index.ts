@@ -53,14 +53,13 @@ app.post("/adicionar/tarefa", (req: Request, resp: Response) => {
     const idUser = req.headers.authorization
     const { title, completed } = req.body
 
-
     let nova = tarefas
+    
     if (!title || !completed) {
         resp.status(401).send("Verificar informações do body")
     } else if (!idUser) {
         resp.status(401).send("Verificar informações authorization")
     } else {
-
         nova.push({
             userId: idUser,
             id: Date.now(),
@@ -86,13 +85,56 @@ app.put("/editar/:id", (req: Request, resp: Response) => {
 
     for (let i = 0; i < tarefas.length; i++) {
         if (tarefas[i].id === edit) {
-         tarefas[i].completed = !tarefas[i].completed
+            tarefas[i].completed = !tarefas[i].completed
         }
     }
 
     resp.status(201).send(tarefas)
 })
 
+//Exercicio 7
+
+app.delete("/deletar", (req: Request, resp: Response) => {
+    const idDelet = Number(req.query.id)
+
+    if (!idDelet) {
+        resp.status(401).send("Verificar Id do usuario!")
+    }
+    const index = tarefas.findIndex((i) => {
+        return i.id === idDelet
+    })
+    tarefas.splice(index, 1)
+
+    resp.status(201).send(tarefas)
+})
+
+//Exercicio 8
+
+app.get("/user/tarefas", (req: Request, resp: Response) => {
+    const id = req.query.id
+
+    const verificaId = tarefas.find((i) => {
+        return i.userId === id
+    })
+
+    if (!id) {
+        resp.status(401).send("Verificar ID")
+    }
+    if (!verificaId) {
+        resp.status(401).send("Não possui esse ID!")
+    }
+    const tarefasUser = tarefas.filter((i) => {
+        return i.userId === id
+    })
+
+    resp.status(201).send(tarefasUser)
+})
+
+//Exercicio 9
+
+// link documentação criada
+
+//https://documenter.getpostman.com/view/22368156/2s8YK6MSHb
 
 app.listen(3000, () => {
     console.log("Server is running in http://localhost:3000");
