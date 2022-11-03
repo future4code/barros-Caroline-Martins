@@ -56,23 +56,27 @@ app.get("/produtos", (req: Request, resp: Response) => {
 
 //EXERCICIO 6
 
-//LOGICA NÃO TESTADA
 // app.put("/editar/:id", (req: Request, resp: Response) => {
 //     const edit = req.params.id
-//     const {name, price}= body 
-//     console.log(edit);
+//     const { price } = req.body
+//     const editarProdutc = Produtc.filter((i) => {
+//         i.id === edit
+//     })
 
 //     if (!edit) {
 //         resp.status(401).send("Verificar parametro")
 //     }
-
 //     for (let i = 0; i < Produtc.length; i++) {
 //         if (Produtc[i].id === edit) {
-//             Produtc[i].price 
+//             Produtc[i].price = price
+//             editarProdutc.push(...Produtc)
+
 //         }
 //     }
 
-//     resp.status(201).send(Produtc)
+//     resp.status(201).send(editarProdutc)
+//     console.log(editarProdutc);
+
 // })
 
 // EXERCICIO 7
@@ -103,27 +107,33 @@ app.post("/novo/produto", (req: Request, resp: Response) => {
             const erro = new Error("Não possui token de authorization ")
             erro.name = "produtcInvalid"
             throw erro
-        } if (!name) {
+        }
+        if (!name) {
             const erro = new Error("Não possui name.")
             erro.name = "produtcInvalid"
             throw erro
-        } if (!price) {
+        }
+        if (!price) {
             const erro = new Error("Não possui preço.")
             erro.name = "produtcInvalid"
             throw erro
-        } if (typeof name !== "string") {
+        }
+        if (typeof name !== "string") {
             const erro = new Error("Nome deve ser uma string.")
             erro.name = "produtcInvalid"
             throw erro
-        } if (typeof price !== "number") {
+        }
+        if (typeof price !== "number") {
             const erro = new Error("Preço dever ser um número.")
             erro.name = "produtcInvalid"
             throw erro
-        } if (price < 0) {
+        }
+        if (price < 0) {
             const erro = new Error("Preço deve ser maior que 0(ZERO).")
             erro.name = "produtcInvalid"
             throw erro
-        } else {
+        }
+        else {
             let newProduct = Produtc
             newProduct.push({
                 id: Date.now().toString(),
@@ -144,46 +154,61 @@ app.post("/novo/produto", (req: Request, resp: Response) => {
 
 //EXERCICIO 9
 
-app.put("/editar/:id", (req: Request, resp: Response) => {
+//REFATURAR EXERCICIO 6
+
+app.put("/editar/preco/:id", (req: Request, resp: Response) => {
     const edit = req.params.id
     const { price } = req.body
+    console.log(price , edit);
 
     try {
-        const produto = Produtc.filter(item => item.id === edit)
+        const editarProdutc = Produtc.filter((i) => { i.id === edit })
 
-        if (!edit) {
+        if (!edit ) {
             const erro = new Error("Não possui ID.")
             erro.name = "IdNot"
             throw erro
-        } if (produto.length === 0) {
-            const erro = new Error("Não possui preço ou name")
-            erro.name = "ProductNot"
+        }
+        // if (editarProdutc.length = 0) {
+        //     const erro = new Error("Não possui esse produto, por favor verificar ID")
+        //     erro.name = "ProductNot"
+        //     throw erro
+        // }
+        if (!price || price === undefined ) {
+            const erro = new Error("Não possui preço")
+            erro.name = "PriceUndefined"
             throw erro
-        } if (!price) {
-            const erro = new Error("Não possui preço ou name")
-            erro.name = "ProductNot"
-            throw erro
-        } if (typeof price !== "number") {
+        }
+        if (typeof price !== 'number') {
             const erro = new Error("Preço deve ser um numero.")
             erro.name = "PriceNot"
             throw erro
-        } if (price >= 0) {
-            const erro = new Error("Preço dever ser maior que 0(zero).")
-            erro.name = "PriceNot"
-            throw erro
-        } else {
-            for (let i = 0; i < Produtc.length; i++) {
-                if (Produtc[i].id === edit) {
-                    Produtc[i].price
-                }
-            }
         }
+        if (price < 0) {
+            const erro = new Error("Preço dever ser maior que 0(zero).")
+            erro.name = "Price"
+            throw erro
+        }
+
+        for (let i = 0; i < Produtc.length; i++) {
+            if (Produtc[i].id === edit) {
+                Produtc[i].price = price
+                editarProdutc.push(...Produtc)
+                console.log(editarProdutc);
+            }
+            resp.status(201).send(editarProdutc)
+        }
+
     } catch (er: any) {
-        if (e.name === "IdNot") {
+        if (er.name == "IdNot") {
             resp.status(404).send(er.message)
-        } if (e.name === "PriceNot") {
+        }if (er.name === "PriceNot") {
             resp.status(422).send(er.message)
-        } if (e.name === "ProductNot") {
+        }  if (er.name === "ProductNot") {
+            resp.status(422).send(er.message)
+        } if(er.name === "PriceUndefined"){
+            resp.status(422).send(er.message)
+        } if (er.name === "Price") {
             resp.status(422).send(er.message)
         }
     }
