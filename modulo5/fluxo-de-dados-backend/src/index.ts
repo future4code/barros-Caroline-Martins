@@ -156,49 +156,53 @@ app.get("/produtos", (req: Request, resp: Response) => {
 
 //REFATURAR EXERCICIO 6
 
-app.po("/editar/preco/:id", (req: Request, resp: Response) => {
+
+app.put("/editar/preco/:id", (req: Request, resp: Response) => {
     const edit = req.params.id
     const { price } = req.body
-    console.log(price , edit);
 
+   
     try {
-        const editarProdutc = Produtc.filter((i) => { i.id === edit })
-        // console.log(editarProdutc);
-        // if (!edit ) {
-        //     const erro = new Error("Não possui ID.")
-        //     erro.name = "IdNot"
-        //     throw erro
-        // }
+        const editarProdutc = Produtc.find((i) => { return i.id === edit })
+        console.log(editarProdutc);
+        
+        if (!edit ) {
+            const erro = new Error("Não possui ID.")
+            erro.name = "IdNot"
+            throw erro
+        }
         // if (editarProdutc.length = 0) {
         //     const erro = new Error("Não possui esse produto, por favor verificar ID")
         //     erro.name = "ProductNot"
         //     throw erro
         // }
-        // if (!price || price === undefined ) {
-        //     const erro = new Error("Não possui preço")
-        //     erro.name = "PriceUndefined"
-        //     throw erro
-        // }
-        // if (typeof price !== 'number') {
-        //     const erro = new Error("Preço deve ser um numero.")
-        //     erro.name = "PriceNot"
-        //     throw erro
-        // }
-        // if (price < 0) {
-        //     const erro = new Error("Preço dever ser maior que 0(zero).")
-        //     erro.name = "Price"
-        //     throw erro
-        // }
+        if (!price || price === undefined ) {
+            const erro = new Error("Não possui preço")
+            erro.name = "PriceUndefined"
+            throw erro
+        }
+        if (typeof price !== 'number') {
+            const erro = new Error("Preço deve ser um numero.")
+            erro.name = "PriceNot"
+            throw erro
+        }
+        if (price < 0) {
+            const erro = new Error("Preço dever ser maior que 0(zero).")
+            erro.name = "Price"
+            throw erro
+        }
 
         for (let i = 0; i < Produtc.length; i++) {
             if (Produtc[i].id === edit) {
-                Produtc[i].price = price
-                editarProdutc.push(...Produtc)
-                console.log(editarProdutc);
+               Produtc[i].price = price
+                // editarProdutc.push(...Produtc)
+             
             }
-            resp.status(201).send(editarProdutc)
         }
-
+        
+        resp.status(201).send(Produtc)
+        console.log(Produtc);
+        
     } catch (er: any) {
         if (er.name == "IdNot") {
             resp.status(404).send(er.message)
@@ -216,37 +220,38 @@ app.po("/editar/preco/:id", (req: Request, resp: Response) => {
 
 //EXERCICIO 10
 
-// app.delete("/deletar", (req: Request, resp: Response) => {
-//     const idDelet = req.query.id
-//     try {
-//         const filtro = Produtc.filter((i) => {
-//             i.id === idDelet
-//         })
-//         if (filtro.length === 0) {
-//             const erro = new Error("Não possui no array")
-//             erro.name = "IdNotLength"
-//             throw erro
-//         } if (!idDelet) {
-//             const erro = new Error("Não possui ID")
-//             erro.name = "IdNot"
-//             throw erro
-//         }
-//         const index = Produtc.findIndex((i) => {
-//             return i.id === idDelet
-//         })
-//         Produtc.splice(index, 1)
+app.delete("/deletar", (req: Request, resp: Response) => {
+    const idDelet = req.query.id
+    try {
+        const filtro = Produtc.filter((i) => {
+            i.id === idDelet
+        })
+        if (filtro.length = 0) {
+            const erro = new Error("Não possui no array")
+            erro.name = "IdNotLength"
+            throw erro
+       } 
+        if (!idDelet) {
+            const erro = new Error("Não possui ID")
+            erro.name = "IdNot"
+            throw erro
+        }
+        const index = Produtc.findIndex((i) => {
+            return i.id === idDelet
+        })
+        Produtc.splice(index, 1)
 
-//         resp.status(201).send(index)
-//     } catch (er: any) {
-//         if (er.name === "IdNot") {
-//             resp.status(404).send(er.message)
-//         } if (er.name === "IdNotLength") {
-//             resp.status(404).send(er.message)
-//         }
+        resp.sendStatus(201).status(index)
 
-//     }
+    } catch (er: any) {
+        if (er.name === "IdNot") {
+            resp.status(404).send(er.message)
+        } if (er.name === "IdNotLength") {
+            resp.status(404).send(er.message)
+        }
+    }
 
-// })
+})
 
 
 
