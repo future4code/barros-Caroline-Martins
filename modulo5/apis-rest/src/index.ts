@@ -26,7 +26,7 @@ app.get("/users", (req: Request, resp: Response) => {
 
 
 //EXERCICIO 2
-app.get("/user/", (req: Request, resp: Response) => {
+app.get("/users/user/", (req: Request, resp: Response) => {
     let errorCode = 400
     try {
         const typeUser = req.query.type as string;
@@ -55,7 +55,7 @@ app.get("/user/", (req: Request, resp: Response) => {
 })
 
 //EXERCICIO 3
-app.get("/user/name",(req: Request, resp: Response )=>{
+app.get("/users/user/name",(req: Request, resp: Response )=>{
     let errorCode= 400
     try{
         const name= req.query.name as string
@@ -76,7 +76,7 @@ resp.status(200).send(userName)
 
 //EXERCICIO 4
 
-app.put("/new/user",(req: Request, resp: Response)=>{
+app.put("/users/new/user",(req: Request, resp: Response)=>{
     let errorCode = 400
     try{
         const {name, email, type, age} = req.body
@@ -121,16 +121,14 @@ app.put("/new/user",(req: Request, resp: Response)=>{
 
 //EXERCICIO 7
 
-app.delete("/delete/:id", (req:Request, resp:Response) => {
+app.delete("/users/delete/:id", (req:Request, resp:Response) => {
     let errorCode = 400
     try{
-        const delet = Number(req.path)
+        const delet = Number(req.params.id)
 
         const deleteUser = users.filter((i)=>{
             return i.id === delet
         })
-       
-        
         if(deleteUser.length = 0){
             errorCode = 404
             throw new Error("Não possui esse usuario.");
@@ -139,7 +137,6 @@ app.delete("/delete/:id", (req:Request, resp:Response) => {
         const indexUser = users.findIndex((i) => {
             return i.id === delet
         })
-
         users.splice(indexUser, 1)
     console.log(indexUser);
 
