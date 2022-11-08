@@ -110,11 +110,43 @@ Terminamos de fazer um belo estudo sobre a tabela de Atores. Agora, você vai fi
 a) Escreva a query que cria essa tabela. Para sinopse, utilize o tipo TEXT, pesquise sobre ele se precisar.
 
 create table Movie (
-	id VARCHAR(250) PRIMARY KEY,  *id obrigatorio*
-    title varchar(150) NOT null, 
-    sinopse text not null,
-    release_date datetime not null,
-    spots int2 not null
+	id VARCHAR(250) PRIMARY KEY,  /*id obrigatorio*/
+    title varchar(150) NOT null, /*titulo maximo de 150 caracteres, obrigatorio*/
+    sinopse text not null, /*sinopse como texto caracteres ilimitados*/
+    release_date datetime not null, /*data, obrigatorio*/
+    spots int2 not null /*avaliação com numeros inteiros*/
 );
 
+b) *adicionar ao table*
 
+###### EXERCICIO 6
+
+Escreva uma query que:
+
+a) Retorne o id, título e avaliação a partir de um id específico;
+*select id,title,spots from Movie where id= "001";*
+
+b) Retorne um filme a partir de um nome específico;
+*select * from Movie where title = "se eu fosse você";*
+
+c) Retorne o id, título e sinopse dos filmes com avaliação mínima de 7
+*select id,title,sinopse from Movie where spots = 7;*
+
+
+###### EXERCICIO 7
+
+a) Retorna um filme cujo título contenha a palavra vida.
+
+*select title from Movie where (title like "%vida%")*
+
+b) Realize a pesquisa de um filme, ou seja: pesquise se o termo de busca está contido no título ou na sinopse. Utilize qualquer TERMO DE BUSCA para exemplificar.
+
+*select * from Movie WHERE title LIKE "%termo de busca%" OR sinopse LIKE "%termo de busca%";*
+
+c) Procure por todos os filmes que já tenham lançado
+
+*select * from Movie where release_date < curdate();*
+
+d) Procure por algum filme que já tenha lançado, com o termo de busca contido no título ou sinopse e com a avaliação maior do que 7. 
+
+*select * from Movie WHERE (title LIKE "%termo de busca%" OR sinopse LIKE "%termo de busca%") and release_date < curdate() and spots = 7;*
