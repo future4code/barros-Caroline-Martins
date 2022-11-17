@@ -13,14 +13,31 @@ As avaliações estão diretamente relacionadas aos filmes. Cada filme pode ter 
 
 a) Explique o que é uma chave estrangeira
 
+*uma chave de outra tabela, estrangeira vem de fora*
+
 b) Crie a tabela e, ao menos, uma avaliação para cada um dos filmes
+
+*INSERT INTO NOME_DA_TABELA (id, comment, rate, movie_id) </BR>
+VALUES ( "001", "Muito bom!", 7, "004" );*</BR>
+
+*INSERT INTO NOME_DA_TABELA (id, comment, rate, movie_id) </BR>
+VALUES ( "002", "Muito engraçado!", 7, "003" );*</BR>
+
+*INSERT INTO Rating (id, comment, rate, movie_id) </BR>
+VALUES ("004","Maravilhoso!",10,"002");*</BR>
 
 c) Tente criar uma avaliação para um filme que não existe (ou seja, um id inválido). Anote e explique o resultado da query.
 
+*deu erro como key primary não existe*
+
 d) Altere a tabela de filmes para que ela não tenha mais uma coluna chamada rating.
+
+*ALTER TABLE  Movie DROP COLUMN  rating;*
 
 e) Tente apagar um filme que possua avaliações. Anote e explique o resultado da query.
 
+*NÃO é possivel pois possui uma chave estrangeira*
+*Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`jbl-4416152-caroline-martins`.`Rating`, CONSTRAINT `Rating_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `Movie` (`id`))*
 
 ## EXERCICIO 2
 
@@ -37,11 +54,22 @@ Essa relação é normalmente representada por uma tabela de relação. No nosso
 
 a) Explique, com as suas palavras, essa tabela
 
+*Criou uma tabela com os filmes e atores onde esta passando uma chave estrangeira do filme e dos atores*
+
 b) Crie, ao menos, 6 relações nessa tabela
+
+*6 VEZES COM IDs DIFERENTES*
+*INSERT INTO MovieCast (movie_id, actor_id)</BR>
+VALUES("004", "001");*</BR>
+
 
 c) Tente criar uma relação com um filme ou um ator inexistente. Anote e explique o resultado da query
 
+*error code 1452... Não possui o key referente*
+
 d) Tente apagar um ator que possua uma relação nessa tabela. Anote e explique o resultado da query
+
+*error code 1451... Não possui o key refere*
 
 
 ## EXERCICIO 3
@@ -55,4 +83,10 @@ INNER JOIN Rating ON Movies.id = Rating.movie_id;*
 
 a) Explique, com suas palavras, a query acima. O que é o operador `ON`?
 
+*Seria um tipo de AONDE... selecione AONDE e a correspodente*
+
 b) Escreva uma query que retorne somente o nome, id e nota de avaliação dos filmes que já foram avaliados.
+
+*SELECT m.id as movie_id, r.rate as rating FROM Movie m </BR>
+INNER JOIN Rating r ON m.id = r.movie_id;*
+**NÃO ENTENDI ESSA PARTE**
