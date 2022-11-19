@@ -42,9 +42,8 @@ app.get("/users/:id", async (req: Request, res: Response): Promise<any> => {
 
 // b)) Faça uma função que busque um ator pelo nome;
 
-app.get("/actor", async (req: Request, res: Response): Promise<any> => {
+app.get("/actors", async (req: Request, res: Response): Promise<any> => {
     const nome = req.query.nome as string
-    console.log(nome);
     let result;
     try {
         if (!nome) {
@@ -55,14 +54,9 @@ app.get("/actor", async (req: Request, res: Response): Promise<any> => {
             SELECT * FROM Actor WHERE nome = "${nome}"
           `)
         }
-        console.log(result);
-
         res.status(200).send(result[0])
     } catch (er: any) {
         res.status(er).send(er.message)
-        console.log(er.message)
-            ;
-
     }
 })
 
@@ -79,12 +73,12 @@ app.get("/actor/gender", async (req: Request, res: Response): Promise<void> => {
             errorCode = 422;
             result = await connection.raw(`select * FROM Actor`)
         }
-        if(gender !== "male" && gender!== "famale"){
+        if (gender !== "male" && gender !== "famale") {
             errorCode = 422;
-            throw new Error("Não possui esse genero, por favor informar male ou female");   
+            throw new Error("Não possui esse genero, por favor informar male ou female");
         }
 
-       result = await connection.raw(`
+        result = await connection.raw(`
             SELECT COUNT(*) as count FROM Actor WHERE gender = "${gender}"
         `);
 
@@ -103,16 +97,15 @@ app.get("/actor/gender", async (req: Request, res: Response): Promise<void> => {
 
 //a)Uma função que receba um salário e um id e realiza a atualização do salário do ator em questão
 
-app.put("/salary", async (req:Request, res:Response):Promise<void> => {
-    const {salary, id} = req.body;
-
+app.put("/salary", async (req: Request, res: Response): Promise<void> => {
+    const { salary, id } = req.body;
     let errorCode = 400;
-    try{
-        if(!salary || !id){
+    try {
+        if (!salary || !id) {
             errorCode = 422;
-            throw new Error("Parametros incorretos"); 
+            throw new Error("Parametros incorretos");
         }
-         await connection("Actor").update({
+        await connection("Actor").update({
             salary: salary
         }).where({
             id: id
@@ -120,91 +113,205 @@ app.put("/salary", async (req:Request, res:Response):Promise<void> => {
 
         res.status(200).send("Salario modificado com sucesso!")
 
-    }catch(erro: any){
+    } catch (erro: any) {
         res.status(errorCode).send(erro.message);
     }
 })
 
 //b)Uma função que receba um id e delete um ator da tabela
 
+app.delete("/delete/:id", async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id
+    let errorCode = 400;
 
-app.delete("/delete/:id", async (req:Request, res:Response):Promise<void> => {
-        const id = req.params.id
-        let errorCode = 400;
+    try {
+        if (!id) {
+            errorCode = 422;
+            throw new Error("Não possui parametro ID.");
+        }
 
-        try{
-            if(!id){
-                errorCode = 422;
-                throw new Error("Não possui parametro ID.");
-            }
-
-            const verificaId = await connection.raw(`
+        const verificaId = await connection.raw(`
                 select id from Actor where id = ${id}
             `)
-            if( verificaId[0].length === 0 ){
-                errorCode = 422;
-                throw new Error("Não possui esse ID de cadastro.");
-                
-            }
-            //desativar a checagem de chave estrangeria 
-            await connection.raw(`
+        if (verificaId[0].length === 0) {
+            errorCode = 422;
+            throw new Error("Não possui esse ID de cadastro.");
+        }
+        //desativar a checagem de chave estrangeria 
+        await connection.raw(`
             set foreign_key_checks = 0;
             `)
-            await connection("Actor").delete().where( {id:id})
+        await connection("Actor").delete().where({ id: id })
 
-            res.status(201).send("Ator deletado.")
+        res.status(201).send("Ator deletado.")
 
-        }catch(erro: any){
-            res.status(errorCode).send(erro.message)
-        }
+    } catch (erro: any) {
+        res.status(errorCode).send(erro.message)
+    }
 
 })
 
 //c) Uma função que receba um gender e devolva a média dos salários de atrizes ou atores desse gender
 
-app.get("/salary/:gender", async (req:Request, res:Response):Promise<void>=>{
+app.get("/salary/:gender", async (req: Request, res: Response): Promise<void> => {
     const gender = req.params.gender;
     let errorCode = 400;
     let result;
 
-    try{
-        if(!gender){
+    try {
+        if (!gender) {
             errorCode = 422
             throw new Error("Não possui parametro");
         }
-        if(gender !== "male" && gender !== "female"){
+        if (gender !== "male" && gender !== "female") {
             errorCode = 422;
             throw new Error("Por favor inserir female ou male.");
         }
         result = await connection("Actor").avg("salary as average").where({ gender })
         console.log(result);
-        
+
         res.status(200).send(`A media salarial é de ${result[0].average}`)
 
-    }catch(erro:any){
-            res.status(erro).send(erro.message)
+    } catch (erro: any) {
+        res.status(erro).send(erro.message)
     }
 })
 
 
+// ---- EXERCICIO 3 ----
+
+//a) Crie um endpoint com as especificações abaixo
+//Queremos criar um método GET que receba como *path param* o *id* do ator cujas informações queremos pegar. Para isso, devemos:
+
+//- Usar o método  `get` do express
+//- Definir o *path param* com a **chave id: 
+//`/actor/:id`.** Dessa forma, poderemos acessar o endpoint assim: `http://localhost:3000/user/id-do-usuario`
+
+app.get("/actor/:id", async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string
+    let errorCode = 400;
+    let result;
+
+    try {
+        if (!id) {
+            errorCode = 422;
+            throw new Error("Não possui parametro.");
+        }
+        const verificaId = await connection.raw(`
+                select id from Actor where id = ${id}
+        `)
+        if (verificaId[0].length === 0) {
+            errorCode = 422;
+            throw new Error("Não possui esse ID de cadastro.");
+        }
+
+        result = await connection("Actor").where({ id })
+
+        res.status(200).send(result);
+    } catch (erro: any) {
+        res.status(erro).send(erro.message)
+    }
+})
 
 
+//b) Crie um endpoint agora com as seguintes especificações:
+
+// - Deve ser um GET (`/actor`)
+// - Receber o gênero como um *query param* (`/actor?gender=`)
+// - Devolver a quantidade de atores/atrizes desse gênero
+
+app.get("/actor", async (req: Request, resp: Response): Promise<void> => {
+    const gender = req.query.gender;
+    let errorCode = 400;
+    let result
+
+    try {
+        if (!gender) {
+            errorCode = 422;
+            throw new Error("Não possui parametro.");
+        }
+
+        result = await connection("Actor").count("*").where({ gender: gender })
+
+        resp.status(200).send(result)
+
+    } catch (erro: any) {
+        resp.status(erro).send(erro.message)
+    }
+})
+
+// ---- EXERCICIO 4 ----
+
+//- a) Endpoint para atualizar salário com id
+//- Deve ser um PUT (`/actor`)
+//- Receber o salário e o id pelo body
+// - Simplesmente atualizar o salário do ator com id em questão
+
+app.put("/actor", async (req: Request, res: Response): Promise<void> => {
+    const { salary, id } = req.body;
+
+    let errorCode = 400;
+    try {
+        if (!salary || !id) {
+            errorCode = 422;
+            throw new Error("Parametros incorretos");
+        }
+        const verificaId = await connection.raw(`
+                select id from Actor where id = ${id}
+        `)
+        if (verificaId[0].length === 0) {
+            errorCode = 422;
+            throw new Error("Não possui esse ID de cadastro.");
+        }
+
+        await connection("Actor").update({
+            salary: salary
+        }).where({
+            id: id
+        })
+
+        res.status(200).send("Salario modificado com sucesso!")
+
+    } catch (erro: any) {
+        res.status(errorCode).send(erro.message);
+    }
+})
 
 
+//- b) Endpoint para deletar ator da tabela
+// - Deve ser um DELETE (`/actor/:id`)
+// - Receber id do ator como *path param*
+// - Simplesmente deletar o ator da tabela
 
 
+app.delete("/actor/:id", async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id
+    let errorCode = 400;
+    try {
+        if (!id) {
+            errorCode = 422;
+            throw new Error("Não possui parametro ID.");
+        }
 
+        const verificaId = await connection.raw(`
+            select id from Actor where id = ${id}
+        `)
+        if (verificaId[0].length === 0) {
+            errorCode = 422;
+            throw new Error("Não possui esse ID de cadastro.");
+        }
+        //desativar a checagem de chave estrangeria 
+        await connection.raw(`
+        set foreign_key_checks = 0;
+        `)
+        await connection("Actor").delete().where({ id: id })
 
+        res.status(201).send("Ator deletado.")
 
-
-
-
-
-
-
-
-
-
+    } catch (erro: any) {
+        res.status(errorCode).send(erro.message)
+    }
+})
 
 
 app.listen(3003, () => {
