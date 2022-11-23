@@ -5,7 +5,7 @@ export type user = {
     type: userType
 }
 
-enum userType {
+export enum userType {
     TEACHER = "teacher",
     OPERATIONS= "operations",
     CX= "cx"

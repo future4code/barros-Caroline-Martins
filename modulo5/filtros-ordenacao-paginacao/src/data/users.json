@@ -3,150 +3,150 @@
         "id": 1,
         "name": "Soter",
         "email":"soter@labenu",
-        "type": "userType.TEACHER"
+        "type": "TEACHER"
     },
     {
         "id": 2 ,
         "name": "João",
         "email": "joao@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id": 3 ,
         "name":"Paula",
         "email":"paula@labenu",
-        "type": "userType.TEACHER"
+        "type": "TEACHER"
     },
     {
         "id": 4,
         "name":"Amanda",
         "email":"amanda@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id": 5,
         "name":"Darvas",
         "email":"darvas@labenu",
-        "type": "userType.TEACHER"
+        "type": "TEACHER"
     },
     {
         "id":6,
         "name":"Severo",
         "email":"severo@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id":7 ,
         "name":"Caio",
         "email":"caio@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id":8,
         "name":"Chijo",
         "email":"chijo@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id": 9,
         "name":"Lais",
         "email":"lais@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id":10,
         "name":"Bruno",
         "email":"bruno@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id":11,
         "name":"Luciano",
         "email":"luciano@labenu",
-        "type":"userType.TEACHER"
+        "type":"TEACHER"
     },
     {
         "id":12,
         "name":"Miau",
         "email":"miau@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":13,
         "name":"Sekine",
         "email":"sekine@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":14,
         "name":"Nathalia",
         "email":"nathalian@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":15,
         "name":"Amanda",
         "email":"amandao@labenu",
-        "type":"userType.OPERATIONS"
+        "type":".OPERATIONS"
     },
     {
         "id":16,
         "name":"Rebeca",
         "email":"rebeca@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":17,
         "name":"Jean",
         "email":"jean@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":18,
         "name":"Vitória",
         "email":"vitoria@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":19,
         "name":"Fernanda",
         "email":"fernanda@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":20,
         "name":"Tainah",
         "email":"tainah@labenu",
-        "type":"userType.OPERATIONS"
+        "type":"OPERATIONS"
     },
     {
         "id":21,
         "name":"Aline",
         "email":"aline@labenu",
-        "type":"userType.CX"
+        "type":"CX"
     },
     {
         "id":22,
         "name":"Nathalia",
         "email":"nathaliacx@labenu",
-        "type":"userType.CX"
+        "type":"CX"
     },
     {
         "id":23,
         "name":"Layla",
         "email":"layla@labenu",
-        "type":"userType.CX"
+        "type":"CX"
     },
     {
         "id":24,
         "name":"Jonathan",
         "email":"jonathan@labenu",
-        "type":"userType.CX"
+        "type":"CX"
     },
     {
         "id":25,
         "name":"Maju",
         "email":"maju@labenu",
-        "type":"userType.CX"
+        "type":"CX"
     }
 ]
