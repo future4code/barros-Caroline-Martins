@@ -1,6 +1,5 @@
 [
     {
-        "id": "1",
         "cep":"12110115" ,
         "logradouro": "Av. das Rendeiras" ,
         "numero": 100,
@@ -10,7 +9,6 @@
         "estado": "SC"
     },
     {
-        "id": "2",
         "cep": "01100110",
         "logradouro": "Rua dos Devs com sonhos",
         "numero": 88,

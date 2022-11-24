@@ -1,10 +1,16 @@
 import axios from "axios"
 
-async function getAddres(cep:string) {
+async function getAddress(cep:string) {
     try{
     const {data} = await axios.get(`https://viacep.com.br/ws/${cep}/json`)
-
-    return `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+    
+    return {
+        cep: data.cep,
+        logradouro: data.logradouro,
+        bairro: data.bairro,
+        cidade: data.localidade,
+        estado: data.uf
+    }
     
     }catch(erro: any){
         throw new Error(erro);
@@ -12,4 +18,4 @@ async function getAddres(cep:string) {
     
 }
 
-export default getAddres;
+export default getAddress;

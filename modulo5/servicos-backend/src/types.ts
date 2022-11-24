@@ -1,5 +1,4 @@
-export type User = {
-    id: string,
+export type Address = {
     cep: string,
     logradouro: string,
     numero: number,

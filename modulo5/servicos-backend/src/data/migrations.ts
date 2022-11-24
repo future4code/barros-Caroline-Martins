@@ -6,7 +6,6 @@ const printError = (error: any) => { console.log(error.sqlMessage || error.messa
 const createTables =()=> connection
 .raw(`
   CREATE TABLE user_address (
-      id VARCHAR(255) PRIMARY KEY ,
       cep VARCHAR(9) NOT NULL,
       logradouro VARCHAR(255) NOT NULL,
       numero VARCHAR(255) NOT NULL,
