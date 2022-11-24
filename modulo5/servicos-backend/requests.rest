@@ -1,0 +1,5 @@
+GET  https://viacep.com.br/ws/88131573/json/
+Content-Type: application/json
+
+###
+

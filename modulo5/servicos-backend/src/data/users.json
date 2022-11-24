@@ -1,0 +1,24 @@
+[
+    {
+        "id": "1",
+        "cep":"12110115" ,
+        "logradouro": "Av. das Rendeiras" ,
+        "numero": 100,
+        "complemento":"casa",
+        "bairro":"Barra da Lagoa",
+        "cidade":"Florianopolis" ,
+        "estado": "SC"
+    },
+    {
+        "id": "2",
+        "cep": "01100110",
+        "logradouro": "Rua dos Devs com sonhos",
+        "numero": 88,
+        "complemento":"casa",
+        "bairro":"Do Esforço",
+        "cidade": "Desenvolverores",
+        "estado": "DV"
+    }
+
+
+]
