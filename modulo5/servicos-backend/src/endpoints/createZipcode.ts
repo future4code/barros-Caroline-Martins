@@ -11,7 +11,7 @@ export default async function createZipcode(req: Request, res: Response): Promis
             INSERT INTO user_address (cep, logradouro, numero, complemento, bairro, cidade, estado)
             VALUES ('${cep}', '${logradouro}', '${numero}', '${complemento}', '${bairro}', '${cidade}', '${estado}')
         `);
-        console.log(insertInfo)
+        
         res.status(200).send("usuario criado!")
 
     } catch (erro: any) {
