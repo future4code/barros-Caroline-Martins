@@ -1,4 +1,6 @@
-export class User{
+import { users } from "../database/data";
+
+export class User {
     private id: string;
     private email: string;
     private password: string;
@@ -29,3 +31,4 @@ export class User{
     }
 
 }
+export default users;
