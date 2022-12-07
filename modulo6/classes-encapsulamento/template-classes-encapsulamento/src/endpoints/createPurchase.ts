@@ -1,7 +1,8 @@
 import { Request, Response } from "express"
+import { Product } from "../class/Product"
+import { ProductDataBase } from "../class/ProductDataBase"
 import connection from "../database/connection"
 import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "../database/tableNames"
-import { Product } from "../models/Product"
 import { Purchase } from "../models/Purchase"
 
 export const createPurchase = async (req: Request, res: Response) => {
@@ -23,28 +24,28 @@ export const createPurchase = async (req: Request, res: Response) => {
             errorCode = 404
             throw new Error("Usuário não encontrado.")
         }
+        const productDB = new ProductDataBase(connection)
 
-        const findProduct = await connection(TABLE_PRODUCTS)
-        .select()
-        .where({ id: productId })
+        const findProduct = await productDB.getProductId(userId)
 
         if (findProduct.length === 0) {
             errorCode = 404
             throw new Error("Produto não encontrado.")
         }
         
-        const product: Product = {
-            id: findProduct[0].id,
-            name: findProduct[0].name,
-            price: findProduct[0].price
-        }
+        // const product: Product = {
+        //     id: findProduct[0].id,
+        //     name: findProduct[0].name,
+        //     price: findProduct[0].price
+        // }
+        const product = new Product(findProduct[0].id, findProduct[0].name, findProduct[0].price)
 
         const newPurchase: Purchase = {
             id: Date.now().toString(),
             userId,
             productId,
             quantity,
-            totalPrice: product.price * quantity
+            totalPrice: product.getPrice() * quantity
         }
 
         await connection(TABLE_PURCHASES).insert({

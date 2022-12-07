@@ -16,4 +16,10 @@ export class ProductDataBase{
 
         return result
     }
+    public getProductId = async(id: string)=>{
+        const result = await this.connection(TABLE_PRODUCTS).select().where({id});
+
+        return result
+    }
+
 }

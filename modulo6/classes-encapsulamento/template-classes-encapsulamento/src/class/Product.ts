@@ -6,4 +6,8 @@ export class Product{
         this.name = name;
         this.price = price;
     }
+
+    public getPrice(){
+        return this.price;
+    }
 }
