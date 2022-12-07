@@ -2,8 +2,6 @@ import { Request, Response } from "express"
 import { Product } from "../class/Product"
 import { ProductDataBase } from "../class/ProductDataBase"
 import connection from "../database/connection"
-import { TABLE_PRODUCTS } from "../database/tableNames"
-
 
 export const createProduct = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -14,18 +12,6 @@ export const createProduct = async (req: Request, res: Response) => {
         if (!name || !price) {
             throw new Error("Body inválido.")
         }
-
-        // const newProduct: Product = {
-        //     id: Date.now().toString(),
-        //     name,
-        //     price
-        // }
-
-        // await connection(TABLE_PRODUCTS).insert({
-        //     id: newProduct.id,
-        //     name: newProduct.name,
-        //     price: newProduct.price
-        // })
 
         const newProduct = new Product(Date.now().toString(), name, price);
 

@@ -30,8 +30,8 @@ POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {
-    "userId": "1670370802152",
-    "productId": "1670372243661",
+    "userId": "101",
+    "productId": "201",
     "quantity": 1
 }
 
