@@ -15,4 +15,9 @@ export class UserDataBase{
 
         return result
     }
+    public getUsersById = async(id: string)=>{
+        const result = await this.connection(TABLE_USERS).select().where({id});
+
+        return result
+    }
 }
