@@ -27,6 +27,7 @@ app.post("/users", createUser)
 // Exercício 2 - Get users
 app.get("/users", getUsers)
 
+
 // Exercício 3 - Create product
 app.post("/products", createProduct)
 
