@@ -30,10 +30,10 @@ POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {
-    "userId": "103",
+    "userId": "1670519547384",
     "productId": "1670522889805",
     "quantity": 4
 }
 
 ### Exercício 6 - Get user purchases
-GET http://localhost:3003/users/103/purchases
+GET http://localhost:3003/users/1670519547384/purchases
