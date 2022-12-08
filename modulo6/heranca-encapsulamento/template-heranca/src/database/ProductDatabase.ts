@@ -28,4 +28,12 @@ export class ProductDatabase extends BaseDatabase{
     
     //   }
 
+    public getProdutcById = async (id: string) => {
+        const productId = await BaseDatabase.connection(ProductDatabase.TABLE_PRODUCTS)
+          .select()
+          .where({ id })
+    
+        return  productId
+      }
+
 }

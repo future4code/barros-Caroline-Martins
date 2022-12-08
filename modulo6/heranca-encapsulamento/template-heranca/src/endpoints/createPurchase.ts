@@ -1,6 +1,8 @@
 import { Request, Response } from "express"
 import connection from "../database/connection"
+import { ProductDatabase } from "../database/ProductDatabase"
 import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "../database/tableNames"
+import { UserDatabase } from "../database/UserDatabase"
 import { Product } from "../models/Product"
 import { Purchase } from "../models/Purchase"
 
@@ -15,18 +17,25 @@ export const createPurchase = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const findUser = await connection(TABLE_USERS)
-        .select()
-        .where({ id: userId })
+        const databaseUser = new UserDatabase()
+
+        const findUser = await databaseUser.getUserById(userId)
+
+        // const findUser = await connection(TABLE_USERS)
+        // .select()
+        // .where({ id: userId })
 
         if (findUser.length === 0) {
             errorCode = 404
             throw new Error("Usuário não encontrado.")
         }
+        const databaseProduct = new ProductDatabase()
 
-        const findProduct = await connection(TABLE_PRODUCTS)
-        .select()
-        .where({ id: productId })
+        const findProduct = await databaseProduct.getProdutcById(productId)
+
+        // const findProduct = await connection(TABLE_PRODUCTS)
+        // .select()
+        // .where({ id: productId })
 
         if (findProduct.length === 0) {
             errorCode = 404
