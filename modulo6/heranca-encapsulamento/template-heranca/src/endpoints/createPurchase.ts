@@ -20,10 +20,6 @@ export const createPurchase = async (req: Request, res: Response) => {
 
         const findUser = await databaseUser.getUserById(userId)
 
-        // const findUser = await connection(TABLE_USERS)
-        // .select()
-        // .where({ id: userId })
-
         if (findUser.length === 0) {
             errorCode = 404
             throw new Error("Usuário não encontrado.")
@@ -32,34 +28,16 @@ export const createPurchase = async (req: Request, res: Response) => {
 
         const findProduct = await databaseProduct.getProdutcById(productId)
 
-        // const findProduct = await connection(TABLE_PRODUCTS)
-        // .select()
-        // .where({ id: productId })
-
         if (findProduct.length === 0) {
             errorCode = 404
             throw new Error("Produto não encontrado.")
         }
-        
-        // const product: Product = {
-        //     id: findProduct[0].id,
-        //     name: findProduct[0].name,
-        //     price: findProduct[0].price
-        // }
 
         const product = new Product(
             findProduct[0].id,
             findProduct[0].name,
             findProduct[0].price
         )
-
-        // const newPurchase: Purchase = {
-        //     id: Date.now().toString(),
-        //     userId,
-        //     productId,
-        //     quantity,
-        //     totalPrice: product.getPrice() * quantity
-        // }
 
         const purchase = new Purchase(
             Date.now().toString(),
@@ -71,14 +49,6 @@ export const createPurchase = async (req: Request, res: Response) => {
         const databasePurchase = new PurchaseDatabase()
 
         const newPurchase = await databasePurchase.insertPurchases(purchase)
-
-        // await connection(TABLE_PURCHASES).insert({
-        //     id: purchase.getId(),
-        //     user_id: purchase.getUserId(),
-        //     product_id: purchase.getProductId(),
-        //     quantity: purchase.getQuantity(),
-        //     total_price: purchase.getTotalPrice()
-        // })
 
         res.status(201).send({ message: "Compra registrada", purchase: newPurchase })
     } catch (error) {

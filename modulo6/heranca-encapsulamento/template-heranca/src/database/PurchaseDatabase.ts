@@ -3,22 +3,21 @@ import { BaseDatabase } from "./BaseDatabase";
 import { ProductDatabase } from "./ProductDatabase";
 import { UserDatabase } from "./UserDatabase";
 
-
-export class PurchaseDatabase extends BaseDatabase{
+export class PurchaseDatabase extends BaseDatabase {
     public static TABLE_PURCHASES = "Labe_Purchases"
 
-    public insertPurchases =async (purchase: Purchase) => {
+    public insertPurchases = async (purchase: Purchase) => {
         await BaseDatabase.connection(PurchaseDatabase.TABLE_PURCHASES).insert({
             id: purchase.getId(),
             user_id: purchase.getUserId(),
             product_id: purchase.getProductId(),
             quantity: purchase.getQuantity(),
             total_price: purchase.getTotalPrice()
-        })   
+        })
     }
 
-    public getUserPuchese = async(id:string) => {
-   
+    public getUserPuchese = async (id: string) => {
+
         const [result] = await PurchaseDatabase.connection.raw(`
         SELECT
             ${UserDatabase.TABLE_USERS}.email,
@@ -33,6 +32,6 @@ export class PurchaseDatabase extends BaseDatabase{
         ON ${PurchaseDatabase.TABLE_PURCHASES}.product_id = ${ProductDatabase.TABLE_PRODUCTS}.id
         WHERE ${PurchaseDatabase.TABLE_PURCHASES}.user_id = ${id};
         `)
-       return result
+        return result
     }
 }

@@ -7,7 +7,7 @@ export const getProducts = async (req: Request, res: Response) => {
         const products = new ProductDatabase()
 
         const result = await products.getAllProducts()
-        
+
         res.status(200).send(result)
 
     } catch (error) {

@@ -13,10 +13,10 @@ export const createUser = async (req: Request, res: Response) => {
 
         const users = new UserDatabase()
 
-        await users.createUser(Date.now().toString(),email, password)
-        
-          res.status(201).send(`User created successfully`)
-        } catch (error) {
-            res.status(errorCode).send({ message: error.message })
-        }
+        await users.createUser(Date.now().toString(), email, password)
+
+        res.status(201).send(`User created successfully`)
+    } catch (error) {
+        res.status(errorCode).send({ message: error.message })
     }
+}

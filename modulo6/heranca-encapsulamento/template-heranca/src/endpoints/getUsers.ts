@@ -8,7 +8,6 @@ export const getUsers = async (req: Request, res: Response) => {
         const users = new UserDatabase()
 
         const result = await users.getAllUsers()
-        
 
         res.status(200).send(result)
 

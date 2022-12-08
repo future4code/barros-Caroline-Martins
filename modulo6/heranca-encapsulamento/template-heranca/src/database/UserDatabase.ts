@@ -10,6 +10,7 @@ export class UserDatabase extends BaseDatabase {
     return result
 
   }
+
   public createUser = async (id: string, email: string, password: string) => {
     const newUser = await BaseDatabase.connection(UserDatabase.TABLE_USERS).insert({
       id,
