@@ -1,6 +1,4 @@
 import { Request, Response } from "express"
-// import connection from "../database/connection"
-// import { TABLE_USERS } from "../database/tableNames"
 import { UserDatabase } from "../database/UserDatabase"
 
 export const getUsers = async (req: Request, res: Response) => {
@@ -9,10 +7,10 @@ export const getUsers = async (req: Request, res: Response) => {
 
         const users = new UserDatabase()
 
-        console.log(users.getAllUsers());
+        const result = await users.getAllUsers()
         
 
-        res.status(200).send(users.getAllUsers())
+        res.status(200).send(result)
 
     } catch (error) {
         res.status(errorCode).send({ message: error.message })

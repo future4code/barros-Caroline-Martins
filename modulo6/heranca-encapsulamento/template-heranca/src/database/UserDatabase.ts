@@ -7,10 +7,16 @@ export class UserDatabase extends BaseDatabase{
        const result = await BaseDatabase.connection(UserDatabase.TABLE_USERS).select()
 
        return result
+       
     }
-    public createUser(){
+    // public async createUser(){
+    //    const newUser = await BaseDatabase.connection(UserDatabase.TABLE_USERS).insert({
+    //     Date.now().toString();
+    //     email;
+    //     password;
+    //     })
+    // }
 
-    }
     public getUserById(){
 
     }
