@@ -6,8 +6,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "email": "AIAIAIe@gmail.com",
-    "password": "teste123"
+    "email": "123@gmail.com",
+    "password": "TESTANDO-NOVAMENTE"
 }
 
 ### Exercício 2 - Get users
