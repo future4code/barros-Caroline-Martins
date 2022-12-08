@@ -18,8 +18,8 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Teste Product",
-    "price": 500
+    "name": " NOVO POST casa",
+    "price": 1500
 }
 
 ### Exercício 4 - Get products

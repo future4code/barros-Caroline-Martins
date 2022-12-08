@@ -6,7 +6,6 @@ export class ProductDatabase extends BaseDatabase{
 
     public async getAllProducts(){
         const resultProducts = await BaseDatabase.connection(ProductDatabase.TABLE_PRODUCTS).select()
-        console.log(resultProducts);
         
         return resultProducts 
      }
