@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import { UserDatabase } from "../database/UserDatabase"
 
-
 export const createUser = async (req: Request, res: Response) => {
     let errorCode = 400
     try {

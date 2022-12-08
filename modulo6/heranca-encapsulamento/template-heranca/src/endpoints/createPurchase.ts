@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
 import { ProductDatabase } from "../database/ProductDatabase"
-import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "../database/tableNames"
+import { PurchaseDatabase } from "../database/PurchaseDatabase"
 import { UserDatabase } from "../database/UserDatabase"
 import { Product } from "../models/Product"
 import { Purchase } from "../models/Purchase"
@@ -69,6 +68,9 @@ export const createPurchase = async (req: Request, res: Response) => {
             quantity,
             product.getPrice() * quantity
         )
+        const databasePurchase = new PurchaseDatabase()
+
+        const newPurchase = await databasePurchase.insertPurchases(purchase)
 
         // await connection(TABLE_PURCHASES).insert({
         //     id: purchase.getId(),
@@ -78,7 +80,7 @@ export const createPurchase = async (req: Request, res: Response) => {
         //     total_price: purchase.getTotalPrice()
         // })
 
-        res.status(201).send({ message: "Compra registrada", purchase: purchase })
+        res.status(201).send({ message: "Compra registrada", purchase: newPurchase })
     } catch (error) {
         res.status(errorCode).send({ message: error.message })
     }

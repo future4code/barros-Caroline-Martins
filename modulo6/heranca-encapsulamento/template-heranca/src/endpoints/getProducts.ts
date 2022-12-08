@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import { ProductDatabase } from "../database/ProductDatabase"
 
-
 export const getProducts = async (req: Request, res: Response) => {
     let errorCode = 400
     try {

@@ -31,7 +31,7 @@ Content-Type: application/json
 
 {
     "userId": "103",
-    "productId": "203",
+    "productId": "1670522889805",
     "quantity": 4
 }
 
