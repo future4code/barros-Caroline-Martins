@@ -1,11 +1,11 @@
 import { Request, Response } from "express"
-import { ProductDatabse } from "../database/ProductDatabase"
+import { ProductDatabase } from "../database/ProductDatabase"
 
 
 export const getProducts = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
-        const products = new ProductDatabse()
+        const products = new ProductDatabase()
 
         const result = await products.getAllProducts()
         
