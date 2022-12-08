@@ -70,13 +70,13 @@ export const createPurchase = async (req: Request, res: Response) => {
             product.getPrice() * quantity
         )
 
-        await connection(TABLE_PURCHASES).insert({
-            id: purchase.getId(),
-            user_id: purchase.getUserId(),
-            product_id: purchase.getProductId(),
-            quantity: purchase.getQuantity(),
-            total_price: purchase.getTotalPrice()
-        })
+        // await connection(TABLE_PURCHASES).insert({
+        //     id: purchase.getId(),
+        //     user_id: purchase.getUserId(),
+        //     product_id: purchase.getProductId(),
+        //     quantity: purchase.getQuantity(),
+        //     total_price: purchase.getTotalPrice()
+        // })
 
         res.status(201).send({ message: "Compra registrada", purchase: purchase })
     } catch (error) {
