@@ -1,0 +1,27 @@
+GET  https://viacep.com.br/ws/88037640/json/
+Content-Type: application/json
+
+###
+
+POST  http://localhost:3003/address
+Content-Type: application/json
+
+{
+   "cep":"88131573", 
+   "logradouro": "ajhbjewe",
+   "numero": 00, 
+   "complemento":"casa",
+   "bairro": "aqui",
+   "cidade":"kshb", 
+   "estado":"RS"
+}
+
+###
+POST  http://localhost:3003/new/address
+Content-Type: application/json
+
+{
+   "zipcode":"94445120",
+   "numero": 35,
+   "complemento":"casa"
+}
