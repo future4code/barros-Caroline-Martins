@@ -1,7 +1,7 @@
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDataBase extends BaseDatabase {
-    insertUser = async (user: any): Promise<void> => {
+    createUser = async (user: any): Promise<void> => {
         try {
             await UserDataBase.connection.insert({
                 name: user.name,

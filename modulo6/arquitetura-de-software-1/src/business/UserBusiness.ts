@@ -18,7 +18,7 @@ export class UserBusiness {
 
             const userDatabase = new UserDataBase()
 
-            await userDatabase.insertUser({
+            await userDatabase.createUser({
                 name,
                 email,
                 password
