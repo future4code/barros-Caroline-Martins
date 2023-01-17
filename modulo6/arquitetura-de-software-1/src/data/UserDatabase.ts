@@ -1,7 +1,7 @@
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDataBase extends BaseDatabase {
-    TABLE_NAME= "user_software"
+    TABLE_NAME = "user_software"
     createUser = async (user: any): Promise<void> => {
         try {
             await UserDataBase.connection.insert({
@@ -14,14 +14,25 @@ export class UserDataBase extends BaseDatabase {
         }
     }
 
-    findUser = async()=>{
-        try{
-          const user = await UserDataBase.connection(this.TABLE_NAME).select()
+    findUser = async () => {
+        try {
+            const user = await UserDataBase.connection(this.TABLE_NAME).select()
             return (user)
-        }catch(e: any) {
+        } catch (e: any) {
             throw new Error(e.message);
         }
     }
 
+    deleteUser = async(id:any)=>{
+        try{
+        
+            const userDelete = await UserDataBase.connection(this.TABLE_NAME)
+            .delete()
+            .where({id})
+
+        }catch(e:any){
+            throw new Error(e.message);
+        }
+    }
 
 }
