@@ -2,9 +2,11 @@ POST http://localhost:3003/createUser
 Content-Type: application/json
 
 {
-    "name": "Harry Potter",
-    "email": "harry4@potter.com",
+    "name": "Harry Pot",
+    "email": "harry5@potter.com",
     "password": "hogwartsss"
 }
 
 ###
+
+GET http://localhost:3003/all

@@ -1,4 +1,3 @@
-import { BaseDatabase } from "../data/BaseDatabase";
 import { UserDataBase } from "../data/UserDatabase";
 
 export class UserBusiness {
@@ -10,12 +9,6 @@ export class UserBusiness {
             if (!name || !email || !password) {
                 throw new Error("Body invalido! verifique name, email, password.");
             }
-
-            // if (password.length > 6) {
-            //     throw new Error("Senha incorrect, password must be at least 6 characters");
-
-            // }
-
             const userDatabase = new UserDataBase()
 
             await userDatabase.createUser({
