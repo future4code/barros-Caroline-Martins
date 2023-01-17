@@ -9,9 +9,9 @@ export class DeleteUserBusiness{
                 throw new Error("Precisa passar id usuário.")
             }
 
-            const deleteUser = new UserDataBase()
+            const deleteDatabase = new UserDataBase()
 
-            await deleteUser.deleteUser(id)
+            await deleteDatabase.deleteUser(id)
 
         }catch(e:any){
             throw new Error(e.message);

@@ -1,13 +1,13 @@
 import { UserDataBase } from "../data/UserDatabase";
 
-export class FindUserController {
+export class FindUserBusiness {
 
     findUser = async (): Promise<void> => {
         try {
 
-            const findUser = new UserDataBase()
+            const userDataBase = new UserDataBase()
 
-            await findUser.findUser()
+            await userDataBase.findUser()
 
         } catch (e: any) {
             throw new Error(e.message);
