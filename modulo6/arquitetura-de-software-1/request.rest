@@ -2,9 +2,9 @@ POST http://localhost:3003/createUser
 Content-Type: application/json
 
 {
-    "name": "Harry Banana",
-    "email": "bananinha@potter.com",
-    "password": "hogwartss"
+  "name": "Jim Halpert",
+  "email": "jim@dundermifflin.com",
+  "password": "fa8s7e6fia7se6ga8i67gf9a7se6f8a7s6e5gaes"
 }
 
 ###

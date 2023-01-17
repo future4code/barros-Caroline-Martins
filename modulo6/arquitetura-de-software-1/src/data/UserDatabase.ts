@@ -23,14 +23,14 @@ export class UserDataBase extends BaseDatabase {
         }
     }
 
-    deleteUser = async(id:any)=>{
-        try{
-        
-            const userDelete = await UserDataBase.connection(this.TABLE_NAME)
-            .delete()
-            .where(id)
+    deleteUser = async (id: any) => {
+        try {
 
-        }catch(e:any){
+            await UserDataBase.connection(this.TABLE_NAME)
+                .delete()
+                .where(id)
+
+        } catch (e: any) {
             throw new Error(e.message);
         }
     }
