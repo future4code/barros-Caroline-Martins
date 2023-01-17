@@ -1,7 +1,7 @@
 import { BaseDatabase } from "../data/BaseDatabase";
 import { UserDataBase } from "../data/UserDatabase";
 
-export class UserBusiness extends BaseDatabase {
+export class UserBusiness {
     createUser = async (input: any): Promise<void> => {
 
         try {
@@ -11,10 +11,10 @@ export class UserBusiness extends BaseDatabase {
                 throw new Error("Body invalido! verifique name, email, password.");
             }
 
-            if (password.length > 6) {
-                throw new Error("Senha incorrect, password must be at least 6 characters");
+            // if (password.length > 6) {
+            //     throw new Error("Senha incorrect, password must be at least 6 characters");
 
-            }
+            // }
 
             const userDatabase = new UserDataBase()
 
