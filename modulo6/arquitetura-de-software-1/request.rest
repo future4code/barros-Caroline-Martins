@@ -2,11 +2,15 @@ POST http://localhost:3003/createUser
 Content-Type: application/json
 
 {
-    "name": "Harry Pot",
-    "email": "harry5@potter.com",
-    "password": "hogwartsss"
+    "name": "Harry Banana",
+    "email": "bananinha@potter.com",
+    "password": "hogwartss"
 }
 
 ###
 
 GET http://localhost:3003/all
+
+###
+DELETE http://localhost:3003/3
+Content-Type: application/json

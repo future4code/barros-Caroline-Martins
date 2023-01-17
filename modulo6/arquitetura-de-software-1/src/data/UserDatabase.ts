@@ -28,7 +28,7 @@ export class UserDataBase extends BaseDatabase {
         
             const userDelete = await UserDataBase.connection(this.TABLE_NAME)
             .delete()
-            .where({id})
+            .where(id)
 
         }catch(e:any){
             throw new Error(e.message);
