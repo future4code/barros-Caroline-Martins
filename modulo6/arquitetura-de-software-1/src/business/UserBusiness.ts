@@ -27,19 +27,19 @@ export class UserBusiness {
 
             const userDataBase = new UserDataBase()
 
-          const user =  await userDataBase.findUser()
-          return (user)
+            const user = await userDataBase.findUser()
+            return (user)
 
         } catch (e: any) {
             throw new Error(e.message);
         }
     }
 
-    
-    deleteUser = async(id:any):Promise<void>=>{
 
-        try{
-            if(!id){
+    deleteUser = async (id: any): Promise<void> => {
+
+        try {
+            if (!id) {
                 throw new Error("Precisa passar id usuário.")
             }
 
@@ -47,7 +47,7 @@ export class UserBusiness {
 
             await deleteDatabase.deleteUser(id)
 
-        }catch(e:any){
+        } catch (e: any) {
             throw new Error(e.message);
         }
     }
