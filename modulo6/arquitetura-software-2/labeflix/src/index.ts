@@ -1,8 +1,7 @@
-import {app} from "./app"
-import {userRouter} from "./routes/userRouter"
+import { app } from "./app"
+import { userRouter } from "./routes/userRouter"
 import { movieRouter } from "./routes/movieRouter"
 
 app.use("/user", userRouter)
 
-app.movie("/create", movieRouter)
-
+app.use("/movie", movieRouter)

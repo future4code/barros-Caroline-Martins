@@ -17,8 +17,8 @@ POST http://localhost:3003/movie/create
 Content-Type: application/json
 
 {
-    "title": "Alto lar", 
-    "description":"ijkebdNKDV AqFCIORHNU", 
+    "title": "aliBABAr", 
+    "description":"O filme vai mostrar a história de um menino sonhador que tenta convencer seu pai a permitir que ele suba ao topo de uma montanha.", 
     "durationInMinutes": 120, 
     "yearOfRelease":2022
 

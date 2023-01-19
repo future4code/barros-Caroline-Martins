@@ -2,24 +2,22 @@ import { MovieDatabase } from "../data/MovieDatabase";
 
 export class MovieBusiness{
     create = async(input:any):Promise<void>=>{
-        let erroCode=400
         try{
-            const {title, description, durationInMinutes, yearOfRelease}= input
-
-            if(!title || !description || !durationInMinutes || !yearOfRelease){
-                erroCode = 400
+          
+            if(!input.title || !input.description || !input.durationInMinutes || !input.yearOfRelease){
                 throw new Error("Body incorreto verificar (title,  description, durationInMinutes, yearOfRelease) ");
                 
             }
             const id:string= Date.now().toString()
+
             const movieDatabase = new MovieDatabase()
 
             await movieDatabase.create({
                 id,
-                title,
-                description, 
-                durationInMinutes, 
-                yearOfRelease
+                title:input.title,
+                description:input.description,
+                duration_in_minutes:input.durationInMinutes,
+                year_of_release:input.yearOfRelease
             })
 
 
