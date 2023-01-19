@@ -26,4 +26,19 @@ export class MovieBusiness{
             
         }
     }
+
+    getAll = async () => {
+        try {
+    
+    
+          const movieDatabase = new MovieDatabase()
+    
+         const movies = await movieDatabase.getAllMovie()
+         return(movies)
+    
+        } catch (e: any) {
+          throw new Error(e.message);
+    
+        }
+      }
 }

@@ -5,20 +5,6 @@ export class MovieDatabase extends BaseDatabase {
 
     create =async ({id,title,description,duration_in_minutes,year_of_release}:any)=>{
         try{
-            // await MovieDatabase.connection.raw(`
-            // insert into ${MovieDatabase.TABLE_NAME} (id, title, description, duration_in_minutes, year_of_release)
-            // values ${id, title, description, durationInMinutes,yearOfRelease}
-            
-            // `)
-            // await MovieDatabase.connection
-            // .insert({
-            //     id: id,
-            //     title: title,
-            //     description: description,
-            //     duration_in_minutes: durationInMinutes,
-            //     year_of_release: yearOfRelease
-
-            // }).into(MovieDatabase.TABLE_NAME)
 
               await MovieDatabase.connection
             .insert({
@@ -35,4 +21,16 @@ export class MovieDatabase extends BaseDatabase {
         }
 
     }
+
+    getAllMovie = async () => {
+        try {
+    
+          const result = await MovieDatabase.connection.select().from(MovieDatabase.TABLE_NAME)
+          return (result)
+    
+        } catch (e: any) {
+          throw new Error(e.message);
+    
+        }
+      }
 }

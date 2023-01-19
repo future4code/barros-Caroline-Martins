@@ -23,3 +23,7 @@ Content-Type: application/json
     "yearOfRelease":2022
 
 }
+
+###
+GET http://localhost:3003/getAll/movie
+Content-Type: application/json

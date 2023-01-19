@@ -5,3 +5,5 @@ import { movieRouter } from "./routes/movieRouter"
 app.use("/user", userRouter)
 
 app.use("/movie", movieRouter)
+
+app.use("/getAll",movieRouter)
