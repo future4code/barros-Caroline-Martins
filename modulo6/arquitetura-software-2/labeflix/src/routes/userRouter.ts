@@ -7,3 +7,5 @@ const userController = new UserController()
 
 userRouter.post("/create", userController.create)
 
+userRouter.get("/getAll", userController.getAllUser)
+
