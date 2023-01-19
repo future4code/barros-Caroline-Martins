@@ -11,3 +11,15 @@ Content-Type: application/json
 GET  http://localhost:3003/user/getAll
 Content-Type: application/json
 
+###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "Alto lar", 
+    "description":"ijkebdNKDV AqFCIORHNU", 
+    "durationInMinutes": 120, 
+    "yearOfRelease":2022
+
+}

@@ -1,4 +1,5 @@
 import express from 'express';
+import { MovieController } from '../controller/MovieController';
 
 export const movieRouter = express.Router();
 
