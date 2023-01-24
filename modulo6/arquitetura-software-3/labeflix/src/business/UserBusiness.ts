@@ -1,8 +1,9 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { v4 as generateId } from 'uuid'
+import { UserInputDTO, UserInsertDTO } from "../model/userDTO"
 
 export class UserBusiness {
-  async create({ email, name, password }: any): Promise<void> {
+  async create({ email, name, password }: UserInputDTO): Promise<void> {
     if (!email || !name || !password) {
       throw new Error("Dados inválidos (email, name, password)")
     }
@@ -10,12 +11,14 @@ export class UserBusiness {
     const id = generateId()
 
     const userDatabase = new UserDatabase()
-    await userDatabase.create({
+
+    const createUser:UserInsertDTO={
       id,
       name,
       email,
       password
-    })
+    }
+    await userDatabase.create(createUser)
   }
 
   getAllUser = async () => {
