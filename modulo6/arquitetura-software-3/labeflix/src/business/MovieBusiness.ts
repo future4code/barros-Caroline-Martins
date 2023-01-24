@@ -1,8 +1,9 @@
 import { MovieDatabase } from "../data/MovieDatabase";
+import { MovieInputDTO, MovieInsertDTO } from "../model/movieDTO";
 import { generateId } from "../services/idGerator";
 
 export class MovieBusiness{
-    create = async(input:any):Promise<void>=>{
+    create = async(input:MovieInputDTO):Promise<void>=>{
         try{
           
             if(!input.title || !input.description || !input.durationInMinutes || !input.yearOfRelease){
@@ -13,13 +14,15 @@ export class MovieBusiness{
 
             const movieDatabase = new MovieDatabase()
 
-            await movieDatabase.create({
-                id,
+            const insertMovie : MovieInsertDTO={
+                id:id,
                 title:input.title,
                 description:input.description,
                 duration_in_minutes:input.durationInMinutes,
                 year_of_release:input.yearOfRelease
-            })
+            }
+
+            await movieDatabase.create(insertMovie)
 
 
         }catch(e:any){
