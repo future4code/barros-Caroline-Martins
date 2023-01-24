@@ -1,0 +1,29 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "testando Caroll",
+    "email": "emailTeste@email.com",
+    "password": "23432535"
+}
+
+### 
+GET  http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "aliBABAr", 
+    "description":"O filme vai mostrar a história de um menino sonhador que tenta convencer seu pai a permitir que ele suba ao topo de uma montanha.", 
+    "durationInMinutes": 120, 
+    "yearOfRelease":2022
+
+}
+
+###
+GET http://localhost:3003/getAll/movie
+Content-Type: application/json
