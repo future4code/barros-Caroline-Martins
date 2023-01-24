@@ -2,8 +2,8 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "testando DTO",
-    "email": "DTO-Teste@email.com",
+    "name": "testando DTO2",
+    "email": "DTO-2-Teste@email.com",
     "password": "23432535"
 }
 
@@ -17,7 +17,7 @@ POST http://localhost:3003/movie/create
 Content-Type: application/json
 
 {
-    "title": "ali deu certo", 
+    "title": "DTO deu certo", 
     "description":"O filme vai mostrar a história de um menina sonhadora que quer ser uma dev.", 
     "durationInMinutes": 1200, 
     "yearOfRelease":2022

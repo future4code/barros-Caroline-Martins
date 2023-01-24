@@ -17,8 +17,8 @@ export class UserController {
       await userBusiness.create(input);
 
       res.status(201).send({ message: "Usuário cadastrado com sucesso" });
-    } catch (error: any) {
-      res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+    } catch (err: any) {
+      res.status(err.statusCode || 400).send(err.message || err.sqlMessage)
     }
   }
 
@@ -31,8 +31,8 @@ export class UserController {
 
       res.status(200).send(users)
 
-    } catch (e: any) {
-      res.status(e.statusCode || 400).send(e.message || e.sqlMessage)
+    } catch (err: any) {
+      res.status(err.statusCode || 400).send(err.message || err.sqlMessage)
     }
 
   }
