@@ -7,6 +7,7 @@ export class UserController {
       const { email, name, password } = req.body;
 
       const userBusiness = new UserBusiness();
+      
       await userBusiness.create({ email, name, password });
 
       res.status(201).send({ message: "Usuário cadastrado com sucesso" });

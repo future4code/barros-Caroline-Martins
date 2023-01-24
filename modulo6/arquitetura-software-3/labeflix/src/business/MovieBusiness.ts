@@ -1,4 +1,5 @@
 import { MovieDatabase } from "../data/MovieDatabase";
+import { generateId } from "../services/idGerator";
 
 export class MovieBusiness{
     create = async(input:any):Promise<void>=>{
@@ -8,7 +9,7 @@ export class MovieBusiness{
                 throw new Error("Body incorreto verificar (title,  description, durationInMinutes, yearOfRelease) ");
                 
             }
-            const id:string= Date.now().toString()
+            const id:string= generateId()
 
             const movieDatabase = new MovieDatabase()
 
