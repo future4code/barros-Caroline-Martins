@@ -17,10 +17,10 @@ POST http://localhost:3003/movie/create
 Content-Type: application/json
 
 {
-    "title": "DTO deu certo", 
+    "title": "DTO deu certo data base", 
     "description":"O filme vai mostrar a história de um menina sonhadora que quer ser uma dev.", 
     "durationInMinutes": 1200, 
-    "yearOfRelease":2022
+    "yearOfRelease":2023
 
 }
 

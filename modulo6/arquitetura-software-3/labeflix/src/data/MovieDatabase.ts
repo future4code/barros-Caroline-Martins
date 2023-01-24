@@ -1,10 +1,11 @@
 import { CustomError } from "../error/CustomError";
+import { MovieInsertDTO } from "../model/movieDTO";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class MovieDatabase extends BaseDatabase {
   private static TABLE_NAME = "LABEFLIX_MOVIE";
 
-  create = async ({ id, title, description, duration_in_minutes, year_of_release }: any) => {
+  create = async ({ id, title, description, duration_in_minutes, year_of_release }: MovieInsertDTO) => {
     try {
 
       await MovieDatabase.connection
@@ -31,7 +32,6 @@ export class MovieDatabase extends BaseDatabase {
 
     } catch (err: any) {
       throw new CustomError(err.statusCode, err.message)
-
     }
   }
 }
