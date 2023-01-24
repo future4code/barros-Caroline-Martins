@@ -17,9 +17,9 @@ POST http://localhost:3003/movie/create
 Content-Type: application/json
 
 {
-    "title": "aliBABAr", 
-    "description":"O filme vai mostrar a história de um menino sonhador que tenta convencer seu pai a permitir que ele suba ao topo de uma montanha.", 
-    "durationInMinutes": 120, 
+    "title": "ali deu certo", 
+    "description":"O filme vai mostrar a história de um menina sonhadora que quer ser uma dev.", 
+    "durationInMinutes": 1200, 
     "yearOfRelease":2022
 
 }
