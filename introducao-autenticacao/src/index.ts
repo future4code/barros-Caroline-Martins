@@ -6,4 +6,4 @@ app.use('/user/', userRouter)
 
 app.use('/user/', userRouter)
 
-app.use('/user/', userRouter)
+app.use('', userRouter)

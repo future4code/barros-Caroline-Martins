@@ -84,8 +84,8 @@ export class UserBusiness{
         try {
           const token = input 
 
-   
           const authentication = authenticator.getTokenData(token);
+
           console.log(authentication);
           
           const userDatabase = new UserDatabase();
@@ -93,6 +93,7 @@ export class UserBusiness{
           const user = await userDatabase.getUserById(authentication.id);
 
           return user
+
         } catch (error: any) {
           throw new CustomError(400, error.message);
         }

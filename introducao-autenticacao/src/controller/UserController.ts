@@ -38,7 +38,7 @@ export class UserController {
          const token = await userBusiness.login(input);
     console.log(token);
     
-          res.status(200).send(input);
+          res.status(200).send({input, token});
 
         } catch (error: any) {
           res.status(400).send(error.message);
@@ -53,7 +53,7 @@ export class UserController {
 
           const userId = await userBusiness.getAllId(token)
 
-          res.status(200).send(userId);
+          res.status(200).send({userId, token});
 
 
         }catch (error: any) {
