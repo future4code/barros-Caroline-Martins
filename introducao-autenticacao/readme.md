@@ -43,26 +43,50 @@ b) Agora, crie a função que gere o token. Além disso, crie um type  para repr
 ---
 
 ### EXERCICIO *3*
-Pronto, com essas três funções preparadas podemos criar o nosso endpoint. As informações dele são:
+Pronto, com essas três funções preparadas podemos criar o nosso endpoint. As informações dele são:</br>
 
-- *Verbo/Método*: POST
-- *Path*: `/user/signup`
-- *Input:* O body da requisição deve ser
+- *Verbo/Método*: POST</br>
+- *Path*: `/user/signup`</br>
+- *Input:* O body da requisição deve ser</br>
 {
-	"email": "email do usuário",
-	"password": "senha do usuário"
+	"email": "email do usuário", </br>
+	"password": "senha do usuário" </br>
 }
 
-- *Output:* O body da resposta deve ser
+- *Output:* O body da resposta deve ser</br>
 
 {
-	"token": "token gerado pelo jwt"
+	"token": "token gerado pelo jwt"</br>
 }
 
-a) *Crie o endpoint que realize isso, com as funções que você implementou anteriormente*
+a) *Crie o endpoint que realize isso, com as funções que você implementou anteriormente*</br>
 
-b) *Altere o seu endpoint para ele não aceitar um email vazio ou que não possua um `"@"`*
+b) *Altere o seu endpoint para ele não aceitar um email vazio ou que não possua um `"@"`*</br>
 
-c) *Altere o seu endpoint para ele só aceitar uma senha com 6 caracteres ou mais*
+c) *Altere o seu endpoint para ele só aceitar uma senha com 6 caracteres ou mais*</br>
+
+
+## RESPOSTAS EM PASTA CODIGOS CRIADOS PODENDO BATER ENDPOINT NO ARQUIVO **RESQUEST.REST**
 
 ---
+
+### EXERCICIO *4*
+
+No login, vamos receber o email e a senha do usuário. Então, vamos precisar de uma função que realize essa busca no banco de dados para gente. </br>
+
+a) *Crie uma função que retorne as informações de um usuário a partir do email*</br>
+
+## RESPOSTAS EM PASTA CODIGOS CRIADOS PODENDO BATER ENDPOINT NO ARQUIVO **RESQUEST.REST**
+
+---
+
+### EXERCICIO *5*
+
+Ufa, agora temos toda a nossa base pronta para identificar o usuário. Antes de prosseguir, precisamos criar uma </br>função que recebe o token e devolve as informações do usuário salvas nele</br>
+
+a) Crie uma função que realize a mesma funcionalidade da função acima</br>
+
+## Criada na pasta e arquivo service/authenticator</br>
+
+---
+

@@ -43,6 +43,22 @@ export class UserController {
         } catch (error: any) {
           res.status(400).send(error.message);
         }
-      };  
+      }; 
+
+      getAllId=async(req: Request, res: Response)=>{
+        try{
+          const token = req.headers.authorization as string;
+
+          const userBusiness = new UserBusiness()
+
+          const userId = await userBusiness.getAllId(token)
+
+          res.status(200).send(userId);
+
+
+        }catch (error: any) {
+          res.status(400).send(error.message);
+        }
+      }
 
 }

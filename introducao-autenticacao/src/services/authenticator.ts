@@ -8,12 +8,12 @@ export class Authenticator{
         const token = jwt.sign(
             {id},
             process.env.JWT_KEY as string,
-            {expiresIn:"1h"}
+            {expiresIn:"1min"}
         )
         return token
     }
 
-    getTokenData = (token:string):AuthenticationData=>{
+    public getTokenData = (token:string):AuthenticationData=>{
         try{
 
             const payload =jwt.verify(
