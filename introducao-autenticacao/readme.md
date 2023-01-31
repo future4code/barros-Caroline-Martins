@@ -30,3 +30,39 @@ Para isso, vamos usar o JWT. Ele possui uma função que permite gerar o token d
 - algumas configurações, como o tempo de expiração </br>
 
 **Criada na pasta service/authenticator**
+
+a) O que a linha as string faz? Por que precisamos usar ela ali?
+
+O arquivo não consegui entender que tipo é pois o dotenv retorna string então é mais para confirmar</br>
+*Olha isso aqui é SIM uma string* caso contrário retorna um erro pois ele le como undefined </br>
+
+b) Agora, crie a função que gere o token. Além disso, crie um type  para representar o input dessa função.</br>
+
+**Criada na pasta e arquivo service/authenticator**</br>
+
+---
+
+### EXERCICIO *3*
+Pronto, com essas três funções preparadas podemos criar o nosso endpoint. As informações dele são:
+
+- *Verbo/Método*: POST
+- *Path*: `/user/signup`
+- *Input:* O body da requisição deve ser
+{
+	"email": "email do usuário",
+	"password": "senha do usuário"
+}
+
+- *Output:* O body da resposta deve ser
+
+{
+	"token": "token gerado pelo jwt"
+}
+
+a) *Crie o endpoint que realize isso, com as funções que você implementou anteriormente*
+
+b) *Altere o seu endpoint para ele não aceitar um email vazio ou que não possua um `"@"`*
+
+c) *Altere o seu endpoint para ele só aceitar uma senha com 6 caracteres ou mais*
+
+---
