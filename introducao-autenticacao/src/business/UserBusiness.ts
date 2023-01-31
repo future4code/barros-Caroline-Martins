@@ -1,6 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase";
 import { CustomError } from "../error/customError";
-import { LoginInputDTO } from "../model/types";
+import {  UserDTO, UserInputDTO } from "../model/types";
 import { Authenticator } from "../services/authenticator";
 import generateId from "../services/generateId";
 
@@ -10,25 +10,30 @@ const authenticator = new Authenticator()
 
 export class UserBusiness{
 
-    public  login = async (input: LoginInputDTO) => {
+    public  signup = async (input: UserInputDTO) => {
         try {
           const {email, password } = input;
     
-          if (!email || email.indexOf("@")) {
-            throw new CustomError(
-              400, 'Preencha os campos "email" e "password"'
-            );
+          if (!email || email.indexOf("@") === -1) {
+            throw new Error("Invalid email");
           }
+      
           if (!password || password.length < 6) {
             throw new Error("Invalid password");
           }
-      
     
+          const id = idGenerate
+    
+          const user: UserDTO = {
+            id,
+            email,
+            password,
+          };
           const userDatabase = new UserDatabase();
-    
-         const user = await userDatabase.findUserByEmail(email);
+
+          await userDatabase.createUser(user);
           
-          const token = authenticator.generateToken({id: user.id})
+          const token = authenticator.generateToken({id})
     
           return token
     
@@ -36,4 +41,5 @@ export class UserBusiness{
           throw new CustomError(400, error.message);
         }
       };
+    
 }
