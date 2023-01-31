@@ -23,4 +23,26 @@ export class UserController {
           res.status(400).send(error.message);
         }
       };  
+
+       
+      public login = async (req: Request, res: Response) => {
+        try {
+          const { email, password } = req.body;
+    
+          const input:  UserInputDTO = {
+            email,
+            password,
+          };
+          const userBusiness = new UserBusiness()
+
+         const token = await userBusiness.login(input);
+    console.log(token);
+    
+          res.status(200).send(input);
+
+        } catch (error: any) {
+          res.status(400).send(error.message);
+        }
+      };  
+
 }

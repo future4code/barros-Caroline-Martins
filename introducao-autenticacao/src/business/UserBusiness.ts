@@ -41,5 +41,41 @@ export class UserBusiness{
           throw new CustomError(400, error.message);
         }
       };
+
+      public  login = async (input: UserInputDTO ) => {
+        try {
+          const {email, password } = input;
+    
+          if (!email || !password) {
+            throw new CustomError(
+              400,
+              'Preencha os campos "email" e "password"'
+            );
+          }
+    
+          if (!email.includes("@")) {
+            throw new CustomError(400, "Email inválida"); 
+          }
+    
+          const userDatabase = new UserDatabase();
+    
+         const user = await userDatabase.getUserByEmail(email);
+    
+         if(!user){
+            throw new CustomError(404, "User not found"); 
+         }
+    
+         if(user.password !== password){
+            throw new CustomError(400, "Senha inválida"); 
+         }
+    
+          const token = authenticator.generateToken({id: user.id})
+    
+          return token
+    
+        } catch (error: any) {
+          throw new CustomError(400, error.message);
+        }
+      };
     
 }
