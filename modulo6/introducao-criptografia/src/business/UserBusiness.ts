@@ -81,12 +81,11 @@ export class UserBusiness {
         throw new UserNotFound()
       }
 
-      const compareResult:boolean = await hashManager.compareHash(password, user.password) 
+      const compareResult: boolean = await hashManager.compareHash(password, user.password) 
 
       if(!compareResult){ 
         throw new InvalidPassword()
       }
-
 
       const token = tokenGenerator.generateToken(user.id)
      

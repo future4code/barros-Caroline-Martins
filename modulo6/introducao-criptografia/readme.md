@@ -7,8 +7,11 @@ a) O que são os round e salt? Que valores são recomendados para o round? Que v
 *Salt* é uma string aleatoria adicionada antes de criar o hash
 
 b) Instale o bcryptjs no seu projeto e comece criando a função generateHash(), que será responsável por **criptografar** uma string usando o bcryptjs.</br>
+**FEITO**</br>
 
 c) Agora, crie a função que verifique se uma string é correspondente a um hash, use a função `compare` do bcryptjs</br>
+
+**FEITO**
 
 ---
 
