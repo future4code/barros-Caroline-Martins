@@ -7,12 +7,16 @@ import {
   EditUserInput,
   LoginInputDTO,
 } from "../model/user";
+import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
+
+//-------------INSTANCIAS-----------------
 const idGenerator = new IdGenerator()
 const tokenGenerator = new TokenGenerator()
 const userDatabase = new UserDatabase();
+const hashManager = new HashManager()
 
 export class UserBusiness {
   public createUser = async (input: UserInputDTO): Promise<string> => {
@@ -36,12 +40,15 @@ export class UserBusiness {
 
       const id: string = idGenerator.generateId()
 
+ //     ---------------- CRIPTOGRAFANDO COM HASH----------------------
+      const hashPassword: string = await hashManager.generateHash(password) 
+
       const user: user = {
         id,
         name,
         nickname,
         email,
-        password,
+        password:hashPassword
       };
    
       await userDatabase.insertUser(user);
@@ -74,9 +81,12 @@ export class UserBusiness {
         throw new UserNotFound()
       }
 
-      if(password !== user.password){ 
+      const compareResult:boolean = await hashManager.compareHash(password, user.password) 
+
+      if(!compareResult){ 
         throw new InvalidPassword()
       }
+
 
       const token = tokenGenerator.generateToken(user.id)
      
