@@ -3,8 +3,9 @@
 A primeira implementação que vamos fazer refere-se à função que vai cuidar do hash da nossa senha. Vamos utilizar um bem famoso e muito recomendado para senhas de usuários: bcryptjs.
 
 a) O que são os round e salt? Que valores são recomendados para o round? Que valor você usou? Por quê?</br>
-*Round* 
-*Salt* é uma string aleatoria adicionada antes de criar o hash
+*Round* vai rodar na quantidade elevado a *n* quanto maior mais vezes vai girar sua aplicação.</br>
+*Salt* é uma string aleatoria adicionada antes de criar o hash.</br>
+Salt como já é pedido uma string e Round um number 12 pois é uma forma segura para a aplicação.
 
 b) Instale o bcryptjs no seu projeto e comece criando a função generateHash(), que será responsável por **criptografar** uma string usando o bcryptjs.</br>
 **FEITO**</br>
@@ -27,4 +28,6 @@ b) Faça a alteração do primeiro endpoint
 c) Faça a alteração do segundo endpoint
 **FEITO**
 
-d) No exercício da aula anterior, nós criamos o endpoint `user/profile`. Também temos que modificar esse endpoint devido à adição da criptografia? Justifique.
+d) No exercício da aula anterior, nós criamos o endpoint `user/profile`. Também temos que modificar esse endpoint devido à adição da criptografia? Justifique.</br>
+Não é preciso Pois ele já está logado.. essa criptografia seria a do *JSONWEBTOKEN*.</br>
+Nesse caso não é necessário. Pois não preciso de verificação do meu password.</br>
