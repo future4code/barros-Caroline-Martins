@@ -9,7 +9,7 @@ export class UserDatabase extends BaseDatabase {
       const result = await UserDatabase.connection
         .select()
         .where({email})
-        .from("Auth_users")
+        .from("Cripto_user")
 
       
       return result[0];
@@ -21,14 +21,8 @@ export class UserDatabase extends BaseDatabase {
   public insertUser = async (user: user) => {
     try {
       await UserDatabase.connection
-        .insert({
-          id: user.id,
-          name: user.name,
-          nickname: user.nickname,
-          email: user.email,
-          password: user.password,
-        })
-        .into("Auth_users");
+        .insert(user)
+        .into("Cripto_user");
     } catch (error: any) {
       throw new CustomError(400, error.message);
     }
@@ -39,7 +33,7 @@ export class UserDatabase extends BaseDatabase {
       await UserDatabase.connection
         .update({ name: user.name, nickname: user.nickname })
         .where({ id: user.id })
-        .into("Auth_users");
+        .into("Cripto_user");
     } catch (error: any) {
       throw new CustomError(400, error.message);
     }
@@ -48,7 +42,7 @@ export class UserDatabase extends BaseDatabase {
   public getUserById = async(id: string): Promise<any> => {
     const result = await UserDatabase.connection
       .select("*")
-      .from("Auth_users")
+      .from("Cripto_user")
       .where({ id });
  
     return result[0];

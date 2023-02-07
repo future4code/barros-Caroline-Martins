@@ -26,33 +26,21 @@ export class UserBusiness {
           'Preencha os campos "name","nickname", "email", "password" e "role"'
         );
       }
-
       if (name.length < 4) {
         throw new InvalidName();
       }
-
       if (!email.includes("@")) {
         throw new InvalidEmail();
       }
-
       const id: string = idGenerator.generateId()
-
-      if(role.toUpperCase() !== UserRole.ADMIN && role.toUpperCase() !== UserRole.NORMAL){
+      if (role.toUpperCase() !== UserRole.ADMIN && role.toUpperCase() !== UserRole.NORMAL) {
         throw new InvalidRole()
       }
+      const user: user = { id, name, nickname, email, password, role };
 
-      const user: user = {
-        id,
-        name,
-        nickname,
-        email,
-        password,
-        role
-      };
-   
       await userDatabase.insertUser(user);
 
-      const token = tokenGenerator.generateToken({id,role})
+      const token = tokenGenerator.generateToken({ id:id, role:role })
 
       return token
     } catch (error: any) {
@@ -63,7 +51,7 @@ export class UserBusiness {
   public login = async (input: LoginInputDTO): Promise<string> => {
     try {
       const { email, password } = input;
-    
+
       if (!email || !password) {
         throw new CustomError(
           400,
@@ -81,12 +69,12 @@ export class UserBusiness {
         throw new UserNotFound()
       }
 
-      if(password !== user.password){ 
+      if (password !== user.password) {
         throw new InvalidPassword()
       }
 
-      const token = tokenGenerator.generateToken({id:user.id, role:user.role})
-     
+      const token = tokenGenerator.generateToken({ id: user.id, role: user.role })
+
       return token
     } catch (error: any) {
       throw new CustomError(400, error.message);
@@ -106,7 +94,7 @@ export class UserBusiness {
 
       const data = tokenGenerator.tokenData(token)
 
-      if(!data.id) {
+      if (!data.id) {
         throw new Unauthorized()
       }
 
@@ -127,16 +115,22 @@ export class UserBusiness {
     }
   };
 
-  public getUserById = async(token:string)=>{
+  public getUserById = async (token: string) => {
     try {
-      const userDatabase = new UserDatabase()
 
+      const authenticationData = tokenGenerator.tokenData(token);
+
+      if (authenticationData.role.toUpperCase() !== "NORMAL") {
+        throw new Error("Only a normal user can access this funcionality");
+      }
+
+      const userDatabase = new UserDatabase()
       const user = await userDatabase.getUserById(token);
 
       return user
 
-    } catch (err:any) {
+    } catch (err: any) {
       throw new Error(err.message);
     }
-}
+  }
 }

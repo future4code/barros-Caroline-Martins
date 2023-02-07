@@ -1,5 +1,6 @@
+-- Active: 1674084192186@@35.226.146.116@3306@jbl-4416152-caroline-martins
 
-CREATE TABLE IF NOT EXISTS Auth_users (
+CREATE TABLE IF NOT EXISTS Cripto_user (
     id VARCHAR(64) PRIMARY KEY,
     name VARCHAR(64) NOT NULL,
     nickname VARCHAR(64) NOT NULL,
@@ -24,5 +25,5 @@ CREATE TABLE IF NOT EXISTS Auth_assignees (
     FOREIGN KEY (task_id) REFERENCES Auth_tasks(id),
     FOREIGN KEY (assignee_id) REFERENCES Auth_users(id)
 );
-ALTER TABLE  `Auth_users` ADD role ENUM("ADMIN","NORMAL") NOT NULL DEFAULT "NORMAL";
+ALTER TABLE  `Cripto_user` ADD role ENUM("ADMIN","NORMAL") NOT NULL DEFAULT "NORMAL";
 

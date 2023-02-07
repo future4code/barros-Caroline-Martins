@@ -16,7 +16,7 @@ export interface UserInputDTO {
    nickname: string,
    email: string,
    password: string
-   role:UserRole
+   role:string
 }
 
 export interface LoginInputDTO {
