@@ -8,6 +8,7 @@ import {
   LoginInputDTO,
   UserRole,
 } from "../model/user";
+import { HashManager } from "../services/HashManager";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
@@ -17,6 +18,7 @@ const tokenGenerator = new TokenGenerator()
 
 const userDatabase = new UserDatabase();
 
+const hashManager = new HashManager()
 export class UserBusiness {
   public createUser = async (input: UserInputDTO): Promise<string> => {
     try {
@@ -37,12 +39,16 @@ export class UserBusiness {
       const id: string = idGenerator.generateId()
       if (role.toUpperCase() !== UserRole.ADMIN && role.toUpperCase() !== UserRole.NORMAL) {
         throw new InvalidRole()
+
       }
-      const user: user = { id, name, nickname, email, password, role };
+
+      const hashPassword: string = await hashManager.hash(password)
+
+      const user: user = { id, name, nickname, email, password: hashPassword, role };
 
       await userDatabase.insertUser(user);
 
-      const token = tokenGenerator.generateToken({ id:id, role:role })
+      const token = tokenGenerator.generateToken({ id: id, role: role })
 
       return token
     } catch (error: any) {
@@ -71,7 +77,9 @@ export class UserBusiness {
         throw new UserNotFound()
       }
 
-      if (password !== user.password) {
+      const compareResult: boolean = await hashManager.compare(password, user.password)
+
+      if (!compareResult) {
         throw new InvalidPassword()
       }
 
@@ -116,22 +124,21 @@ export class UserBusiness {
       throw new CustomError(400, error.message);
     }
   };
-
+// LEMBRAR QUE RECEBE E FAZ TUDO É O BUSINNES CONTROLLER SO RECEBE TUDO
   public getUserById = async (token: string) => {
     try {
 
       const authenticationData = tokenGenerator.tokenData(token);
 
-      if (authenticationData.role.toUpperCase() !== "NORMAL") {
+      if (authenticationData.role.toUpperCase() !== UserRole.NORMAL) {
         throw new Error("Only a normal user can access this funcionality");
-      }else{
-
-        const userDatabase = new UserDatabase()
-        const user = await userDatabase.getUserById(token);
-  
-        return user
       }
 
+      const userDatabase = new UserDatabase()
+
+      const user = await userDatabase.getUserById(authenticationData.id);
+
+      return user
 
     } catch (err: any) {
       throw new Error(err.message);

@@ -44,6 +44,7 @@ export class UserDatabase extends BaseDatabase {
       .select("*")
       .from("Cripto_user")
       .where({ id });
+ console.log(result[0]);
  
     return result[0];
    }
