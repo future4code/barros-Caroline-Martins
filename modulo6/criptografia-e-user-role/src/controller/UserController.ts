@@ -68,13 +68,21 @@ export class UserController {
           const token = req.headers.authorization as string;
       
           const tokenGenerator = new TokenGenerator()
+
           const authenticationData = tokenGenerator.tokenData(token);
+
+          if (authenticationData.role !== "NORMAL") {
+            throw new Error("Only a normal user can access this funcionality");
+          }
+
           const userBusiness = new UserBusiness()
+
           const user = await userBusiness.getUserById(authenticationData.id);
       
           res.status(200).send({
             id: user.id,
             email: user.email,
+            role: authenticationData.role,
           });
         } catch (err:any) {
           res.status(400).send({

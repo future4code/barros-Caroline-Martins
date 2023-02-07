@@ -130,8 +130,11 @@ export class UserBusiness {
   public getUserById = async(token:string)=>{
     try {
       const userDatabase = new UserDatabase()
+
       const user = await userDatabase.getUserById(token);
+
       return user
+
     } catch (err:any) {
       throw new Error(err.message);
     }
