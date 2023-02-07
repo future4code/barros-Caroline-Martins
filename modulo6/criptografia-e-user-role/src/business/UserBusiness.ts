@@ -12,7 +12,9 @@ import { IdGenerator } from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
 
 const idGenerator = new IdGenerator()
+
 const tokenGenerator = new TokenGenerator()
+
 const userDatabase = new UserDatabase();
 
 export class UserBusiness {
@@ -122,12 +124,14 @@ export class UserBusiness {
 
       if (authenticationData.role.toUpperCase() !== "NORMAL") {
         throw new Error("Only a normal user can access this funcionality");
+      }else{
+
+        const userDatabase = new UserDatabase()
+        const user = await userDatabase.getUserById(token);
+  
+        return user
       }
 
-      const userDatabase = new UserDatabase()
-      const user = await userDatabase.getUserById(token);
-
-      return user
 
     } catch (err: any) {
       throw new Error(err.message);
