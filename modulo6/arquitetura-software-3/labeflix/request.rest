@@ -1,0 +1,29 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "testando DTO2",
+    "email": "DTO-2-Teste@email.com",
+    "password": "23432535"
+}
+
+### 
+GET  http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "DTO deu certo data base", 
+    "description":"O filme vai mostrar a história de um menina sonhadora que quer ser uma dev.", 
+    "durationInMinutes": 1200, 
+    "yearOfRelease":2023
+
+}
+
+###
+GET http://localhost:3003/getAll/movie
+Content-Type: application/json
