@@ -1,0 +1,22 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "email":"userteste@hotmail.com",
+    "password": "user1245"
+}
+
+###
+GET  http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email":"userteste@hotmail.com",
+    "password": "user1245"
+}
+
+###
+
+GET  http://localhost:3003/user/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3NjZjYjE0LTA4YjgtNGM3MC1iMzhiLWY1ZTQwZGExZGRkNiIsImlhdCI6MTY3NTIwNzk4NywiZXhwIjoxNjc1MjA4MTA3fQ._bOQr2LFGbRVJxwYYz6gcYuQ0BRUlu1ULeZqCVhS5zU
+Content-Type: application/json

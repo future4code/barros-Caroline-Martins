@@ -1,0 +1,32 @@
+{
+  "name": "introducao-autenticacao",
+  "version": "1.0.0",
+  "description": "Na autenticação de usuários o elemento mais fundamental talvez seja o id.</br>\r É muito importante encontrar um que seja fácil de guardar e que garanta unicidade.</br>\r Para isso usaremos a versão v4 do UUID, uma das mais recomendadas. </br>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev ./src/index.ts",
+    "start": "tsc && node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "Caroline Martins",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/node": "^18.11.18",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
+    "mysql": "^2.18.1",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/knex": "^0.16.1",
+    "@types/uuid": "^9.0.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
