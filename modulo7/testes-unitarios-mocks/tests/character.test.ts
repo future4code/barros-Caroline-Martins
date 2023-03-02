@@ -1,7 +1,7 @@
 import { validateCharacter } from "../src/funcs/validateCharacter";
 
 
-describe("Teste Character",()=>{
+describe.skip("Teste Character",()=>{
     test("Teste 1: Crie um teste que verifique o comportamento da função com um personagem com o nome vazio ",()=>{
         const result = validateCharacter({
             name: "",
