@@ -35,7 +35,11 @@ describe("Testes Signup", () => {
     test("teste erro 2: erro email invalido", async () => {
         expect.assertions
         try {
-            await userBusiness.signup("mockinho", "email", "123456", USER_ROLES.NORMAL)
+            await userBusiness.signup(
+                "Astrodev",
+                "astrodev",
+                "123456",
+                USER_ROLES.ADMIN)
 
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
@@ -47,7 +51,11 @@ describe("Testes Signup", () => {
     test("teste erro 3: erro senha invalido", async () => {
         expect.assertions
         try {
-            await userBusiness.signup("mockinho", "email@email.com", "123", USER_ROLES.NORMAL)
+            await userBusiness.signup(
+                "Astrodev",
+                "astrodev@gmail.com",
+                "123",
+                USER_ROLES.ADMIN)
 
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
@@ -59,7 +67,10 @@ describe("Testes Signup", () => {
     test("teste erro 4: erro tipo user invalido", async () => {
         expect.assertions
         try {
-            await userBusiness.signup("mockinho", "email@email.com", "123456", "")
+            await userBusiness.signup("Astrodev",
+                "astrodev@gmail.com",
+                "123456",
+                "")
 
         } catch (error: any) {
             expect(error).toBeInstanceOf(CustomError)
@@ -69,7 +80,11 @@ describe("Testes Signup", () => {
     })
 
     test("teste erro 5: SUCESSO cadastro e token verificação", async () => {
-        const result = await userBusiness.signup("mockinho", "email@email.com", "123456", USER_ROLES.NORMAL)
+        const result = await userBusiness.signup(
+            "Astrodev",
+            "astrodev@gmail.com",
+            "123456",
+            USER_ROLES.ADMIN)
 
         expect(result).toBeDefined()
         expect(result).toEqual({ accessToken: "token" })
