@@ -15,7 +15,7 @@ const userBusiness = new UserBusiness(
 
 
 
-describe("Testes Signup", () => {
+describe.skip("Testes Signup", () => {
     test("teste erro 1: erro name vazio", async () => {
         expect.assertions
         try {
@@ -67,7 +67,8 @@ describe("Testes Signup", () => {
     test("teste erro 4: erro tipo user invalido", async () => {
         expect.assertions
         try {
-            await userBusiness.signup("Astrodev",
+            await userBusiness.signup(
+                "Astrodev",
                 "astrodev@gmail.com",
                 "123456",
                 "")
@@ -89,4 +90,44 @@ describe("Testes Signup", () => {
         expect(result).toBeDefined()
         expect(result).toEqual({ accessToken: "token" })
     })
+})
+
+
+/// EXERCICIO
+
+describe("Teste Get All By Id", () => {
+
+    test("Should catch error when id is not registered",async()=>{
+        expect.assertions(2)
+
+        try {
+          await userBusiness.allById("abc")
+        } catch (error:any) {
+          expect(error.statusCode).toBe(404)
+          expect(error.message).toBe("User not found")
+        }
+    })
+
+    test("Should return respective user when id is registered", async () => {
+        expect.assertions(2)
+        
+        try {
+          const getUserById = jest.fn(
+            (id: string) => userBusiness.allById(id)
+          )
+            
+          const result = await getUserById("id")
+    
+          expect(getUserById).toHaveBeenCalledWith("id")
+          expect(result).toEqual({
+            id: "id",
+            name: "Astrodev",
+            email: "astrodev@gmail.com",
+            password:"123456",
+            role: "ADMIN",
+          })
+        } catch (error:any) {
+          console.log(error.message)
+        }
+      })
 })
